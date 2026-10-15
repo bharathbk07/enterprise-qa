@@ -1,0 +1,930 @@
+{
+  "schema_version": "1.0",
+  "package_version": "0.2.3",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "4d1230c57c50fab90776a566304d015613c178facea6600955d94aad022da779"
+    },
+    {
+      "path": "README.md",
+      "sha256": "265a50d699de0c9820a6d5518361da03e8da9c755b30cf0ef0d59b790f5ef08d"
+    },
+    {
+      "path": "adapters/antigravity/instructions.md",
+      "sha256": "68ed08c095e59cf8d3f8812eb4e82c8e3b5ccfaa024f5720a686d8e7f87ec27c"
+    },
+    {
+      "path": "adapters/chatgpt-portable/instructions.md",
+      "sha256": "cffdd84b3995bca4902398851df5408b54618a8c7aa11d30082c9b67d08806af"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-analysis.md",
+      "sha256": "bd7724df7e8e95af142cb4b66e7e84dc07e0cf30117c96a7d0a3bf755e6ff756"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-automation.md",
+      "sha256": "9cfe4f15a9a1f757511c81bf9ec4b1f3c996bc44390886acfd2fbe7df16a1188"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-bottleneck-analysis.md",
+      "sha256": "941ec0944325d13edfff3b76869683d14446170f50991cd5b86861ddd4298fd7"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-browser.md",
+      "sha256": "bd943c4c6cc1edfddfe517ad4f4a177166719284a3ffb7af7747afd7941a6829"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-engineering.md",
+      "sha256": "9226773c7241bc0ca3b654d7e6aeb618112cd0211c2cf10b48a4aa18b91f604d"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-fix-implementation.md",
+      "sha256": "332ba934bb783cd8abd50f25bb27fe5feb923a1f636d0c44c7d13f353732c2b6"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-fix-proposal.md",
+      "sha256": "968086c9472c87fef6b0fe9ac919d889801472579a2909e5b4ffffc87f7c4923"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-framework.md",
+      "sha256": "90cc97f0da02a6d3e6c80cb1320128041ebed3c67e9f832b8451f1c885ceb4b7"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-knowledge.md",
+      "sha256": "9557c5630593af3bb526050b5267b8e66a57958872918908bd8d2177149eaf53"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-mcp-confluence.md",
+      "sha256": "fa1e0733ce6a5df428a36b204b011d9d8bd5c665976e7469f40805b0871590ed"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-mcp-dynatrace.md",
+      "sha256": "47b95a51179a5ef39109bf99e9dc902315ad9658a19536c946e85e35a27e9d5a"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-mcp-jira.md",
+      "sha256": "9cd07daa8dc94784958619f0b0609727402cb654d44c5873a6be7fd3de407189"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-mcp-neoload.md",
+      "sha256": "201b2893677ddfb806cda0992a5dfe257ffbb018bc590d2aea53a66c81031e71"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-mcp-splunk.md",
+      "sha256": "061bbe02d05d61b89f89d5608b502d0b2896a61ee755a59b2f80f10a7c48de13"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-orchestrate.md",
+      "sha256": "5a658a2f81ad0a7bd20a1453a765c3ca54cffa52ab3dc3147f9f7da57d4dc02d"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-performance-engineering.md",
+      "sha256": "3c9e391d676dbf686680e2a055fcd4839edf9d47591a0a780bf67cb0461358a3"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-performance-retest.md",
+      "sha256": "4d0346d3f2c5f4a3c5fd2abf5087a1827c99a1c12e8db0d2f3ee8a0e4cab9258"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-performance.md",
+      "sha256": "2db826f2e76f93b7c4e7d1d14e76b6bb9c810c69bd0cfffa77283c2a1b4d0736"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-rca.md",
+      "sha256": "1caf4e68ef949f1e0f0151cc737e2d804f8b61c95f308bc30034eaef4ca33013"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-recording.md",
+      "sha256": "7347c9b49f0c3119c24462afb0e1023f759b13742f16fed648466a92da4390b3"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-reporting.md",
+      "sha256": "598db87eddf4530edd3838c7176357b21baf28eeeb5309c33f1afb942de9a8bc"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-setup.md",
+      "sha256": "ffdf3b73cbcc08d2da60fc387bd1c8516bdb1c5a5b1df1bf919f9a34fb44972a"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-telemetry-correlation.md",
+      "sha256": "51c095e8eab886b11373e8c3e78d23f3db47ee1c22c468468f568bcfa57aea18"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-test-design.md",
+      "sha256": "67a23a75ee9274a4107bf9ac14c7f25dedcce9032f529cb6cb92219d203e7730"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-test-execution.md",
+      "sha256": "003c5426b830afb1796e25f2b052feca0e11d86c5292834840800e5e7567d4fa"
+    },
+    {
+      "path": "adapters/claude-code/agents/qa-workload-model.md",
+      "sha256": "acbb037678e332e31108531588c8bdef777a571329b33aa102199a9919f47b55"
+    },
+    {
+      "path": "adapters/codex/instructions.md",
+      "sha256": "68ed08c095e59cf8d3f8812eb4e82c8e3b5ccfaa024f5720a686d8e7f87ec27c"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-analysis.md",
+      "sha256": "b4ef2388140fea6550771bf0993ea48d4d55c078ca236397294826c4b75c5b44"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-automation.md",
+      "sha256": "d5e1163f2a8c2b67bfc1230e3ae7cf4365e5636687eaa741c64180c53f168aa4"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-bottleneck-analysis.md",
+      "sha256": "40b85aa08ea1793c33b7397601a52ba79ed4c924d43f5555540db7f15e4e0fb7"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-browser.md",
+      "sha256": "373d126230ebeab2b6f441d1d1c07f9c0a64342dfb9034efc44c76e9c837c88a"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-engineering.md",
+      "sha256": "33de2cec11850bdd5c3c09c1f31f19751b09538aba00abf5c88c95dbc8d66d4a"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-fix-implementation.md",
+      "sha256": "2514edbe9d82be3b2989cff700c5bdd50d2c2beb0fca1cc4bf2b7c15c6bdd47b"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-fix-proposal.md",
+      "sha256": "3543d374a28e9f2c3c25e3e997a6c1da04b64778b8eb62483d675d75b360c316"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-framework.md",
+      "sha256": "ab9e245c199a6f8677aa4540b9157c62a5821ac4d3983353a06d9e6fd7f9c35a"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-knowledge.md",
+      "sha256": "968fcefea2e0a1a9f774967f949542fbbdc9c9db5c73786fae672d65ba9f8f19"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-mcp-confluence.md",
+      "sha256": "c8b076ae839ca8f23fa620e754181be5f29aecccce46e054931f06e2fd12add3"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-mcp-dynatrace.md",
+      "sha256": "57a2760b1b64db13c49fc01fa92155ee3f83ad982eaf6fba90e4020c7f890619"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-mcp-jira.md",
+      "sha256": "7ad9212c268e19ed52ed0bbaded7d748d777ef811ea3adef2f5079e618823a09"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-mcp-neoload.md",
+      "sha256": "90d43d2d5a816b1baf16a6a24bc5b620b72f621c3eb76b6fa69683b3727e205a"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-mcp-splunk.md",
+      "sha256": "78f9e107225572fabbc838ec36e4839a278070c4526ffeaa7a773ea124dccb15"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-orchestrate.md",
+      "sha256": "3880e24223f499b295a37f84f9dce258e5b821f25894335f8471e93378cef42e"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-performance-engineering.md",
+      "sha256": "95cbe085f7b551f784f26e6c36a2daacd1a4f00b2aff8084ba9e9176411192f5"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-performance-retest.md",
+      "sha256": "492f988846bdbf3d7888fee60117522a6ea16ccb5c29ad5910a2440b978cc66c"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-performance.md",
+      "sha256": "2350809c0aaee87cb311bbdd3d4716da6310d07d909b0a0c9c0842b12313a9d1"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-rca.md",
+      "sha256": "795705ac2f94e62c6d53151df7b8b72ef32210161f1835829df1ad1e415ad5ae"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-recording.md",
+      "sha256": "87ca356de22858b83892d27cf6361f54eb500c4e8015ed9510bd8cf0ad1d79dc"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-reporting.md",
+      "sha256": "5bf70e1188b8c4d7973aa6ee593ae76498aabfb21d8a7cbb9783ccc614afa2a8"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-setup.md",
+      "sha256": "8aeb2d508f4b7d3430a1f4220b6c31665a8c2552ddbca0f56eb7577297a9aae8"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-telemetry-correlation.md",
+      "sha256": "a8f79848772d72bc8a99db7ce631ffb6ad453f6a8a96a53a4ffe906e17a8a3d5"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-test-design.md",
+      "sha256": "7c38a7e4bb98f183d0787a1cfb5c6cd8213845d6e999707c1332a6495fef867c"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-test-execution.md",
+      "sha256": "cdccb8c0b482d2a2c1eec2e75322e491c863b9b78f33bb7d0cd6cb947d9d8774"
+    },
+    {
+      "path": "adapters/cursor/agents/qa-workload-model.md",
+      "sha256": "6b15dc214a14c1c71ea4699e60204f250a467f3df5684b35d2265fe924f04127"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-analysis.agent.md",
+      "sha256": "309b9e593efba463f0c014afc5350ed9ab581fdca5a0987d5fcb84d9d917df2a"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-automation.agent.md",
+      "sha256": "efe563afe819660b3c618157cc74a52755348432be01dddfa8b2e5ddf2cfa2a9"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-bottleneck-analysis.agent.md",
+      "sha256": "5b35831dcc7a4bc95837bf8833d6acc2b46bf567cb8c9419d10b8381a3a15ebb"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-browser.agent.md",
+      "sha256": "1e7c08d1c0b944926e5342a1b4982675c9f1194dd726028eb5a3eeca99da3b45"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-engineering.agent.md",
+      "sha256": "07908d354e2e72998f500825807e4dedeb4a27bcfcf9ea1d3fb5f93ce7d7a939"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-fix-implementation.agent.md",
+      "sha256": "244cee04072086d01f49e16048b898ea84d8bf7f3700522f439460390bd2bd65"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-fix-proposal.agent.md",
+      "sha256": "bc098b30eef442b7a82624685c7b16135e9dce70fd0d8fbaec5aa4625289fe5e"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-framework.agent.md",
+      "sha256": "5a2474308af28553fd7e5eae26d7e526899b1852435f3edec47e5bf12168148e"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-knowledge.agent.md",
+      "sha256": "ae245709fea0078edc3399ecd0fbc42c426908070f772c03c598864f649b30c8"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-mcp-confluence.agent.md",
+      "sha256": "bad7746c2d638a49fa1472aff5d25b59e876decd5b1214b05d01dce175475c7e"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-mcp-dynatrace.agent.md",
+      "sha256": "6c5c52e191a2dc6a584d52f034b2ccaf2a313bd18539c5c79842fd536b159982"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-mcp-jira.agent.md",
+      "sha256": "2e11af4c52e33c582d18612111393d279f8ee0cae96bc664ecdeebe33b088557"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-mcp-neoload.agent.md",
+      "sha256": "86cbd193e6c777c611ce17a3dab53dedb0f98038c2b7e711c13ed6d19e37e23a"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-mcp-splunk.agent.md",
+      "sha256": "7a55bb267357f4cfa115588ee44fbfe68b4ae6fbd9080ac23b3ced8f520691d6"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-orchestrate.agent.md",
+      "sha256": "8f1bf75f56af717d697ddd5a0eb04efc38ac6c46f851d86a0c1670f90ba18c2e"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-performance-engineering.agent.md",
+      "sha256": "2c28cc01f09844c64f4f23897cf35b97c40fa9da5a0f98dd8664fe77a8ad5902"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-performance-retest.agent.md",
+      "sha256": "2ccb000f124a25f0035b2e116cf0c564f2cd74d54234fe94cd3a3fe773ee55b6"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-performance.agent.md",
+      "sha256": "2148b39743b4e963e055090b961d0f1bdaf5ab81a1c9236db25f5b499201174d"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-rca.agent.md",
+      "sha256": "ebea94ada759575b8284b80b332efdb04f31a76f3a89f878b692d000c7f882ff"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-recording.agent.md",
+      "sha256": "d44d29e32dada8a2262798b01372a604efeb7f9d33b9efd8fa16224070009326"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-reporting.agent.md",
+      "sha256": "b6455ec85e9713685def096d5a6209c9ba3beca7f2247497ccf2a84ba225a83f"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-setup.agent.md",
+      "sha256": "e562a2d76d1f5ae25ac5a9fa44ac0e0b61391018319394b80c81a616ad58e794"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-telemetry-correlation.agent.md",
+      "sha256": "0b89e2e70e4731d47750b534abbf40afa69d61e5ef00ea023c25e7e2cb5dde07"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-test-design.agent.md",
+      "sha256": "d00e31072a47ad8c6689878747a42dc813fbfda375760694251fc723c8eb113a"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-test-execution.agent.md",
+      "sha256": "fa409382b9c243941e140cd5b88bb1b88fa33833d4f1cb4e5f171e7af5e1ef6d"
+    },
+    {
+      "path": "adapters/vscode-copilot/agents/qa-workload-model.agent.md",
+      "sha256": "5395286fc67a596e6a5bd96c293bcb24f222ef3838d519539047b5e1023a2a53"
+    },
+    {
+      "path": "agent-manifest.json",
+      "sha256": "796f3cd27176624e5d4d359f9f1b9a69159fb6d27167ad32bab09935515c80c8"
+    },
+    {
+      "path": "agents/qa-analysis.md",
+      "sha256": "5e1615c8f7faec71d5ba1543ed83c611874099074cbed9036b7563115d5c0423"
+    },
+    {
+      "path": "agents/qa-automation.md",
+      "sha256": "dd4afdd827a2f0f2b78773c1ef37413044ef8ed762b835365474b250fc00c835"
+    },
+    {
+      "path": "agents/qa-bottleneck-analysis.md",
+      "sha256": "5f083f1db1592024cb251b7793ec093bb8b55255c6f214b0ab4aba07a0da1e8c"
+    },
+    {
+      "path": "agents/qa-browser.md",
+      "sha256": "4c64426d2872348a2ea3798191553fba0c642a27b717308a9c969c5db4dc4ddd"
+    },
+    {
+      "path": "agents/qa-engineering.md",
+      "sha256": "44a91ba82a16da3aeede355c7b77359ed7f61231bfb4a54fb0939e57898b2fc9"
+    },
+    {
+      "path": "agents/qa-fix-implementation.md",
+      "sha256": "4ab0cdccaae3dbed027ac0c1f3c29a4d40f36f9250d00ac0012b3c377fcb6084"
+    },
+    {
+      "path": "agents/qa-fix-proposal.md",
+      "sha256": "abe225a5b3390efd811525ab69341104e7f179345731cc5a527df41920d4c41a"
+    },
+    {
+      "path": "agents/qa-framework.md",
+      "sha256": "1160968c814dd12d33aeb15c6acd3b98a86943861e63e1b8093313e072dae1aa"
+    },
+    {
+      "path": "agents/qa-knowledge.md",
+      "sha256": "33ac8d12af0b93e07b4304d33bca01c274cdfb122b9e5209db195e0e8ae0bea3"
+    },
+    {
+      "path": "agents/qa-mcp-confluence.md",
+      "sha256": "0e5ef24ed222a9366d0e36c9036f6aba151a7b6df21cf200c35bb5fccb94ca84"
+    },
+    {
+      "path": "agents/qa-mcp-dynatrace.md",
+      "sha256": "21f62b7d7b14654c040be41235c0a3f0f5519d23df6eec1fd5b9039f898c9966"
+    },
+    {
+      "path": "agents/qa-mcp-jira.md",
+      "sha256": "aaf7ee0da4e063d8a79d8cc19314c943b040a5923b99405e79dce39283257d6e"
+    },
+    {
+      "path": "agents/qa-mcp-neoload.md",
+      "sha256": "a3d8dd501a1ba010c11af79dd3b86bc6987155c834aaffdb16bc4e40517d9ee8"
+    },
+    {
+      "path": "agents/qa-mcp-splunk.md",
+      "sha256": "cf1a29e851dd602413fe9c134ec4fd799189755289a036b4dc19dc517fc1708a"
+    },
+    {
+      "path": "agents/qa-orchestrate.md",
+      "sha256": "b50a94440e281e82c9791b28fa08033a33c5d2df59a19381f1c2daad62788f19"
+    },
+    {
+      "path": "agents/qa-performance-engineering.md",
+      "sha256": "227626b4018c56e3869743a0b8865ed1387c08dd44e0141acba1734eccb465c2"
+    },
+    {
+      "path": "agents/qa-performance-retest.md",
+      "sha256": "81b77e75b2cdac497bb8ce1080c60c512ec1e2af3a27f42231e4551e6df3b732"
+    },
+    {
+      "path": "agents/qa-performance.md",
+      "sha256": "b9205cdcdd2e4c08b541fc3b82f4e2c2438f25c96e04d2152643b642b453aeb6"
+    },
+    {
+      "path": "agents/qa-rca.md",
+      "sha256": "ddb99900e61df69107394988fa031928de2e90fe110ce28644cab8918e00f65e"
+    },
+    {
+      "path": "agents/qa-recording.md",
+      "sha256": "168d668176fdcd65649a3b89a169d2b54f1fda91395a646b91c96f1d224944f3"
+    },
+    {
+      "path": "agents/qa-reporting.md",
+      "sha256": "858ed33b42d38c0ce31cc9841df9099a15ed8e455f5f0ff45d6ba5eb0ed14af0"
+    },
+    {
+      "path": "agents/qa-setup.md",
+      "sha256": "bc1abb7b369e1243a5c0f9c488892f7bf81064102d06f73d8ec72c2e76c782fa"
+    },
+    {
+      "path": "agents/qa-telemetry-correlation.md",
+      "sha256": "996a809bfab0c492cfbd7d8773e8cbfdec40bb49cbcb86f748698a1d3fd20c29"
+    },
+    {
+      "path": "agents/qa-test-design.md",
+      "sha256": "69fa98d6cf491660a3f02618f505546d0f53ab587265b1e24aa53ced84b1d562"
+    },
+    {
+      "path": "agents/qa-test-execution.md",
+      "sha256": "3b5219431b21c8b02ce6000a8a0a981ad6ac50119c5810f439d66db968f6b5c6"
+    },
+    {
+      "path": "agents/qa-workload-model.md",
+      "sha256": "4bfaed4a2c79fc87275f82ad2743b018f04bca3ab0b07d2b1b088a430169d9d4"
+    },
+    {
+      "path": "contracts/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "contracts/DATA-MODEL.md",
+      "sha256": "6bc0c1406d7379bf68bad0016e790a069f8110fd9902e5e78ea38237809e1e0a"
+    },
+    {
+      "path": "contracts/ENGINEERING-RECORDS.md",
+      "sha256": "dbd04d11d65d79c46ee8084fa76c40a7d4d8f8748c268ede53fb8568c033e2f5"
+    },
+    {
+      "path": "contracts/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "contracts/rca.schema.json",
+      "sha256": "32090faf5aae5491c89eaf2484c1cfefc485727304c1ee8bb6262cf9f97e2c4d"
+    },
+    {
+      "path": "contracts/records.schema.json",
+      "sha256": "2cf3cb73aff966d1906b8d9aabdc29217d11c7d1fec20260174138cff622afb4"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "706fef72836184934a94b14a3608481a6ffc0802513dce08e38ea27d6e0a0550"
+    },
+    {
+      "path": "docs/FLOW-DOCUMENT.md",
+      "sha256": "58d49367e41246a617c29b5201d1629d2ff4fdd9e80052396a4fe6677b21af5e"
+    },
+    {
+      "path": "docs/GAP-REVIEW.md",
+      "sha256": "7884dcea51a0de0600b1e540a9c1edf692869060af71ef15fc192e8b5f0d0642"
+    },
+    {
+      "path": "docs/INSTALLATION.md",
+      "sha256": "073040b93d4c3f345f063815907f048154d52fea0da803bd7f3d76851ace904b"
+    },
+    {
+      "path": "docs/INTERACTION.md",
+      "sha256": "65397b7490c47f495df29a00221eb97c6701317d23639b60f70ae03c7766d6e4"
+    },
+    {
+      "path": "docs/RECORDER.md",
+      "sha256": "4310f8c2c9cb7385167aabad52a078bb5de68c8228fd71cbe164249254f0d83e"
+    },
+    {
+      "path": "docs/gap-review.json",
+      "sha256": "48757fdc99e7897c9d0ca4867cb3848d13b79e12912816fede6d0761f3aac2ac"
+    },
+    {
+      "path": "docs/qa-gap-review.canvas.tsx",
+      "sha256": "f008c174831fb34287aaf669a9cded338ea95215b5f0de03a4e5c6963fac3d02"
+    },
+    {
+      "path": "integrations/SETUP.md",
+      "sha256": "c99d314e6576b920f829a9dd15c9d7eb4d7ad7b7db9c41e664158678b16c56ad"
+    },
+    {
+      "path": "integrations/catalog.json",
+      "sha256": "f9dcbfd761942c5beabe88ccc5ef35b913d461060a97c3a0c435cc6fd2227c15"
+    },
+    {
+      "path": "integrations/templates/claude-code.mcp.example.json",
+      "sha256": "734da6447fc107c6bbaf7672dc3557e03d40931f737ce8a66939e8212cc5ad67"
+    },
+    {
+      "path": "integrations/templates/codex.config.example.toml",
+      "sha256": "279754cac2b44a4c976e13f5d7298c673e1562321c97996ca193410d64729e95"
+    },
+    {
+      "path": "integrations/templates/cursor.mcp.example.json",
+      "sha256": "c3dec66833c1e2a357cd6c8e5b52d80b5199b5d667a9421ea104f87216cb3ed9"
+    },
+    {
+      "path": "integrations/templates/vscode-copilot.mcp.example.json",
+      "sha256": "fade35bed2482be0cc0d3c176cfa911f53a81dec21a17a4554eb2ea25be6a76d"
+    },
+    {
+      "path": "recorder/package-lock.json",
+      "sha256": "178780b6e00a791b38e6dfd7e211ac7d687bbd60535667ac8d3fc13eb7ec3f1b"
+    },
+    {
+      "path": "recorder/package.json",
+      "sha256": "d2e4082a74238569ac0f61f7e638481456338fe6e4b6eab0ae53bd8b0843b930"
+    },
+    {
+      "path": "recorder/src/budget.ts",
+      "sha256": "0ca3949ca3a2418a5dadfe4ae05bec52963aa16adda2cea1c4bd0c6b351d2359"
+    },
+    {
+      "path": "recorder/src/cli.ts",
+      "sha256": "778713b08adefa7699f7740a90689e0d8cb40dd907423519165cb51b33df156f"
+    },
+    {
+      "path": "recorder/src/events.ts",
+      "sha256": "8b3fa08de0b43c522c9d086f73c6189d9bf8086d572923adfc273e20d7ac6f7b"
+    },
+    {
+      "path": "recorder/src/instrument.ts",
+      "sha256": "8c187068d975c869b2752962b294df5d82bd792330549632942529d190b20a28"
+    },
+    {
+      "path": "recorder/src/paths.ts",
+      "sha256": "5d21d85cc61bd6212b58117cfc5b23bfd23f5b54bd0258418056c67d05786170"
+    },
+    {
+      "path": "recorder/src/privacy.ts",
+      "sha256": "78ff113b299309bde6cf00cb3c673753d69bb7520f0e63693c8b7797cc7a786d"
+    },
+    {
+      "path": "recorder/src/recorder.ts",
+      "sha256": "78627ecbf09eeffae1355729152920c609fe8f95d4e6e63b9208d1a891810ac2"
+    },
+    {
+      "path": "recorder/test/recorder.test.ts",
+      "sha256": "c989262b83edc540a9b8fd1dfb1ae014c72d69a6f1cd525071d645cf29f2b490"
+    },
+    {
+      "path": "recorder/tsconfig.json",
+      "sha256": "f2d7838175642a50744b93601d6d3090c90b38d3978993f9eb80b84b8197ff1c"
+    },
+    {
+      "path": "scripts/check_gate.py",
+      "sha256": "345354d98068f1c8532faf2e2df0131ef22ddcbc3ee34857f9e138680d9cbd91"
+    },
+    {
+      "path": "scripts/engineering_checks.py",
+      "sha256": "abc3f2c1a582380a5b7c30c0b03b1f540687db1878aa15095bcac3ed036a5d2d"
+    },
+    {
+      "path": "scripts/install.py",
+      "sha256": "3261d099597043c9aab5dcb26a781fa88ef43a677906f4b6ff783801444b79b1"
+    },
+    {
+      "path": "scripts/sync_package.py",
+      "sha256": "fd56edf534ad0789ac9380dac947e1265846e2ed57733d8baa95c826a7ba7d9f"
+    },
+    {
+      "path": "scripts/test_contracts.py",
+      "sha256": "a04c858b56649469d4074f29a4a11d63d38da515f4dc4d6128a426d17ac143af"
+    },
+    {
+      "path": "scripts/test_engineering.py",
+      "sha256": "da9defae4586bd77d8fc82fd7db1d1ef5fbfc12090c835707a246fd29534e90b"
+    },
+    {
+      "path": "scripts/validate.py",
+      "sha256": "6d7522152a60a361ce7d17fb94eaa7e618adf57f5409c49c9ac555cea51d91f0"
+    },
+    {
+      "path": "skill-definition.json",
+      "sha256": "b9da51e676eb211da286a8c884f39cbb4c0c077009b65e18a2e9a162af3432c0"
+    },
+    {
+      "path": "skills/qa-analysis/SKILL.md",
+      "sha256": "415c315853799fe5961c6456aada342140b9d1555e315c3268b721a870695615"
+    },
+    {
+      "path": "skills/qa-analysis/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-automation/SKILL.md",
+      "sha256": "f5eb9be26e71168c8ebd38bb936f06216aec8f341ad554df981cba0b834157f7"
+    },
+    {
+      "path": "skills/qa-automation/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-bottleneck-analysis/SKILL.md",
+      "sha256": "bab90d9e8cbc161b27b762b208977be9d1eaa6c0a04383ffdff1334cfbc60d9c"
+    },
+    {
+      "path": "skills/qa-bottleneck-analysis/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-bottleneck-analysis/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-engineering/SKILL.md",
+      "sha256": "d11f1baecfee4effd1e6746132fe5fd64f3e562dfe2e557e34ea70cb0aee70d9"
+    },
+    {
+      "path": "skills/qa-engineering/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-engineering/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-fix-implementation/SKILL.md",
+      "sha256": "4010020db11e58ffa2ba3e81d036c72c3821487bccb765c23ffd0a0b9085a4ea"
+    },
+    {
+      "path": "skills/qa-fix-implementation/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-fix-implementation/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-fix-implementation/references/RECORDS.md",
+      "sha256": "dbd04d11d65d79c46ee8084fa76c40a7d4d8f8748c268ede53fb8568c033e2f5"
+    },
+    {
+      "path": "skills/qa-fix-proposal/SKILL.md",
+      "sha256": "536a523df34ccf80c093dee3bf7261b38ff4692b0f496aea37c259bcdd26ed0c"
+    },
+    {
+      "path": "skills/qa-fix-proposal/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-fix-proposal/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-fix-proposal/references/RECORDS.md",
+      "sha256": "dbd04d11d65d79c46ee8084fa76c40a7d4d8f8748c268ede53fb8568c033e2f5"
+    },
+    {
+      "path": "skills/qa-framework/SKILL.md",
+      "sha256": "df97c25e69b332fd2ebcdd5b1ec6e429c65dcd05ce9c1043689ac3f199f0eb9f"
+    },
+    {
+      "path": "skills/qa-framework/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-knowledge/SKILL.md",
+      "sha256": "1aeb6e136b724702deeec42e86e38dcbb59e75cff197f271701ffa7b4affa49a"
+    },
+    {
+      "path": "skills/qa-knowledge/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-knowledge/references/FLOW-DOCUMENT.md",
+      "sha256": "58d49367e41246a617c29b5201d1629d2ff4fdd9e80052396a4fe6677b21af5e"
+    },
+    {
+      "path": "skills/qa-knowledge/references/INTERACTION.md",
+      "sha256": "65397b7490c47f495df29a00221eb97c6701317d23639b60f70ae03c7766d6e4"
+    },
+    {
+      "path": "skills/qa-mcp-confluence/SKILL.md",
+      "sha256": "126acccce10513dff654753ac9db351af8a05f85d51e1815d251e9a25538e2aa"
+    },
+    {
+      "path": "skills/qa-mcp-confluence/references/CONNECTOR.md",
+      "sha256": "667ade62df14afbfe7dbfb195a300d91dca7823e7afa82995f2f47a30ffdbf77"
+    },
+    {
+      "path": "skills/qa-mcp-confluence/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-mcp-confluence/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-mcp-dynatrace/SKILL.md",
+      "sha256": "bb47b5e2f94822acac8fd883701a431b093669767b8eb1839376c5f3071319da"
+    },
+    {
+      "path": "skills/qa-mcp-dynatrace/references/CONNECTOR.md",
+      "sha256": "2dfaa7be98fef091252b1c19f3cf3ed449226c9b90fc971e20f3ef34d823fac2"
+    },
+    {
+      "path": "skills/qa-mcp-dynatrace/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-mcp-dynatrace/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-mcp-jira/SKILL.md",
+      "sha256": "4b02d66a2154c8b71d0c1be2bdce349e8473f60e17758ce5c09684f7f9afe74c"
+    },
+    {
+      "path": "skills/qa-mcp-jira/references/CONNECTOR.md",
+      "sha256": "896e11ce64abe803acb48ebf1d17f30672b7ad24b9c9c4487c99c06f28505310"
+    },
+    {
+      "path": "skills/qa-mcp-jira/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-mcp-jira/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-mcp-neoload/SKILL.md",
+      "sha256": "82e1e2777ee3dda5801382255a5f3b154bf23613a734355f70501aa94d796598"
+    },
+    {
+      "path": "skills/qa-mcp-neoload/references/CONNECTOR.md",
+      "sha256": "d003e4ddc9c58108d9d2a3a668fe6c6e330ba88a70d242ded91edea498647e68"
+    },
+    {
+      "path": "skills/qa-mcp-neoload/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-mcp-neoload/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-mcp-splunk/SKILL.md",
+      "sha256": "c7621d10c426dcd9f798c7d5346fe6cd4223a657ca8a60167faa5baf3d47064f"
+    },
+    {
+      "path": "skills/qa-mcp-splunk/references/CONNECTOR.md",
+      "sha256": "b25a287324513fc43b6b7ac0fb8b6a207d76780445692793250860566ac89514"
+    },
+    {
+      "path": "skills/qa-mcp-splunk/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-mcp-splunk/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-orchestrate/SKILL.md",
+      "sha256": "2225841c973bd8b36bff66114793ba2e0aeb934e35047fd7bf6a4c1383c20cc3"
+    },
+    {
+      "path": "skills/qa-orchestrate/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-orchestrate/references/INTERACTION.md",
+      "sha256": "65397b7490c47f495df29a00221eb97c6701317d23639b60f70ae03c7766d6e4"
+    },
+    {
+      "path": "skills/qa-performance/SKILL.md",
+      "sha256": "95a8b5cb9ad274519dcc8deb551989656f2a0722990570be73dfea2f83deb447"
+    },
+    {
+      "path": "skills/qa-performance/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-performance/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-performance-engineering/SKILL.md",
+      "sha256": "07e641d515296b99d135030620769ebc6955bbbb2f5868bfdd3bdce85d536261"
+    },
+    {
+      "path": "skills/qa-performance-engineering/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-performance-engineering/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-performance-retest/SKILL.md",
+      "sha256": "a189e451defee089e3f0cfe5b9214414393f0d04c0180fa7497f73347ea21962"
+    },
+    {
+      "path": "skills/qa-performance-retest/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-performance-retest/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-playwright/SKILL.md",
+      "sha256": "c800e1fc86b2dee0d9926532e1c4ae6010748265554f34a529a7167825b29aca"
+    },
+    {
+      "path": "skills/qa-playwright/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-rca/SKILL.md",
+      "sha256": "4310a4c9946447df1630033357996bc9400a6a000b879262692350faa9c533dc"
+    },
+    {
+      "path": "skills/qa-rca/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-rca/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-rca/references/RECORDS.md",
+      "sha256": "dbd04d11d65d79c46ee8084fa76c40a7d4d8f8748c268ede53fb8568c033e2f5"
+    },
+    {
+      "path": "skills/qa-recording/SKILL.md",
+      "sha256": "1431adf62dcbf8121ddb4db24149f0cb3a8b1820760995f6082db3b9edd019da"
+    },
+    {
+      "path": "skills/qa-recording/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-recording/references/RECORDER.md",
+      "sha256": "4310f8c2c9cb7385167aabad52a078bb5de68c8228fd71cbe164249254f0d83e"
+    },
+    {
+      "path": "skills/qa-reporting/SKILL.md",
+      "sha256": "1dffaa7884d6111238c23873784103e2019a7310791a89482f99a85aaa851d87"
+    },
+    {
+      "path": "skills/qa-reporting/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-setup/SKILL.md",
+      "sha256": "2e25ceb869c9694557c731427d8a9ab92b02dc13a29ab1628d63ae9b14c1aafe"
+    },
+    {
+      "path": "skills/qa-setup/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-setup/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-setup/references/INTEGRATIONS.md",
+      "sha256": "c99d314e6576b920f829a9dd15c9d7eb4d7ad7b7db9c41e664158678b16c56ad"
+    },
+    {
+      "path": "skills/qa-telemetry-correlation/SKILL.md",
+      "sha256": "ee8da74fbd56a124e3fd3f4cd1755bc6083646fa8fdba0735ee88a23dbdda28e"
+    },
+    {
+      "path": "skills/qa-telemetry-correlation/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-telemetry-correlation/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "skills/qa-test-design/SKILL.md",
+      "sha256": "94ae0c562662aabb8b3bfa657cb684f6ca443780147ffae025bbd82ad00dc083"
+    },
+    {
+      "path": "skills/qa-test-design/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-test-execution/SKILL.md",
+      "sha256": "7a0b6045446ed09eef29811d4e941302df6a9a03d198b61ff33f16609660c228"
+    },
+    {
+      "path": "skills/qa-test-execution/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-workload-model/SKILL.md",
+      "sha256": "70971cb046bccaa49ed78b14d8a6a9030c90053249a10b9775f8d808d96c1093"
+    },
+    {
+      "path": "skills/qa-workload-model/references/CONTRACT.md",
+      "sha256": "7b12733ab1e3448517619516dcaf0bd8d801fb177d862146043d0cf0cca06eb8"
+    },
+    {
+      "path": "skills/qa-workload-model/references/ENGINEERING.md",
+      "sha256": "d6fa3d5e49e1226891de073301c3f6b9793c760a7d2f2f0cc75c03e434423f38"
+    },
+    {
+      "path": "verification.md",
+      "sha256": "2b4c2a477db52de4aac1ed6b4c5f7119991e6905a4e1f37fd95db9b5e4745062"
+    }
+  ]
+}

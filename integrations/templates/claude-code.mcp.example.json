@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "splunk": {
+      "url": "https://replace-splunk-mcp-endpoint.invalid",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${SPLUNK_MCP_ENCRYPTED_TOKEN}"
+      }
+    },
+    "dynatrace": {
+      "url": "https://replace-environment.apps.dynatrace.com/platform-reserved/mcp-gateway/v0.1/servers/dynatrace-mcp/mcp",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${DT_PLATFORM_TOKEN}"
+      }
+    },
+    "neoload": {
+      "url": "https://neoload-v2.saas.neotys.com/mcp-server/mcp-v2",
+      "type": "http",
+      "headers": {
+        "Authorization": "${NEOLOAD_AUTH_HEADER}"
+      }
+    },
+    "atlassian": {
+      "url": "https://mcp.atlassian.com/v2/mcp",
+      "type": "http"
+    }
+  }
+}

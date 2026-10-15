@@ -1,0 +1,19 @@
+# Manual merge template only; confirm target/client/edition and approve configuration changes.
+[mcp_servers.splunk]
+url = "https://replace-splunk-mcp-endpoint.invalid"
+enabled = false
+bearer_token_env_var = "SPLUNK_MCP_ENCRYPTED_TOKEN"
+
+[mcp_servers.dynatrace]
+url = "https://replace-environment.apps.dynatrace.com/platform-reserved/mcp-gateway/v0.1/servers/dynatrace-mcp/mcp"
+enabled = false
+bearer_token_env_var = "DT_PLATFORM_TOKEN"
+
+[mcp_servers.neoload]
+url = "https://neoload-v2.saas.neotys.com/mcp-server/mcp-v2"
+enabled = false
+env_http_headers = { "Authorization" = "NEOLOAD_AUTH_HEADER" }
+
+[mcp_servers.atlassian]
+url = "https://mcp.atlassian.com/v2/mcp"
+enabled = false

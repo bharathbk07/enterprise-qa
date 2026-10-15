@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "splunk": {
+      "url": "https://replace-splunk-mcp-endpoint.invalid"
+    },
+    "dynatrace": {
+      "url": "https://replace-environment.apps.dynatrace.com/platform-reserved/mcp-gateway/v0.1/servers/dynatrace-mcp/mcp"
+    },
+    "neoload": {
+      "url": "https://neoload-v2.saas.neotys.com/mcp-server/mcp-v2"
+    },
+    "atlassian": {
+      "url": "https://mcp.atlassian.com/v2/mcp"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "verified_documentation_date": "2026-10-15",
+  "live_connections_tested": false,
+  "providers": [
+    {
+      "id": "splunk",
+      "url": "https://replace-splunk-mcp-endpoint.invalid",
+      "secret": "SPLUNK_MCP_ENCRYPTED_TOKEN",
+      "prefix": "Bearer ",
+      "source": "https://help.splunk.com/en/splunk-enterprise/mcp-server-for-splunk-platform/1.0/connecting-to-the-mcp-server-and-settings",
+      "note": "Copy the endpoint from the Splunk MCP Server app. The cited 1.0 guidance requires an encrypted MCP token, not a generic REST token; verify the deployed version. Tool availability is administrator-controlled. Do not disable TLS verification.",
+      "status": "documented-template-not-connected",
+      "required_setup": [
+        "edition/version",
+        "deployment/region",
+        "endpoint",
+        "tenant/site/workspace",
+        "auth method and secret reference",
+        "available tool/action schemas",
+        "allowed scope and query budgets"
+      ],
+      "product_roles": [
+        "qa-mcp-splunk"
+      ]
+    },
+    {
+      "id": "dynatrace",
+      "url": "https://replace-environment.apps.dynatrace.com/platform-reserved/mcp-gateway/v0.1/servers/dynatrace-mcp/mcp",
+      "secret": "DT_PLATFORM_TOKEN",
+      "prefix": "Bearer ",
+      "source": "https://docs.dynatrace.com/docs/dynatrace-intelligence/dynatrace-mcp",
+      "note": "Use the documented environment-specific endpoint for supported Latest Dynatrace deployments; verify edition support. Platform bearer tokens or confidential OAuth are documented. Grant only needed MCP/data permissions; do not paste the full broad permission list by default.",
+      "status": "documented-template-not-connected",
+      "required_setup": [
+        "edition/version",
+        "deployment/region",
+        "endpoint",
+        "tenant/site/workspace",
+        "auth method and secret reference",
+        "available tool/action schemas",
+        "allowed scope and query budgets"
+      ],
+      "product_roles": [
+        "qa-mcp-dynatrace"
+      ]
+    },
+    {
+      "id": "neoload",
+      "url": "https://neoload-v2.saas.neotys.com/mcp-server/mcp-v2",
+      "secret": "NEOLOAD_AUTH_HEADER",
+      "prefix": "",
+      "source": "https://docs.tricentis.com/neoload-web-v2/en-us/content/ai_integration/mcp_meta_tool.htm",
+      "note": "NeoLoad Web meta endpoint discovers action schemas on demand. US URL shown; EU is https://neoload-v2-eu.saas.neotys.com/mcp-server/mcp-v2. Set NEOLOAD_AUTH_HEADER to the API-token header value required by the deployment. Classify the nested action before execution. This differs from testing MCP servers via NeoLoad User Path client actions.",
+      "status": "documented-template-not-connected",
+      "required_setup": [
+        "edition/version",
+        "deployment/region",
+        "endpoint",
+        "tenant/site/workspace",
+        "auth method and secret reference",
+        "available tool/action schemas",
+        "allowed scope and query budgets"
+      ],
+      "product_roles": [
+        "qa-mcp-neoload"
+      ]
+    },
+    {
+      "id": "atlassian",
+      "url": "https://mcp.atlassian.com/v2/mcp",
+      "source": "https://developer.atlassian.com/cloud/rovo-mcp/",
+      "note": "One Rovo MCP connection serves the separate Jira and Confluence specialists. This official endpoint is for Atlassian Cloud; do not claim Data Center support. Use OAuth and existing site/project/space permissions. Discover actual tools on demand.",
+      "status": "documented-template-not-connected",
+      "required_setup": [
+        "edition/version",
+        "deployment/region",
+        "endpoint",
+        "tenant/site/workspace",
+        "auth method and secret reference",
+        "available tool/action schemas",
+        "allowed scope and query budgets"
+      ],
+      "product_roles": [
+        "qa-mcp-jira",
+        "qa-mcp-confluence"
+      ]
+    }
+  ]
+}

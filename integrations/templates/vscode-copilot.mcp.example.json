@@ -1,0 +1,49 @@
+{
+  "servers": {
+    "splunk": {
+      "url": "https://replace-splunk-mcp-endpoint.invalid",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${input:splunk_mcp_encrypted_token}"
+      }
+    },
+    "dynatrace": {
+      "url": "https://replace-environment.apps.dynatrace.com/platform-reserved/mcp-gateway/v0.1/servers/dynatrace-mcp/mcp",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${input:dt_platform_token}"
+      }
+    },
+    "neoload": {
+      "url": "https://neoload-v2.saas.neotys.com/mcp-server/mcp-v2",
+      "type": "http",
+      "headers": {
+        "Authorization": "${input:neoload_auth_header}"
+      }
+    },
+    "atlassian": {
+      "url": "https://mcp.atlassian.com/v2/mcp",
+      "type": "http"
+    }
+  },
+  "inputs": [
+    {
+      "id": "splunk_mcp_encrypted_token",
+      "type": "promptString",
+      "description": "splunk: secret header/token value, from your approved secret source",
+      "password": true
+    },
+    {
+      "id": "dt_platform_token",
+      "type": "promptString",
+      "description": "dynatrace: secret header/token value, from your approved secret source",
+      "password": true
+    },
+    {
+      "id": "neoload_auth_header",
+      "type": "promptString",
+      "description": "neoload: secret header/token value, from your approved secret source",
+      "password": true
+    }
+  ]
+}

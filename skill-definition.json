@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "kind": "portable-qa-skill-catalog",
+  "entrypoint": "qa-orchestrate",
+  "skills": [
+    {
+      "id": "qa-orchestrate",
+      "path": "skills/qa-orchestrate/SKILL.md",
+      "description": "Coordinate a requested QA workflow across recording, knowledge, tests, automation, performance and reporting without loading unrelated stages."
+    },
+    {
+      "id": "qa-setup",
+      "path": "skills/qa-setup/SKILL.md",
+      "description": "Inspect QA prerequisites and install approved missing skill, agent, browser and recorder components in the selected workspace."
+    },
+    {
+      "id": "qa-playwright",
+      "path": "skills/qa-playwright/SKILL.md",
+      "description": "Operate browser/API tests using dedicated spawned Playwright browsers and inspect API traffic."
+    },
+    {
+      "id": "qa-recording",
+      "path": "skills/qa-recording/SKILL.md",
+      "description": "Record human flows in a dedicated spawned Chromium browser with step screenshots, console/network evidence and bounded file resources until the last window closes."
+    },
+    {
+      "id": "qa-knowledge",
+      "path": "skills/qa-knowledge/SKILL.md",
+      "description": "Summarize and name recorded flows with minimal clarification, maintain business knowledge, and create illustrated manual flow documents."
+    },
+    {
+      "id": "qa-framework",
+      "path": "skills/qa-framework/SKILL.md",
+      "description": "Inspect an entire existing automation framework and document architecture, data flow and CI without changing implementation."
+    },
+    {
+      "id": "qa-test-design",
+      "path": "skills/qa-test-design/SKILL.md",
+      "description": "Create versioned manual UI/API test scenarios with at least 20 distinct cases for each selected business flow."
+    },
+    {
+      "id": "qa-test-execution",
+      "path": "skills/qa-test-execution/SKILL.md",
+      "description": "Execute selected manual UI/API cases with dedicated spawned browsers, evidence, human judgment and versioned run records."
+    },
+    {
+      "id": "qa-automation",
+      "path": "skills/qa-automation/SKILL.md",
+      "description": "Create or update a local automation framework for selected flows after manual execution evidence or an explicit prerequisite override."
+    },
+    {
+      "id": "qa-performance",
+      "path": "skills/qa-performance/SKILL.md",
+      "description": "Create or update k6/JMeter performance scripts and execute only a confirmed load profile for selected application flows."
+    },
+    {
+      "id": "qa-analysis",
+      "path": "skills/qa-analysis/SKILL.md",
+      "description": "Analyze functional and performance test evidence and score likely failure causes independently from severity."
+    },
+    {
+      "id": "qa-reporting",
+      "path": "skills/qa-reporting/SKILL.md",
+      "description": "Produce an engineering report from evidenced QA analysis with coverage, defects, thresholds and prioritized recommendations."
+    },
+    {
+      "id": "qa-engineering",
+      "path": "skills/qa-engineering/SKILL.md",
+      "description": "Route performance engineering and RCA/fix requests to focused specialists and product-specific MCP roles."
+    },
+    {
+      "id": "qa-performance-engineering",
+      "path": "skills/qa-performance-engineering/SKILL.md",
+      "description": "Coordinate full performance engineering from SLO/workload design through monitoring, bottlenecks, tuning proposals and retesting."
+    },
+    {
+      "id": "qa-workload-model",
+      "path": "skills/qa-workload-model/SKILL.md",
+      "description": "Define realistic performance workloads, documented SLO targets and comparable baseline criteria before load execution."
+    },
+    {
+      "id": "qa-telemetry-correlation",
+      "path": "skills/qa-telemetry-correlation/SKILL.md",
+      "description": "Align test/incident runs with bounded logs, traces and metrics across products while reporting missing links and clock uncertainty."
+    },
+    {
+      "id": "qa-bottleneck-analysis",
+      "path": "skills/qa-bottleneck-analysis/SKILL.md",
+      "description": "Diagnose latency, saturation, capacity and scalability bottlenecks using correlated workload and system evidence."
+    },
+    {
+      "id": "qa-performance-retest",
+      "path": "skills/qa-performance-retest/SKILL.md",
+      "description": "Plan and evaluate regression/performance retests of approved fixes against comparable baselines and stability criteria."
+    },
+    {
+      "id": "qa-rca",
+      "path": "skills/qa-rca/SKILL.md",
+      "description": "Investigate QA failures and production incidents, establish causal mechanisms and distinguish suspected/probable/confirmed causes."
+    },
+    {
+      "id": "qa-fix-proposal",
+      "path": "skills/qa-fix-proposal/SKILL.md",
+      "description": "Prepare an evidence-backed code/configuration fix or tuning proposal with reviewable patch, rollback and validation before implementation approval."
+    },
+    {
+      "id": "qa-fix-implementation",
+      "path": "skills/qa-fix-implementation/SKILL.md",
+      "description": "Apply only an explicitly approved RCA/tuning proposal, validate the change and prepare a comparable retest without automatic deployment."
+    },
+    {
+      "id": "qa-mcp-splunk",
+      "path": "skills/qa-mcp-splunk/SKILL.md",
+      "description": "Discover approved Splunk MCP capabilities and retrieve bounded environment-scoped log/search evidence for performance or RCA."
+    },
+    {
+      "id": "qa-mcp-dynatrace",
+      "path": "skills/qa-mcp-dynatrace/SKILL.md",
+      "description": "Discover Dynatrace MCP tools and retrieve bounded DQL, entity, problem, metric and trace evidence for engineering investigations."
+    },
+    {
+      "id": "qa-mcp-neoload",
+      "path": "skills/qa-mcp-neoload/SKILL.md",
+      "description": "Discover NeoLoad Web MCP actions and read results or execute an explicitly approved NeoLoad run profile."
+    },
+    {
+      "id": "qa-mcp-jira",
+      "path": "skills/qa-mcp-jira/SKILL.md",
+      "description": "Prepare and, after explicit approval, create/update evidence-linked Jira issues using discovered project metadata and duplicate checks."
+    },
+    {
+      "id": "qa-mcp-confluence",
+      "path": "skills/qa-mcp-confluence/SKILL.md",
+      "description": "Prepare application knowledge, performance/RCA documents and runbooks, then publish version-aware Confluence changes after explicit approval."
+    }
+  ],
+  "contract": "contracts/CONTRACT.md",
+  "recorder": "recorder/",
+  "not_a_native_platform_manifest": true,
+  "package_version": "0.2.3",
+  "browser_policy": {
+    "mode": "dedicated-spawned-only",
+    "integrated_browser_allowed": false,
+    "personal_or_shared_browser_attachment_allowed": false,
+    "require_session_ownership": true,
+    "retained_profile_scope": "consented-qa-application-profile-only",
+    "on_unavailable": "block-browser-dependent-work",
+    "api_and_result_analysis_require_browser": false
+  },
+  "flow_documentation": {
+    "name_policy": "user-supplied-or-confirmed-suggestion",
+    "custom_name_allowed": true,
+    "embed_step_screenshots": true,
+    "assets": "versioned-flow-owned-copies",
+    "missing_screenshot_policy": "explicit-gap-and-offer-dedicated-browser-recapture",
+    "rename_preserves_flow_id_and_business_version": true
+  },
+  "interaction_policy": {
+    "review_mode": "one-combined-flow-summary",
+    "review_fields": [
+      "flow_name",
+      "inferred_steps",
+      "completion_status",
+      "minor_uncertainties"
+    ],
+    "follow_up": "essential-ambiguity-or-required-approval-only",
+    "minor_uncertainties": "one-combined-review",
+    "reuse_confirmed_preferences": true,
+    "preferences_grant_authorization": false,
+    "detailed_step_review": "on-explicit-request"
+  }
+}

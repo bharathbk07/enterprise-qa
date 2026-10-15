@@ -1,6 +1,7 @@
 ---
 name: qa-fix-implementation
 description: "Apply only an explicitly approved RCA/tuning proposal, validate the change and prepare a comparable retest without automatic deployment."
+license: MIT
 ---
 
 # qa-fix-implementation

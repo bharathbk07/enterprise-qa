@@ -1,6 +1,7 @@
 ---
 name: qa-bottleneck-analysis
 description: "Diagnose latency, saturation, capacity and scalability bottlenecks using correlated workload and system evidence."
+license: MIT
 ---
 
 # qa-bottleneck-analysis

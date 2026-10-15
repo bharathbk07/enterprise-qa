@@ -1,6 +1,7 @@
 ---
 name: qa-automation
 description: "Create or update a local automation framework for selected flows after manual execution evidence or an explicit prerequisite override."
+license: MIT
 ---
 
 # qa-automation

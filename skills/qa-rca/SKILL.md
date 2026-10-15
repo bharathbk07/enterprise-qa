@@ -1,6 +1,7 @@
 ---
 name: qa-rca
 description: "Investigate QA failures and production incidents, establish causal mechanisms and distinguish suspected/probable/confirmed causes."
+license: MIT
 ---
 
 # qa-rca

@@ -1,6 +1,7 @@
 ---
 name: qa-performance
 description: "Create or update k6/JMeter performance scripts and execute only a confirmed load profile for selected application flows."
+license: MIT
 ---
 
 # qa-performance

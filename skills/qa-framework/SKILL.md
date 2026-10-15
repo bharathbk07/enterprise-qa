@@ -1,6 +1,7 @@
 ---
 name: qa-framework
 description: "Inspect an entire existing automation framework and document architecture, data flow and CI without changing implementation."
+license: MIT
 ---
 
 # qa-framework

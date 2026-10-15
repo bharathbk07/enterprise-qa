@@ -1,6 +1,7 @@
 ---
 name: qa-mcp-jira
 description: "Prepare and, after explicit approval, create/update evidence-linked Jira issues using discovered project metadata and duplicate checks."
+license: MIT
 ---
 
 # qa-mcp-jira

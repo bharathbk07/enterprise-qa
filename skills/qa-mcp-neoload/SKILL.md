@@ -1,6 +1,7 @@
 ---
 name: qa-mcp-neoload
 description: "Discover NeoLoad Web MCP actions and read results or execute an explicitly approved NeoLoad run profile."
+license: MIT
 ---
 
 # qa-mcp-neoload

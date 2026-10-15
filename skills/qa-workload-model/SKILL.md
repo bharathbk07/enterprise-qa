@@ -1,6 +1,7 @@
 ---
 name: qa-workload-model
 description: "Define realistic performance workloads, documented SLO targets and comparable baseline criteria before load execution."
+license: MIT
 ---
 
 # qa-workload-model

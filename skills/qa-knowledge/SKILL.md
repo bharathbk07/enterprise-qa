@@ -1,6 +1,7 @@
 ---
 name: qa-knowledge
 description: "Summarize and name recorded flows with minimal clarification, maintain business knowledge, and create illustrated manual flow documents."
+license: MIT
 ---
 
 # qa-knowledge

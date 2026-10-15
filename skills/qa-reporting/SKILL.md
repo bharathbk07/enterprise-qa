@@ -1,6 +1,7 @@
 ---
 name: qa-reporting
 description: "Produce an engineering report from evidenced QA analysis with coverage, defects, thresholds and prioritized recommendations."
+license: MIT
 ---
 
 # qa-reporting

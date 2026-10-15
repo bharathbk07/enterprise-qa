@@ -1,6 +1,7 @@
 ---
 name: qa-test-execution
 description: "Execute selected manual UI/API cases with dedicated spawned browsers, evidence, human judgment and versioned run records."
+license: MIT
 ---
 
 # qa-test-execution

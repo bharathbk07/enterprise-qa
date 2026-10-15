@@ -1,6 +1,7 @@
 ---
 name: qa-performance-retest
 description: "Plan and evaluate regression/performance retests of approved fixes against comparable baselines and stability criteria."
+license: MIT
 ---
 
 # qa-performance-retest

@@ -1,6 +1,7 @@
 ---
 name: qa-mcp-dynatrace
 description: "Discover Dynatrace MCP tools and retrieve bounded DQL, entity, problem, metric and trace evidence for engineering investigations."
+license: MIT
 ---
 
 # qa-mcp-dynatrace

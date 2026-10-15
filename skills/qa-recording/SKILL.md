@@ -1,6 +1,7 @@
 ---
 name: qa-recording
 description: "Record human flows in a dedicated spawned Chromium browser with step screenshots, console/network evidence and bounded file resources until the last window closes."
+license: MIT
 ---
 
 # qa-recording

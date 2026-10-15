@@ -1,6 +1,7 @@
 ---
 name: qa-mcp-splunk
 description: "Discover approved Splunk MCP capabilities and retrieve bounded environment-scoped log/search evidence for performance or RCA."
+license: MIT
 ---
 
 # qa-mcp-splunk

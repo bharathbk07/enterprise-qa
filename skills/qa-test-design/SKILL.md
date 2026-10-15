@@ -1,6 +1,7 @@
 ---
 name: qa-test-design
 description: "Create versioned manual UI/API test scenarios with at least 20 distinct cases for each selected business flow."
+license: MIT
 ---
 
 # qa-test-design

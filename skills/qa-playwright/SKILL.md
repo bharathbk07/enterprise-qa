@@ -1,6 +1,7 @@
 ---
 name: qa-playwright
 description: "Operate browser/API tests using dedicated spawned Playwright browsers and inspect API traffic."
+license: MIT
 ---
 
 # qa-playwright

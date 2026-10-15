@@ -1,6 +1,7 @@
 ---
 name: qa-mcp-confluence
 description: "Prepare application knowledge, performance/RCA documents and runbooks, then publish version-aware Confluence changes after explicit approval."
+license: MIT
 ---
 
 # qa-mcp-confluence

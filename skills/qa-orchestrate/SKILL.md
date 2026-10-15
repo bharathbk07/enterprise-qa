@@ -1,6 +1,7 @@
 ---
 name: qa-orchestrate
 description: "Coordinate a requested QA workflow across recording, knowledge, tests, automation, performance and reporting without loading unrelated stages."
+license: MIT
 ---
 
 # qa-orchestrate

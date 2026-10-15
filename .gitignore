@@ -5,3 +5,14 @@ qa/
 
 .npm-cache/
 __pycache__/
+
+# Local OS/editor state and credentials
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.tsbuildinfo
+*.zip

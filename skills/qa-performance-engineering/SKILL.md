@@ -1,6 +1,7 @@
 ---
 name: qa-performance-engineering
 description: "Coordinate full performance engineering from SLO/workload design through monitoring, bottlenecks, tuning proposals and retesting."
+license: MIT
 ---
 
 # qa-performance-engineering

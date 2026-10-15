@@ -1,6 +1,7 @@
 ---
 name: qa-analysis
 description: "Analyze functional and performance test evidence and score likely failure causes independently from severity."
+license: MIT
 ---
 
 # qa-analysis

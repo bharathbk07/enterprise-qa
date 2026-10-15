@@ -1,6 +1,7 @@
 ---
 name: qa-telemetry-correlation
 description: "Align test/incident runs with bounded logs, traces and metrics across products while reporting missing links and clock uncertainty."
+license: MIT
 ---
 
 # qa-telemetry-correlation

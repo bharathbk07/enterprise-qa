@@ -1,0 +1,23 @@
+name: Feature request
+description: Propose a focused improvement to the toolkit.
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: Explain the workflow and why the current behavior is insufficient.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Identify affected skills/agents, runtime components or integrations.
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Alternatives, permissions and validation
+      description: Include approval/privacy implications, supported editions/clients and how success could be checked. Do not include credentials.

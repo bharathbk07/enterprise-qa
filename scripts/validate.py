@@ -15,13 +15,17 @@ skills={s['id']:s for s in catalog['skills']};agents={a['id']:a for a in manifes
 assert len(skills)==len(catalog['skills']) and len(agents)==len(manifest['agents']) and len(skills)==len(agents)
 assert catalog['entrypoint'] in skills and manifest['entrypoint'] in agents
 contract=(ROOT/'contracts/CONTRACT.md').read_text()
+license_text=(ROOT/'LICENSE').read_text()
+assert 'MIT License' in license_text and catalog['copyright']==manifest['copyright'] and catalog['copyright'] in license_text
+assert catalog['license']==manifest['license']=='MIT'
+assert (ROOT/'agents/LICENSE').read_text()==license_text
 for name,skill in skills.items():
-    p=ROOT/skill['path'];text=header(p,name);assert (p.parent/'references/CONTRACT.md').read_text()==contract
+    p=ROOT/skill['path'];text=header(p,name);assert re.search(r'^license: MIT$',text.split('---',2)[1],re.M);assert (p.parent/'LICENSE').read_text()==license_text;assert (p.parent/'references/CONTRACT.md').read_text()==contract
     for link in re.findall(r'`(references/[^`]+)`',text):assert (p.parent/link).exists(),link
 for name,agent in agents.items():
     assert agent['skill'] in skills;header(ROOT/agent['prompt'],name)
     for platform,location,extension in [('cursor','.cursor/skills','.md'),('claude-code','.claude/skills','.md'),('vscode-copilot','.agents/skills','.agent.md')]:
-        path=ROOT/'adapters'/platform/'agents'/(name+extension);text=header(path,name);assert f'{location}/{agent["skill"]}/SKILL.md' in text
+        path=ROOT/'adapters'/platform/'agents'/(name+extension);assert (path.parent/'LICENSE.enterprise-qa').read_text()==license_text;text=header(path,name);assert f'{location}/{agent["skill"]}/SKILL.md' in text
 for path in ROOT.rglob('*.json'):
     if any(x in path.parts for x in ('node_modules','.npm-cache','dist','__pycache__')):continue
     json.loads(path.read_text())

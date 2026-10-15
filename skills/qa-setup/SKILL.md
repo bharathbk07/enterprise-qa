@@ -1,6 +1,7 @@
 ---
 name: qa-setup
 description: "Inspect QA prerequisites and install approved missing skill, agent, browser and recorder components in the selected workspace."
+license: MIT
 ---
 
 # qa-setup

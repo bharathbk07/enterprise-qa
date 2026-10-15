@@ -1,6 +1,7 @@
 ---
 name: qa-fix-proposal
 description: "Prepare an evidence-backed code/configuration fix or tuning proposal with reviewable patch, rollback and validation before implementation approval."
+license: MIT
 ---
 
 # qa-fix-proposal

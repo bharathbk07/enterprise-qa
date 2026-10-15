@@ -137,7 +137,7 @@
   "contract": "contracts/CONTRACT.md",
   "recorder": "recorder/",
   "not_a_native_platform_manifest": true,
-  "package_version": "0.2.3",
+  "package_version": "0.2.4",
   "browser_policy": {
     "mode": "dedicated-spawned-only",
     "integrated_browser_allowed": false,
@@ -168,5 +168,8 @@
     "reuse_confirmed_preferences": true,
     "preferences_grant_authorization": false,
     "detailed_step_review": "on-explicit-request"
-  }
+  },
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Bharath Kumar M",
+  "repository": "https://github.com/bharathbk07/enterprise-qa"
 }

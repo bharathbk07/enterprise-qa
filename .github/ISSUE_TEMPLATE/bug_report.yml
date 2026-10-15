@@ -1,0 +1,39 @@
+name: Bug report
+description: Report a reproducible toolkit problem using synthetic or redacted evidence.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "For security vulnerabilities, follow SECURITY.md. Never post credentials, browser profiles or private application data."
+  - type: input
+    id: version
+    attributes:
+      label: Toolkit revision or version
+      description: Include the Git commit or toolkit version.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python/Node versions, agent client/version, affected skill or recorder command. For MCP, include edition/deployment without private details.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide steps using synthetic data and an approved local fixture.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Checks and redacted evidence
+      description: What did you run, and which checks could not run?

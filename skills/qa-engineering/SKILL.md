@@ -1,6 +1,7 @@
 ---
 name: qa-engineering
 description: "Route performance engineering and RCA/fix requests to focused specialists and product-specific MCP roles."
+license: MIT
 ---
 
 # qa-engineering

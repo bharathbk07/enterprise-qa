@@ -1,6 +1,6 @@
 # Workspace installation
 
-This package does not change IDE settings, global installations, existing instructions or MCP settings automatically. The portable manifests are catalogs consumed by the orchestrator, not native executable agent configurations.
+The toolkit-definition phase does not change global IDE settings or active MCP configuration. An explicitly selected --playwright-loop additionally previews/installs official Playwright definitions and their local MCP registration while preserving unrelated settings. The portable manifests are catalogs consumed by the orchestrator, not native executable agent configurations.
 
 1. Select the application workspace and platform(s). Run the installer dry-run with Python 3.11+:
 
@@ -14,7 +14,7 @@ Allowed platform IDs: cursor, claude-code, vscode-copilot, codex, antigravity, c
 python scripts/install.py --workspace "/path/to/application" --platforms all --apply
 ```
 
-2. Installer copies package resources to `.qa-agent/`; bundled QA Playwright skill and browser agent are included. It copies workspace skills/agents into native locations where verified by documentation. It refuses changed-file overwrites and paths escaping the workspace. No npm/MCP/browser installation occurs inside this command.
+2. Installer copies package resources to `.qa-agent/`; bundled QA Playwright skill and browser agent are included. It copies workspace skills/agents into native locations where verified by documentation. It refuses changed-file overwrites and paths escaping the workspace. No npm/browser installation occurs inside this command. With --playwright-loop the protected official-agent phase also applies the reviewed local MCP entry; without it that phase is reported pending.
 3. Follow RECORDER.md for `npm ci`, missing Chromium installation, build and doctor in `.qa-agent/recorder/`. Use existing compatible browsers where available. Missing Node/MCP/skill dependencies require a concrete plan and the once-per-setup approval. Do not blindly install from unreviewed repositories. Bundle-owned qa-playwright/qa-browser are provided, not a claim that a third-party Playwright skill/agent was installed.
 4. Reload/inspect each client's skills/agent picker. Run a smoke request on a permitted fixture. Native file generation is verified locally; runtime integration in every product must be verified on that product/version. Existing Playwright tooling is sufficient only when it can spawn a dedicated QA-owned browser process; verify launch/session ownership. Configure missing approved dedicated launch tooling as needed.
 
@@ -57,3 +57,7 @@ The bundled recorder already uses Playwright launch APIs. Setup must reject inte
 # Source and redistribution
 
 Clone https://github.com/bharathbk07/enterprise-qa.git and run these commands from the toolkit source root. For the complete first-run sequence see GETTING-STARTED.md. Root LICENSE (MIT, copyright 2026 Bharath Kumar M), community documents and independent skill/agent license copies are part of the owned distribution. See ../CONTRIBUTING.md for development and ../docs/MAINTAINING.md for release preparation.
+
+# Official Playwright Test Agents
+
+Full setup includes the upstream planner/generator/healer, not only qa-playwright/qa-browser. After preparing compatible local Playwright dependencies, use setup_playwright_agents.py or install.py --playwright-loop with the selected documented loop. See [PLAYWRIGHT-AGENTS.md](PLAYWRIGHT-AGENTS.md) for preview/apply commands, reference-only handling for other hosts, conflict protection, preserved seed/CI files, license notices and refresh after upgrades. Include this phase in the existing concrete setup approval instead of asking redundant questions.

@@ -20,6 +20,8 @@ def sync():
     for name in ('qa-knowledge','qa-orchestrate'):
         (ROOT/f'skills/{name}/references/INTERACTION.md').write_text((ROOT/'docs/INTERACTION.md').read_text())
     (ROOT/'skills/qa-setup/references/INTEGRATIONS.md').write_text((ROOT/'integrations/SETUP.md').read_text())
+    for name in ('qa-setup','qa-playwright','qa-automation'):
+        (ROOT/f'skills/{name}/references/PLAYWRIGHT-AGENTS.md').write_text((ROOT/'docs/PLAYWRIGHT-AGENTS.md').read_text())
     for platform,skillroot in [('cursor','.cursor/skills'),('claude-code','.claude/skills'),('vscode-copilot','.agents/skills')]:
         dest=ROOT/'adapters'/platform/'agents';dest.mkdir(parents=True,exist_ok=True)
         (dest/'LICENSE.enterprise-qa').write_text(license_text)
@@ -35,7 +37,7 @@ def sync():
     files.update((ROOT/'.github').glob('*.md'));files.update((ROOT/'.github/ISSUE_TEMPLATE').glob('*.yml'))
     for directory,patterns in [('contracts',['*.md','*.json']),('docs',['*.md','*.json','*.html','*.canvas.tsx']),('integrations',['*.md','*.json']),('integrations/templates',['*.json','*.toml'])]:
         for pattern in patterns:files.update((ROOT/directory).glob(pattern))
-    for p in ['check_gate.py','engineering_checks.py','install.py','sync_package.py','validate.py','test_contracts.py','test_engineering.py']:
+    for p in ['check_gate.py','engineering_checks.py','install.py','sync_package.py','validate.py','test_contracts.py','test_engineering.py','setup_playwright_agents.py','test_playwright_agents.py']:
         path=ROOT/'scripts'/p
         if path.exists():files.add(path)
     for platform in ('codex','antigravity','chatgpt-portable'):files.add(ROOT/'adapters'/platform/'instructions.md')

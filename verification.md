@@ -44,3 +44,14 @@ Package v0.2.3 replaces mandatory per-step questioning and separate completion/n
 # Open-source documentation update — 15 October 2026
 
 Package v0.2.4 adds the user-selected MIT License with copyright holder Bharath Kumar M, public repository documentation, contribution/support/security/conduct guidance and GitHub issue/PR templates. Canonical license copies are included with independently installed skill/agent bundles and in the source allowlist. Recorder package/lockfile metadata identifies MIT without changing dependency licenses or runtime code. Local Finder metadata was removed from the worktree and ignore patterns were extended. No GitHub settings, CI pipelines, commits, tags, releases or remote content were changed by preparing these files. For this documentation/metadata update, package integrity validation and 24 existing Python tests passed. Public-document links, issue-form YAML, npm lockfile/license consistency and license propagation through a temporary three-platform installation were checked. Prior recorder browser-test results above remain historical; the browser suite was not rerun for this metadata/documentation change.
+
+
+# Official Playwright agent setup — 15 October 2026
+
+Package v0.2.5 makes the upstream planner, generator and healer a required QA setup stage. The protected initializer uses an inspected local Playwright CLI and stages generated files before a reviewed apply; the combined toolkit installer can perform both stages. Source changes do not configure this repository's IDE or start an MCP server.
+
+- Thirty-three Python tests passed, including real Playwright 1.64.0 generation for VS Code, Claude Code and Codex; valid Codex TOML; preview without workspace writes; upstream license/notice propagation; unrelated MCP setting preservation; existing server/user-edited agent conflicts; reference-only output; workspace path boundaries; and combined installation/conflict handling.
+- Package integrity validation passed for 26 skills, 26 roles, synchronized native toolkit adapters and owned distribution checksums. Git whitespace checks passed.
+- Generated upstream CI workflows, application seed tests and specs are excluded from installation. No application framework or CI pipeline was changed. No dependency download, browser session, live application test, MCP server connection or native-client discovery was exercised for this update. Existing recorder browser-test results above remain historical.
+
+Official native output is verified at generation time for the three named loops. Cursor/Antigravity use explicitly inactive reference output until their native support is verified; ChatGPT without local access receives local setup instructions. Client acceptance, dedicated-browser ownership and application fixtures/configuration must be checked before first test-agent execution. Regenerate managed upstream definitions after Playwright upgrades, preserving local edits and the QA execution boundaries.

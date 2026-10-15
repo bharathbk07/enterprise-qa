@@ -11,3 +11,5 @@ Inspect network request lists/details and console errors using available develop
 Do not equate MCP-driven automation with passive human recording. Use qa-recording for user demonstrations. Mark CAPTCHA/MFA or judgment-dependent assertions blocked pending human assistance. New browser/locale/device targets require user selection and approved missing dependencies; viewport emulation is not a physical mobile test.
 
 Record browser launch mode, session/run identity and available ownership evidence with execution artifacts. Reuse only this session’s tabs/windows. Retained QA application profiles require storage consent and a newly spawned process on resume; never use a personal browser profile. Close only the owned session.
+
+Setup includes the official Playwright planner/generator/healer, distinct from qa-browser. Read `references/PLAYWRIGHT-AGENTS.md` when initializing or verifying their MCP/host readiness. Verify dedicated-browser ownership before use; registration alone is not browser acceptance.

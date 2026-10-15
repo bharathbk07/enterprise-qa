@@ -2,7 +2,7 @@
 
 ## Choose the operation
 
-For agent instructions only, review the relevant SKILL.md and shared contract; no browser/npm installation is needed merely to read the kit. For recording, prepare the TypeScript recorder. For native skill/agent discovery, install the selected workspace adapter. MCP configuration is a separate approved setup step.
+For agent instructions only, review the relevant SKILL.md and shared contract; no browser/npm installation is needed merely to read the kit. For recording, prepare the TypeScript recorder. For native skill/agent discovery, install the selected workspace adapter. Provider MCP configuration is a separate approved setup step. Official Playwright Test Agent initialization belongs in the toolkit setup plan and is completed after compatible local tooling is available.
 
 ## Obtain the source
 
@@ -37,6 +37,17 @@ npm run record -- --workspace "/path/to/application" --app customer-portal --url
 ```
 
 Only install missing components after the user's approved setup plan when operating as an agent. Use an approved application URL. The browser is a dedicated spawned Chromium process; integrated browsers and personal/shared attachments are not used. Perform the flow and close every window to stop. A masked session still requires deliberate consent before retaining an authenticated profile. See RECORDER.md for plaintext choice, file capture limits, resume and cleanup.
+
+## Install official Playwright Test Agents
+
+After preparing approved compatible local Playwright tooling, preview and install the three upstream roles. For Claude Code:
+
+```sh
+python3 scripts/setup_playwright_agents.py --workspace "/path/to/application" --loop claude
+python3 scripts/setup_playwright_agents.py --workspace "/path/to/application" --loop claude --apply
+```
+
+Use vscode or codex for the corresponding supported local host. The target application's local CLI or installed .qa-agent/recorder dependencies must be present; --playwright-cli can select an approved existing CLI explicitly. The source recorder's dependencies are not automatically the target workspace's runtime. For Cursor/Antigravity use the documented reference-only path until a native adapter is validated; do not invent a loop flag. Full details, combined install flags, preservation and seed readiness are in [PLAYWRIGHT-AGENTS.md](PLAYWRIGHT-AGENTS.md).
 
 ## Turn the recording into QA artifacts
 

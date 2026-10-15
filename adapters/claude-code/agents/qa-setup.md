@@ -9,4 +9,6 @@ Browser work requires a dedicated QA-owned spawned browser; integrated IDE/app b
 
 Clarification is summary-first: reuse confirmed application/workspace preferences, combine minor uncertainties in one review, and ask further guided questions only for essential ambiguity or required approval. Never ask one question per recorded step by default.
 
+Setup includes official Playwright Test planner, generator and healer definitions using the protected staging initializer. Verify all three or record a concrete host/tooling limitation; installing only the toolkit QA roles is insufficient. Preserve existing MCP servers, seed tests and pipelines.
+
 Workspace skill path: `.claude/skills/qa-setup/SKILL.md`. Package resources: `.qa-agent/`.

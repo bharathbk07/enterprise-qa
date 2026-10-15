@@ -30,7 +30,7 @@ cd enterprise-qa
 python3 scripts/install.py --workspace "/path/to/application" --platforms cursor
 ```
 
-The command previews the workspace files. Review the plan, then repeat with `--apply` to install approved definitions. Select only the platforms you need; `--platforms all` is also available. Installation copies owned files and refuses unapproved overwrites. It does not install npm packages, configure active MCP connections or change global IDE settings.
+The command previews the workspace files. Review the plan, then repeat with `--apply` to install approved definitions. Select only the platforms you need; `--platforms all` is also available. Installation copies owned files and refuses unapproved overwrites. It does not install npm packages or change global IDE settings. Without --playwright-loop it is the toolkit-definition phase and reports official Playwright setup pending. Include official planner/generator/healer initialization in the approved setup; --playwright-loop can additionally merge the reviewed local Playwright MCP configuration. See [Playwright agent setup](docs/PLAYWRIGHT-AGENTS.md).
 
 To prepare and use the recorder, run from this repository:
 
@@ -76,7 +76,7 @@ The browser tests launch Chromium against a loopback-only fixture. Environments 
 
 ## Documentation
 
-- [Getting started](docs/GETTING-STARTED.md), [installation and updates](docs/INSTALLATION.md), [recorder](docs/RECORDER.md)
+- [Getting started](docs/GETTING-STARTED.md), [installation and updates](docs/INSTALLATION.md), [official Playwright agents](docs/PLAYWRIGHT-AGENTS.md), [recorder](docs/RECORDER.md)
 - [Flow documents](docs/FLOW-DOCUMENT.md), [fewer-question interaction](docs/INTERACTION.md), [data model](contracts/DATA-MODEL.md)
 - [Architecture](docs/ARCHITECTURE.md), [engineering rules](contracts/ENGINEERING.md), [MCP setup](integrations/SETUP.md)
 - [Gap review](docs/GAP-REVIEW.md), [verification](verification.md), [changelog](CHANGELOG.md)

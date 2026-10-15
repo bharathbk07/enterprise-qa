@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.5 — 2026-10-15
+
+- Required official Playwright planner/generator/healer initialization during setup, alongside toolkit QA agents.
+- Added staged local-CLI generation, explicit preview/apply and combined installer flags; preserve unrelated MCP settings and user-edited definitions.
+- Excluded upstream-generated seed/spec/CI scaffold from automatic application installation; added upstream license/notice handling and safe refresh.
+- Added native/reference host guidance and execution boundaries retaining dedicated browsers, manual gates, approvals and truthful failure reporting.
+
 ## 0.2.4 — 2026-10-15
 
 - Added MIT licensing with copyright attribution to Bharath Kumar M, license metadata, and copies accompanying separately installed skills/agents.

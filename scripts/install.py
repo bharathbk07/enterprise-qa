@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Dry-run by default. Install allowlisted owned files; never merge active MCP settings."""
-import argparse,hashlib,json,shutil
+"""Dry-run by default. Install allowlisted owned files; optionally initialize official Playwright agents through a protected staging step."""
+import argparse,hashlib,json,shutil,subprocess
 from pathlib import Path
 PLATFORMS=('cursor','claude-code','vscode-copilot','codex','antigravity','chatgpt-portable')
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -50,14 +50,26 @@ def apply(mapping,workspace):
     previous.update(files);receipt.write_text(json.dumps({'schema_version':'1.0','files':previous},indent=2)+'\n')
     # Deliberately no stale-file deletion, global installation or active settings edits.
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--workspace',required=True);p.add_argument('--platforms',default='all');p.add_argument('--apply',action='store_true');p.add_argument('--update-managed',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--workspace',required=True);p.add_argument('--platforms',default='all');p.add_argument('--apply',action='store_true');p.add_argument('--update-managed',action='store_true');p.add_argument('--playwright-loop',choices=['vscode','claude','codex']);p.add_argument('--playwright-cli');p.add_argument('--playwright-reference-only',action='store_true');a=p.parse_args()
     platforms=list(PLATFORMS) if a.platforms=='all' else [s.strip() for s in a.platforms.split(',')]
     if any(x not in PLATFORMS for x in platforms):p.error('Unknown platform.')
     source=Path(__file__).resolve().parents[1];workspace=Path(a.workspace).resolve()
     try:mapping,conflicts=plan(source,workspace,platforms,a.update_managed)
-    except (OSError,ValueError,TypeError,KeyError) as e:p.error(str(e))
-    print(json.dumps({'workspace':str(workspace),'platforms':platforms,'files':len(mapping),'conflicts':conflicts,'apply_requested':a.apply,'managed_update':a.update_managed,'dependency_installation':False,'active_mcp_settings_changed':False,'destinations':[str(x.relative_to(workspace)) for x in mapping]},indent=2))
+    except (OSError,ValueError,TypeError,KeyError,subprocess.TimeoutExpired) as e:p.error(str(e))
+    prepared=None
+    if a.playwright_loop:
+        try:
+            from setup_playwright_agents import prepare
+            prepared=prepare(workspace,a.playwright_loop,a.playwright_cli,a.playwright_reference_only,a.update_managed)
+            conflicts.extend(prepared['summary']['conflicts'])
+        except (OSError,ValueError,TypeError,KeyError,subprocess.TimeoutExpired) as e:p.error(str(e))
+    official=prepared['summary'] if prepared else {'required_during_setup':True,'status':'pending','next_step':'Run setup_playwright_agents.py with the chosen loop, or supply --playwright-loop after approving its preview.'}
+    print(json.dumps({'workspace':str(workspace),'platforms':platforms,'files':len(mapping),'conflicts':conflicts,'apply_requested':a.apply,'managed_update':a.update_managed,'dependency_installation':False,'active_mcp_settings_planned':bool(prepared and not a.playwright_reference_only),'official_playwright_agents':official,'destinations':[str(x.relative_to(workspace)) for x in mapping]},indent=2))
     if conflicts:return 2
-    if a.apply:apply(mapping,workspace)
+    if a.apply:
+        apply(mapping,workspace)
+        if prepared:
+            from setup_playwright_agents import apply_prepared
+            apply_prepared(prepared)
     return 0
 if __name__=='__main__':raise SystemExit(main())

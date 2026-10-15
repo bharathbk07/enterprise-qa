@@ -137,7 +137,7 @@
   "contract": "contracts/CONTRACT.md",
   "recorder": "recorder/",
   "not_a_native_platform_manifest": true,
-  "package_version": "0.2.4",
+  "package_version": "0.2.5",
   "browser_policy": {
     "mode": "dedicated-spawned-only",
     "integrated_browser_allowed": false,
@@ -171,5 +171,23 @@
   },
   "license": "MIT",
   "copyright": "Copyright (c) 2026 Bharath Kumar M",
-  "repository": "https://github.com/bharathbk07/enterprise-qa"
+  "repository": "https://github.com/bharathbk07/enterprise-qa",
+  "official_playwright_agents": {
+    "required_during_setup": true,
+    "roles": [
+      "planner",
+      "generator",
+      "healer"
+    ],
+    "source": "https://playwright.dev/docs/test-agents",
+    "initializer": "scripts/setup_playwright_agents.py",
+    "native_loops": [
+      "vscode",
+      "claude",
+      "codex"
+    ],
+    "unsupported_native_hosts": "reference-only; native acceptance must be verified",
+    "regenerate_after_playwright_upgrade": true,
+    "preserve_framework_mcp_and_ci": true
+  }
 }

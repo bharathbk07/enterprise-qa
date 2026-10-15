@@ -14,3 +14,5 @@ These identifiers are taken from the checked-in lockfile, not a complete legal o
 Vendor documentation linked by the project remains attributable to its publisher. MCP endpoints, hosted products and associated accounts retain their provider terms and permissions. Product names are used to identify integration targets; no vendor endorsement or service license is supplied by this repository.
 
 The MIT license text follows the Open Source Initiative reference: https://opensource.org/license/mit . The project's copyright notice identifies Bharath Kumar M for 2026.
+
+The protected Playwright agent initializer generates definitions from the user's installed upstream Playwright package at setup time. Those upstream instruction texts are not vendored into this source distribution. When installed, their LICENSE/NOTICE are retained in namespaced files beside the generated definitions, including local Enterprise QA boundary additions. Do not replace the upstream license with the toolkit's MIT notice.

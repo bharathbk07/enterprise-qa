@@ -24,6 +24,11 @@ class ContractTests(unittest.TestCase):
         self.write_run([self.case(),self.case('CASE-002',status='failed')]);self.assertTrue(evaluate(self.root,['1'])['eligible'])
     def test_blocked_automated_and_missing_evidence_do_not_count(self):
         self.write_run([self.case(status='blocked'),self.case('CASE-002',kind='automated'),self.case(evidence='missing.txt')]);self.assertEqual(evaluate(self.root,['FLOW-001'])['flows'][0]['count'],0)
+    def test_all_native_runner_kinds_are_excluded_from_manual_gate(self):
+        for kind in ('automated-unit','automated-component','automated-contract','automated-integration','automated-e2e'):
+            self.write_run([self.case(kind=kind),self.case('CASE-002',kind=kind)])
+            result=evaluate(self.root,['Login']);self.assertFalse(result['eligible']);self.assertEqual(result['flows'][0]['count'],0)
+
     def test_version_scoped_explicit_override(self):
         self.write('overrides.json',{'overrides':[{'flow_id':'FLOW-001','flow_version':1,'scope':'automation','explicit':True,'authorized_by':'user','reason':'requested','authorized_at':'2026-10-14T12:00:00Z'}]});self.assertFalse(evaluate(self.root,['Login'])['eligible'])
         data=json.loads((self.root/'overrides.json').read_text());data['overrides'][0]['flow_version']=2;self.write('overrides.json',data);self.assertTrue(evaluate(self.root,['Login'])['eligible'])

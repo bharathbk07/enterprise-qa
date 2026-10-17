@@ -16,6 +16,8 @@ assert len(skills)==len(catalog['skills']) and len(agents)==len(manifest['agents
 assert catalog['entrypoint'] in skills and manifest['entrypoint'] in agents
 contract=(ROOT/'contracts/CONTRACT.md').read_text()
 license_text=(ROOT/'LICENSE').read_text()
+assert len(contract.split())<600
+assert len((ROOT/'contracts/ARCHITECTURE.md').read_text().split())<600
 assert 'MIT License' in license_text and catalog['copyright']==manifest['copyright'] and catalog['copyright'] in license_text
 assert catalog['license']==manifest['license']=='MIT'
 assert (ROOT/'agents/LICENSE').read_text()==license_text

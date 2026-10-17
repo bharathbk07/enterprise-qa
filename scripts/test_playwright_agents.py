@@ -67,3 +67,22 @@ class OfficialAgentTests(unittest.TestCase):
             self.assertFalse((workspace/'.qa-agent').exists())
             self.assertFalse((workspace/'.claude').exists())
             self.assertEqual(json.loads((workspace/'.mcp.json').read_text()),original)
+
+    def test_post_preview_mcp_edit_blocks_all_official_writes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            workspace=Path(directory).resolve()
+            path=workspace/'.mcp.json';path.write_text(json.dumps({'mcpServers':{}}))
+            prepared=prepare(workspace,'claude',CLI)
+            changed={'mcpServers':{'company-service':{'command':'user-added-service'}}}
+            path.write_text(json.dumps(changed))
+            with self.assertRaisesRegex(ValueError,'changed after preflight'):apply_prepared(prepared)
+            self.assertEqual(json.loads(path.read_text()),changed)
+            self.assertFalse((workspace/'.claude/agents').exists())
+
+    def test_post_preview_agent_creation_is_preserved(self):
+        with tempfile.TemporaryDirectory() as directory:
+            workspace=Path(directory).resolve();prepared=prepare(workspace,'claude',CLI)
+            path=workspace/'.claude/agents/playwright-test-planner.md';path.parent.mkdir(parents=True);path.write_text('user-created agent')
+            with self.assertRaises(ValueError):apply_prepared(prepared)
+            self.assertEqual(path.read_text(),'user-created agent')
+            self.assertFalse((workspace/'.mcp.json').exists())

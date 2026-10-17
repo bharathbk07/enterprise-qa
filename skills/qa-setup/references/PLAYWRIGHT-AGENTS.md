@@ -60,3 +60,5 @@ Generated official definitions include a clearly marked Enterprise QA section. B
 ## Verify completion
 
 Confirm all three upstream roles, inspected Playwright version, native/reference destination, preserved MCP entries and seed/fixture readiness. Inspect the client's actual loaded agent/tool list; local file generation is not a guarantee of client acceptance. Record verified/blocked capabilities and why. Validate a harmless authorized local fixture before live work; no load, CI modification or external writes solely to prove installation.
+
+Official generated files, merged MCP settings and ownership receipt also use content snapshots and guarded apply. A user edit after preview blocks replacement; inspect and regenerate the plan. Toolkit and official phases are individually guarded, not one transactional deployment. Read INSTALLATION.md for lock, partial-batch and uncooperative-editor limitations.

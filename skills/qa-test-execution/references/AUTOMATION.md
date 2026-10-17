@@ -1,0 +1,5 @@
+# Automation prerequisites and local framework changes
+
+Statuses: passed, failed, blocked, not-executed. Only distinct current-version cases with an actual first-attempt passed/failed outcome and evidence count as executed. Blocked, planned and not-executed do not count. Before creating/updating automation, require two such distinct cases per selected flow; otherwise warn and obtain an explicit flow/version-specific override. Preserve override identity, reason, timestamp and scope. A pass is not required. Historical executions of older flow/case versions do not satisfy the gate.
+
+Framework changes are local: preserve framework, conventions and user changes, run relevant checks, present diff/results. If none exists ask which framework/language to use. Do not commit, migrate, modify CI or publish without a request. Inspect and document CI read-only by default. Performance: preserve the existing k6/JMeter/NeoLoad tool; ask when none exists or selection is ambiguous. Ask for missing target, load/rate, duration and thresholds; confirm the full run profile before every execution. Script creation alone does not authorize load generation.

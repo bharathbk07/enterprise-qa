@@ -13,6 +13,9 @@ def sync():
         (base/'references/CONTRACT.md').write_text(contract)
         (base/'LICENSE').write_text(license_text)
         if (base/'references/ENGINEERING.md').exists():(base/'references/ENGINEERING.md').write_text(engineering)
+    mode_refs={'qa-recording':['RECORDING.md','BROWSER.md'],'qa-playwright':['BROWSER.md'],'qa-knowledge':['FLOWS.md'],'qa-test-design':['FLOWS.md'],'qa-test-execution':['FLOWS.md','BROWSER.md','AUTOMATION.md','NATIVE-EXECUTION.md'],'qa-automation':['AUTOMATION.md'],'qa-fix-implementation':['AUTOMATION.md'],'qa-setup':['SETUP.md'],'qa-analysis':['NATIVE-EXECUTION.md'],'qa-architect':['ARCHITECTURE-RECORDS.md'],'qa-reporting':['ARCHITECTURE-RECORDS.md']}
+    for name,refs in mode_refs.items():
+        for reference in refs:(ROOT/f'skills/{name}/references/{reference}').write_text((ROOT/'contracts'/reference).read_text())
     for name in ('qa-rca','qa-fix-proposal','qa-fix-implementation','qa-jmeter','qa-performance','qa-performance-engineering'):
         (ROOT/f'skills/{name}/references/RECORDS.md').write_text((ROOT/'contracts/ENGINEERING-RECORDS.md').read_text())
     architecture=(ROOT/'contracts/ARCHITECTURE.md').read_text()
@@ -53,7 +56,7 @@ def sync():
     files.update((ROOT/'.github').glob('*.md'));files.update((ROOT/'.github/ISSUE_TEMPLATE').glob('*.yml'))
     for directory,patterns in [('contracts',['*.md','*.json']),('docs',['*.md','*.json','*.html','*.canvas.tsx']),('integrations',['*.md','*.json']),('integrations/templates',['*.json','*.toml'])]:
         for pattern in patterns:files.update((ROOT/directory).glob(pattern))
-    for p in ['check_gate.py','engineering_checks.py','install.py','sync_package.py','validate.py','test_contracts.py','test_engineering.py','setup_playwright_agents.py','test_playwright_agents.py','evidence_checks.py','test_evidence.py','architecture_checks.py','test_architecture.py']:
+    for p in ['check_gate.py','engineering_checks.py','install.py','sync_package.py','validate.py','test_contracts.py','test_engineering.py','setup_playwright_agents.py','test_playwright_agents.py','evidence_checks.py','test_evidence.py','architecture_checks.py','test_architecture.py','safe_install.py','test_install_safety.py','native_run_checks.py','test_native_execution.py']:
         path=ROOT/'scripts'/p
         if path.exists():files.add(path)
     for platform in ('codex','antigravity','chatgpt-portable'):files.add(ROOT/'adapters'/platform/'instructions.md')

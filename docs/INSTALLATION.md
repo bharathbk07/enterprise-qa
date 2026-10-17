@@ -66,3 +66,9 @@ Full setup includes the upstream planner/generator/healer, not only qa-playwrigh
 # Full-stack architect discovery
 
 qa-architect is the full-stack entry point; qa-orchestrate remains the QA workflow entry. The kit now has 37 focused skills/roles, including stack, functional, security, accessibility, resilience, data and solution architecture. Use the same dry-run/managed-update installer; no framework, infrastructure or scanner migration is performed by installing definitions. Verify the selected client's discovery and run a bounded source-only assessment before claiming live execution capabilities. See FULLSTACK-ARCHITECT.md.
+
+# Preflight snapshots and guarded apply
+
+Toolkit and official Playwright installation capture destination content/path/mode and receipt snapshots. Apply rechecks the complete batch, then rechecks each destination after staging its bytes. New files use exclusive publication; existing files use atomic replacement. Cooperating installers are serialized by .qa-agent-install.lock. Sources and ownership receipts changed after preflight require a new plan; user edits are not accepted as owned simply because they appeared during planning. Existing file symlinks require manual review.
+
+On a detected late change the action fails rather than overwriting it. Inspect results and re-plan; a failure after earlier files were written can leave a partial batch, so this is not a multi-file transaction or automatic rollback. A crash can leave the lock/staging artifacts; inspect ownership/process state before manually removing those exact artifacts. Arbitrary external editors do not honor the installer lock: content rechecks narrow the final check-to-replace window, but are not an OS-level compare-and-swap guarantee against concurrent adversarial writers. Keep the target installation quiet during apply. Native client/platform acceptance remains separate.

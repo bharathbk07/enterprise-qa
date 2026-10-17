@@ -78,3 +78,7 @@ flowchart TD
 Eight focused roles add coordination, stack discovery, functional architecture, security, accessibility, resilience, data quality and enterprise solution design. The shared architecture contract defines current-stack assessment, project strategy, quality-domain scope, requirements/findings/solution states and acceptance. Domain references are read only when selected. Enterprise solutions must state evidence, tradeoffs, compatibility, operating assumptions and validation; no implicit rewrite, compliance certification or deployment authority.
 
 Read FULLSTACK-ARCHITECT.md and contracts/ARCHITECTURE.md for usage and record fields. Existing browser, manual gate, evidence fallback, RCA and fix approvals remain in effect. Local architecture_checks.py validates plan consistency only; it does not measure quality or enforce a runtime gate.
+
+# Reviewer corrections — 0.3.1
+
+Solution validation now covers the requirements behind all source findings. Selected native framework tests use qa-test-execution native-runner mode and a separate result contract; manual-flow selection remains its own path. Shared core rules are separated from recording/browser/flow/automation/setup references, with architecture schemas loaded only by artifact writers. Installers use snapshot-checked staged writes and scoped locks; cross-file transactions and enforcement against arbitrary writers remain outside those guarantees. Closed concurrent-user profiles require positive integer counts.

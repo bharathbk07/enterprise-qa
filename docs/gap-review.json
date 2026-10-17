@@ -300,5 +300,46 @@
     ],
     "validation": "Nine synthetic quality-plan consistency tests; not a live application assessment",
     "residual_gaps": "Existing enforcement, data handling, crash/capture and client/live acceptance findings remain open."
+  },
+  "reviewer_fixes": {
+    "date": "2026-10-17",
+    "package_version": "0.3.1",
+    "findings": [
+      {
+        "id": "RV-031-01",
+        "priority": "P1",
+        "title": "Validated solution could omit its source requirements",
+        "status": "Fixed with regression tests",
+        "resolution": "architecture_checks.py binds every source finding requirement to passed solution validation, keeping unrelated regression checks additional."
+      },
+      {
+        "id": "RV-031-02",
+        "priority": "P1",
+        "title": "Apply could overwrite post-preflight user edits",
+        "status": "Guarded writes added and tested",
+        "resolution": "Original destination/receipt snapshots are rechecked across planning, staging and publication; exclusive new files and cooperating-installer lock. Uncooperative-editor race window and multi-file transactions remain documented limits."
+      },
+      {
+        "id": "RV-031-03",
+        "priority": "P2",
+        "title": "Planned native test layers lacked execution handoff",
+        "status": "Native execution procedure and result checks added",
+        "resolution": "Existing runner selection, command execution and source result handling now use native-runner mode without a flow index; all automated kinds remain excluded from the manual gate."
+      },
+      {
+        "id": "RV-031-04",
+        "priority": "P2",
+        "title": "Fractional concurrent users passed readiness",
+        "status": "Fixed with regression tests",
+        "resolution": "Closed-model users require positive integers for k6, JMeter and NeoLoad; open fractional arrival rates remain allowed."
+      },
+      {
+        "id": "RV-031-05",
+        "priority": "P2",
+        "title": "Every role loaded irrelevant shared workflow rules",
+        "status": "References split and synchronized",
+        "resolution": "Common contract and architecture policy are compact; selected workflow rules and structured architecture schemas are loaded on demand."
+      }
+    ]
   }
 }

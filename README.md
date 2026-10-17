@@ -1,6 +1,6 @@
 # Enterprise Full-Stack Quality Architect Kit
 
-[MIT license](LICENSE) · [Getting started](docs/GETTING-STARTED.md) · [Contributing](CONTRIBUTING.md) · [Support](SUPPORT.md)
+[MIT license](LICENSE) · [Getting started](docs/GETTING-STARTED.md) · [Example walkthrough](docs/EXAMPLE-WALKTHROUGH.md) · [Contributing](CONTRIBUTING.md) · [Support](SUPPORT.md)
 
 A modular, open-source full-stack functional and nonfunctional quality architect for web applications and APIs. It assesses frontend, services, data, integrations and infrastructure; helps test behavior, find bugs, investigate root causes and propose enterprise solutions with measurable acceptance. Existing recording, application knowledge, manual cases, automation, performance and engineering reports remain integrated.
 
@@ -52,6 +52,7 @@ Ask the user before missing-component installation/configuration when an agent e
 
 - Use qa-architect to assess this application and produce a scoped functional/nonfunctional quality plan.
 - Use qa-stack-discovery to trace a critical request through frontend, API, data and infrastructure.
+- Use qa-test-execution in native-runner mode to run selected existing unit/component/contract/integration tests; no manual flow index is required.
 - Use qa-security, qa-accessibility or qa-resilience for a selected domain assessment.
 - Use qa-solution-architecture to propose compatible remedies for these findings, with tradeoffs and validation.
 
@@ -90,7 +91,7 @@ The browser tests launch Chromium against a loopback-only fixture. Environments 
 
 - [Getting started](docs/GETTING-STARTED.md), [installation and updates](docs/INSTALLATION.md), [official Playwright agents](docs/PLAYWRIGHT-AGENTS.md), [recorder](docs/RECORDER.md)
 - [Flow documents](docs/FLOW-DOCUMENT.md), [fewer-question interaction](docs/INTERACTION.md), [data model](contracts/DATA-MODEL.md)
-- [Full-stack architect](docs/FULLSTACK-ARCHITECT.md), [architecture](docs/ARCHITECTURE.md), [engineering rules](contracts/ENGINEERING.md), [MCP setup](integrations/SETUP.md), [evidence fallback](contracts/EVIDENCE.md), [JMeter](docs/JMETER.md)
+- [Full-stack architect](docs/FULLSTACK-ARCHITECT.md), [architecture](docs/ARCHITECTURE.md), [engineering rules](contracts/ENGINEERING.md), [MCP setup](integrations/SETUP.md), [evidence fallback](contracts/EVIDENCE.md), [native execution](contracts/NATIVE-EXECUTION.md), [JMeter](docs/JMETER.md)
 - [Gap review](docs/GAP-REVIEW.md), [verification](verification.md), [changelog](CHANGELOG.md)
 - [Contributing](CONTRIBUTING.md), [security reporting](SECURITY.md), [support](SUPPORT.md), [community conduct](CODE_OF_CONDUCT.md)
 

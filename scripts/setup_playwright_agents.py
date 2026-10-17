@@ -2,6 +2,7 @@
 """Stage official Playwright agents with a local CLI, then apply reviewed files only."""
 import argparse, hashlib, json, shutil, subprocess, tempfile
 from pathlib import Path
+from safe_install import snapshot, apply_checked
 
 LOOPS=('vscode','claude','codex')
 BOUNDARY='''
@@ -42,11 +43,12 @@ def prepare(workspace,loop,cli=None,reference_only=False,update_managed=False):
     if not node:raise ValueError('Node.js is required.')
     cli,version=find_cli(workspace,cli)
     receipt_path=local_path(workspace,workspace/'.qa-agent/.playwright-agent-state.json')
+    receipt_state=snapshot(workspace,receipt_path)
     previous=json.loads(receipt_path.read_text()) if receipt_path.is_file() else {'files':{},'servers':{}}
     if not isinstance(previous,dict):raise ValueError('Invalid Playwright agent ownership receipt.')
     roots={'vscode':'.github/agents','claude':'.claude/agents','codex':'.codex/agents'}
     expected=['planner','generator','healer']
-    writes={};file_hashes=dict(previous.get('files',{}));server_hashes=dict(previous.get('servers',{}));conflicts=[];scaffold=[]
+    writes={};file_hashes=dict(previous.get('files',{}));server_hashes=dict(previous.get('servers',{}));conflicts=[];scaffold=[];expected_states={}
     with tempfile.TemporaryDirectory(prefix='qa-playwright-agents-') as directory:
         stage=Path(directory)
         # No target config is loaded: init-agents may otherwise write a seed into that config's real testDir.
@@ -94,6 +96,7 @@ def prepare(workspace,loop,cli=None,reference_only=False,update_managed=False):
             # Bind the server to the inspected local CLI. No implicit package downloads on invocation.
             generated.update(command=node,args=[str(cli),'run-test-mcp-server'])
             destination=local_path(workspace,prefix/config_name)
+            expected_states[destination]=snapshot(workspace,destination)
             current=json.loads(destination.read_text()) if destination.is_file() else {}
             if not isinstance(current,dict) or not isinstance(current.get(key,{}),dict):raise ValueError('Existing MCP settings must be a JSON object; review JSONC/unsupported formats manually.')
             servers=dict(current.get(key,{}));old=servers.get('playwright-test');receipt_key=str(destination.relative_to(workspace))+'#playwright-test'
@@ -112,6 +115,7 @@ def prepare(workspace,loop,cli=None,reference_only=False,update_managed=False):
         for path in stage.rglob('*'):
             if path.is_file() and path not in paths and path!=config:scaffold.append(str(path.relative_to(stage)))
     for dest,data in writes.items():
+        if dest not in expected_states:expected_states[dest]=snapshot(workspace,dest)
         name=str(dest.relative_to(workspace));is_config=name.endswith(('.mcp.json','mcp.json'))
         if dest.exists():
             if not dest.is_file():conflicts.append(str(dest));continue
@@ -119,14 +123,14 @@ def prepare(workspace,loop,cli=None,reference_only=False,update_managed=False):
         file_hashes[name]=sha(data)
     receipt={'schema_version':'1.0','playwright_version':version,'loop':loop,'reference_only':reference_only,'files':file_hashes,'servers':server_hashes}
     summary={'playwright_version':version,'loop':loop,'reference_only':reference_only,'official_agents':['planner','generator','healer'],'command':[node,str(cli),'init-agents',f'--loop={loop}'],'destinations':[str(p.relative_to(workspace)) for p in writes],'conflicts':sorted(set(conflicts)),'not_installed_scaffold':scaffold,'ci_workflows_installed':False,'seed_tests_installed':False,'framework_migrated':False,'server_launch':'inspected-local-cli; dedicated-browser verification required before use'}
-    return {'workspace':workspace,'writes':writes,'receipt_path':receipt_path,'receipt':receipt,'summary':summary}
+    expected_states[receipt_path]=receipt_state
+    return {'expected':expected_states,'workspace':workspace,'writes':writes,'receipt_path':receipt_path,'receipt':receipt,'summary':summary}
 
 def apply_prepared(prepared):
     if prepared['summary']['conflicts']:raise ValueError('Conflicts require review; no generated agent/config files were installed.')
-    workspace=prepared['workspace']
-    for destination,data in prepared['writes'].items():
-        local_path(workspace,destination);destination.parent.mkdir(parents=True,exist_ok=True);destination.write_bytes(data)
-    receipt=prepared['receipt_path'];local_path(workspace,receipt);receipt.parent.mkdir(parents=True,exist_ok=True);receipt.write_text(json.dumps(prepared['receipt'],indent=2)+'\n')
+    writes=dict(prepared['writes'])
+    writes[prepared['receipt_path']]=(json.dumps(prepared['receipt'],indent=2)+'\n').encode()
+    apply_checked(prepared['workspace'],writes,prepared['expected'])
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--workspace',required=True);p.add_argument('--loop',choices=LOOPS,required=True);p.add_argument('--playwright-cli');p.add_argument('--reference-only',action='store_true');p.add_argument('--update-managed',action='store_true');p.add_argument('--apply',action='store_true');a=p.parse_args()

@@ -36,6 +36,7 @@ def check(kind,record,proposal=None):
         load=record.get('load',{})
         if not isinstance(load,dict) or load.get('model') not in ('open','closed') or not positive(load.get('value')):errors.append('Load model/value required.')
         elif load.get('unit') not in (('arrivals/s','requests/s','transactions/s') if load['model']=='open' else ('concurrent-users',)):errors.append('Load unit does not match the model.')
+        elif load['model']=='closed' and type(load.get('value')) is not int:errors.append('Closed-model concurrent users must be a positive integer.')
         if not positive(record.get('duration_seconds')):errors.append('Positive duration_seconds required.')
     elif kind=='rca':
         require(['investigation_id','application_id','environment','cause','classification','evidence_matrix','cause_scores'])

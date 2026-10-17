@@ -78,3 +78,24 @@ class ArchitectureTests(unittest.TestCase):
     def test_failed_requirement_does_not_become_a_complete_clean_assessment(self):
         plan = self.plan(); plan['requirements'][0]['outcome'] = 'failed'
         result = check_plan(plan); self.assertTrue(result['valid']); self.assertEqual(result['recorded_summary'], 'open-findings')
+
+    def test_unrelated_passing_requirement_cannot_validate_an_unfixed_source(self):
+        plan = self.with_solution()
+        original = plan['requirements'][0]; original['outcome'] = 'failed'
+        unrelated = copy.deepcopy(original); unrelated.update(id='REQ-UNRELATED', outcome='passed')
+        plan['requirements'].append(unrelated); plan['findings'][0]['status'] = 'reproduced'
+        plan['solutions'][0]['validation_requirement_ids'] = ['REQ-UNRELATED']
+        self.assertFalse(check_plan(plan)['valid'])
+        original['outcome'] = 'passed'
+        self.assertFalse(check_plan(plan)['valid'], 'Passing the source check does not remove the missing linkage.')
+        plan['solutions'][0]['validation_requirement_ids'].append('REQ-1')
+        self.assertTrue(check_plan(plan)['valid'])
+
+    def test_validated_solution_must_cover_all_linked_findings(self):
+        plan = self.with_solution()
+        second = copy.deepcopy(plan['requirements'][0]); second['id'] = 'REQ-2'
+        plan['requirements'].append(second)
+        plan['findings'][0]['requirement_ids'].append('REQ-2')
+        self.assertFalse(check_plan(plan)['valid'])
+        plan['solutions'][0]['validation_requirement_ids'].append('REQ-2')
+        self.assertTrue(check_plan(plan)['valid'])

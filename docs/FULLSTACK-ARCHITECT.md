@@ -50,3 +50,11 @@ A useful enterprise solution states measurable business/quality goals, affected 
 Standards references were checked on 17 October 2026: [OWASP ASVS](https://owasp.org/projects/asvs), [WCAG 2.2](https://www.w3.org/TR/WCAG22/), and [SRE SLO guidance](https://sre.google/workbook/implementing-slos/). Use only applicable, versioned requirements; links do not confer compliance. Domain notes contain focused verification guidance, not copied standards.
 
 Production investigation remains read-only by default. Approved scope is required for load, active security tests, fault injection, failover/restore and data/infrastructure changes. Dedicated spawned browsers remain mandatory for UI operations. Existing automation prerequisites, one safe retry, original-failure retention, RCA evidence standard, privacy and publication approvals remain intact. Local helpers and prompts do not enforce every host's external actions; client/platform/live acceptance is still required.
+
+## Existing native tests and focused references
+
+qa-test-execution now has native-runner mode for selected existing unit/component/contract/integration/end-to-end tests. It inspects the workspace CLI/configuration, executes only the selected tests and preserves runner exit, source reports and first-attempt outcomes under native-runs/. A missing manual flow index does not block this mode. Native runs do not satisfy the manual prerequisite for flow automation. See [NATIVE-EXECUTION.md](../contracts/NATIVE-EXECUTION.md).
+
+Common instructions now retain identity, evidence, permissions and essential browser boundaries. Recording, detailed browser ownership, manual flows, automation and setup rules are loaded from the selected mode reference. Structured plan fields are in [ARCHITECTURE-RECORDS.md](../contracts/ARCHITECTURE-RECORDS.md); security/accessibility/domain reviews need not load the full schema. A validated solution must verify every requirement attached to its source findings, alongside any additional regression checks.
+
+See the [illustrative checkout walkthrough](EXAMPLE-WALKTHROUGH.md) for a complete usage example covering cases, execution, RCA, solution design and honest report states.

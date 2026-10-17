@@ -140,6 +140,19 @@ def check_plan(record):
                 errors.append(f'{ident}: validated solution needs acceptance, evidence and verification requirements.')
             if any(requirements[link].get('outcome') != 'passed' for link in validations):
                 errors.append(f'{ident}: validated solution has failed/untested verification.')
+            affected = set()
+            if references(links):
+                for finding_id in links:
+                    finding = findings.get(finding_id, {})
+                    original = finding.get('requirement_ids')
+                    if not references(original) or not original:
+                        errors.append(f'{ident}: resolve source finding requirements before validating the solution.')
+                        continue
+                    affected.update(original)
+            if not affected.issubset(set(validations)):
+                errors.append(f'{ident}: validation must cover every requirement of its source findings.')
+            if any(requirements.get(link, {}).get('outcome') != 'passed' for link in affected):
+                errors.append(f'{ident}: source finding requirements remain failed or untested.')
         elif status != 'deferred':
             warnings.append(f'{ident}: solution is not validated.')
     summary = 'incomplete'

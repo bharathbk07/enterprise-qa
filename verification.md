@@ -78,3 +78,21 @@ Package v0.3.0 adds eight focused architecture roles, bringing the catalog to 37
 - skill-creator quick_validate.py was attempted for qa-architect but PyYAML remains absent. The dependency-free repository validator passed instead; bundled validation is not claimed.
 
 No dependencies, active client settings, scanners or cloud infrastructure were installed, no live target tested and no application/framework/CI code changed for this expansion. Recorder runtime and browser integration test results remain as previously reported. Native discovery and any real application's functional/security/accessibility/data/resilience/performance acceptance require selected authorized resources and evidence. Architecture helpers check local record consistency, not evidence truth, approvals or runtime enforcement. Updates remain local in this phase.
+
+
+# Reviewer corrections — 17 October 2026
+
+Package v0.3.1 addresses the five reviewed findings while retaining 37 skills/roles and existing browser/approval/manual-flow policies.
+
+- Seventy-two Python tests passed: 54 prior tests plus 18 regressions for original-requirement validation, closed user counts, late install/receipt/source edits, exclusive publication/locking, official agent/MCP late edits, native runner records and manual-gate exclusion. A real selected unittest command also ran in an isolated fixture without a flow index.
+- An independent skill-creator forward test followed qa-test-execution in a separate temporary workspace and ran only tests.test_pricing.PricingTests.test_rounding. One test passed, actual CLI exit was zero, no retries occurred, source hashes stayed unchanged, and the generated native record passed its evidence-root check with manual_gate_eligible false. This single scenario is behavioral evidence for that path, not comprehensive agent/client acceptance.
+- Dependency-free package validation passed for 37 skills/roles, generated adapters, linked references and reviewed distribution checksums. Temporary fresh installation and managed upgrade from the published v0.3.0 source verified the new references/helpers and unchanged active MCP settings. Whitespace checks passed.
+- Default security reference loading fell from approximately 2,856 to 1,208 words. Detailed recording/browser/flow/automation/setup rules remain in linked mode references; architecture record fields are loaded by artifact writers only.
+- skill-creator quick_validate.py was attempted for qa-test-execution; PyYAML is still absent. The dependency-free repository validator passed; bundled validation remains unavailable.
+
+Guarded installation rechecks destination content/path/mode and ownership receipts, stages bytes, exclusively publishes new files, atomically replaces existing files and serializes cooperating installers. It is not a multi-file transaction or an OS-level compare-and-swap against arbitrary uncooperative editors. Interrupted/partial batches and stale locks still need inspection; existing crash/enforcement/live acceptance gaps remain open. No dependencies, scanners, browsers, live target load or active IDE/product settings were installed for this correction. Recorder runtime is unchanged; its browser tests remain historical. These checks were performed locally before publication; repository delivery is tracked by Git history.
+
+
+# Example document — 17 October 2026
+
+Added docs/EXAMPLE-WALKTHROUGH.md: a fictional checkout use case spanning architecture, 20 planned manual cases, native execution, automation prerequisites, performance, monitoring fallback, RCA, solution review and honest report states. No application was tested for the example; there are no fabricated execution results, screenshots, measurements or approvals. Its embedded JSON passed architecture consistency checks with recorded_summary incomplete, all local Markdown links resolved and the table contains 20 planned cases. The document is linked from the README and architect guide and included in the reviewed distribution. The 72-test results above apply to the included v0.3.1 implementation; adding this example changes documentation only.

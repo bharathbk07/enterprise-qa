@@ -107,3 +107,14 @@ class ReadinessTests(unittest.TestCase):
         record['controls'][0]['verification_reference'] = ''; self.assertTrue(check('readiness', record, profile))
         record = self.readiness(profile); record['controls'] = [None]; self.assertTrue(check('readiness', record, profile))
         self.assertTrue(check('readiness', record, None))
+
+    def test_closed_user_counts_require_integers_for_each_supported_runner(self):
+        for runner in ('jmeter', 'k6', 'neoload'):
+            for invalid in (1.5, 1.0, True, 0, -1):
+                profile = self.profile(); profile['tool'] = runner; profile['load']['value'] = invalid
+                self.assertTrue(check('profile', profile), (runner, invalid))
+                self.assertTrue(check('readiness', self.readiness(profile), profile), (runner, invalid))
+            profile = self.profile(); profile['tool'] = runner; profile['load']['value'] = 2
+            self.assertEqual(check('profile', profile), [])
+        profile = self.profile(); profile['load'] = {'model': 'open', 'value': 1.5, 'unit': 'arrivals/s'}
+        self.assertEqual(check('profile', profile), [], 'Fractional arrival rates remain valid.')

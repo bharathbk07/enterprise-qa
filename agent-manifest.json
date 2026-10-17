@@ -51,7 +51,7 @@
       "id": "qa-test-execution",
       "skill": "qa-test-execution",
       "prompt": "agents/qa-test-execution.md",
-      "description": "Execute selected manual UI/API cases with dedicated spawned browsers, evidence, human judgment and versioned run records."
+      "description": "Execute selected manual UI/API cases or existing native unit, component, contract, integration and end-to-end tests with truthful evidence and separate provenance."
     },
     {
       "id": "qa-automation",
@@ -256,7 +256,7 @@
     "antigravity",
     "chatgpt-portable"
   ],
-  "package_version": "0.3.0",
+  "package_version": "0.3.1",
   "browser_policy": {
     "mode": "dedicated-spawned-only",
     "integrated_browser_allowed": false,
@@ -343,5 +343,18 @@
     "strategy": "assess-first-compatible-improvements; ask project strategy when consequential; redesign only with evidence-backed cost/risk justification",
     "legacy_qa_entrypoint": "qa-orchestrate",
     "runtime_enforcement": false
+  },
+  "reference_loading": {
+    "common": "contracts/CONTRACT.md",
+    "mode_specific": [
+      "RECORDING.md",
+      "BROWSER.md",
+      "FLOWS.md",
+      "AUTOMATION.md",
+      "SETUP.md",
+      "NATIVE-EXECUTION.md"
+    ],
+    "architecture_records": "ARCHITECTURE-RECORDS.md",
+    "policy": "load-selected-mode-only"
   }
 }

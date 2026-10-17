@@ -10,3 +10,5 @@ Read `references/CONTRACT.md` and `references/ENGINEERING.md`. Verify user appro
 Apply the smallest approved local patch, preserve unrelated user changes and follow existing framework/data conventions. If the change creates/updates flow automation, also enforce its manual execution gate. Run relevant checks; record actual results, failures and diff in a change receipt. Ask before new dependencies/extra effects not covered by approval. No automatic commit, CI modification, deployment or production rollback. Handoff to qa-performance-retest and RCA; readiness is not deployment approval.
 
 For record fields and content-bound approval preflight, read `references/RECORDS.md`.
+
+When an approved patch changes business-flow automation, read `references/AUTOMATION.md` before applying it. Native suite execution alone does not satisfy that manual prerequisite.

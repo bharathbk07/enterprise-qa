@@ -33,3 +33,7 @@ The Markdown flow document embeds copied images from `flows/assets/FLOW-NNN/vN/`
 Use one combined summary review for proposed flow name, inferred steps, completion status and minor uncertainties. Store `review_status`, `proposed_name`, `proposed_completion`, `minor_uncertainties`, `essential_blockers`, answers and confirmation references in workflow/clarification state. Existing step_cursor is retained for compatibility, not a requirement to question every step.
 
 Confirmed nonsecret defaults live in `qa/preferences.json` (workspace) and `qa/<application-id>/preferences.json` (application overrides), with scope/environment, source confirmation reference/time and freshness conditions. Current user instructions override remembered preferences. Reuse only confirmed applicable settings; do not store credentials or approvals. See docs/INTERACTION.md for review and approval boundaries.
+
+# Native framework execution
+
+qa-test-execution selects manual-flow or native-runner mode before resolving flow records. Selected existing unit/component/contract/integration/end-to-end suites do not require manual flow identity. See NATIVE-EXECUTION.md for handoff and result fields. Native results use native-runs/, automated-* execution kinds, actual runner/report provenance and original attempt outcomes; qa-analysis normalizes them without granting manual gate eligibility. Flow/version references are optional traceability, not invented prerequisites.

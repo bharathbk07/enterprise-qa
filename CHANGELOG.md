@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.1 — 2026-10-17
+
+- Added an illustrative checkout walkthrough with 20 planned cases, staged prompts, RCA/solution examples and a structurally valid incomplete planning record.
+
+- Bound solution validation to every original finding requirement, rejecting unrelated passing checks.
+- Added snapshot-checked staged writes and cooperating-installer locks for toolkit and official Playwright setup, preserving late user edits.
+- Added native-runner execution and result contracts without manual-flow prerequisites or manual-gate eligibility.
+- Required positive integer closed-model user counts while retaining fractional open-model rates.
+- Split shared workflow policies and architecture record schemas into references loaded only when relevant; added focused regression tests.
+
 ## 0.3.0 — 2026-10-17
 
 - Evolved the toolkit into a full-stack functional/nonfunctional quality architect with eight focused roles, bringing the total to 37.

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Dry-run by default. Install allowlisted owned files; optionally initialize official Playwright agents through a protected staging step."""
-import argparse,hashlib,json,shutil,subprocess
+import argparse,hashlib,json,subprocess
+from safe_install import snapshot, apply_checked
 from pathlib import Path
 PLATFORMS=('cursor','claude-code','vscode-copilot','codex','antigravity','chatgpt-portable')
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -12,10 +13,13 @@ def owned(source):
         if not p.is_file() or sha(p)!=entry['sha256']:raise ValueError(f'Distribution file changed; review then run sync_package.py: {entry["path"]}')
         files.append(p)
     return files+[source/'distribution.json']
+class InstallPlan(dict):
+    pass
+
 def plan(source,workspace,platforms,update_managed=False):
     source,workspace=Path(source).resolve(),Path(workspace).resolve()
     if workspace.is_relative_to(source):raise ValueError('Install workspace cannot be the source or nested inside it.')
-    mapping={workspace/'.qa-agent'/p.relative_to(source):p for p in owned(source)}
+    mapping=InstallPlan({workspace/'.qa-agent'/p.relative_to(source):p for p in owned(source)})
     roots={'cursor':'.cursor/skills','claude-code':'.claude/skills','vscode-copilot':'.agents/skills','codex':'.agents/skills','antigravity':'.agents/skills'}
     declared=set(owned(source))
     for platform in platforms:
@@ -28,27 +32,40 @@ def plan(source,workspace,platforms,update_managed=False):
                 if p.is_relative_to(source/'adapters'/platform/'agents'):mapping[workspace/target/p.name]=p
     receipt=workspace/'.qa-agent/.install-state.json'
     if not receipt.resolve().is_relative_to(workspace):raise ValueError('Install receipt escapes workspace.')
-    previous=json.loads(receipt.read_text()).get('files',{}) if receipt.is_file() else {}
-    conflicts=[]
+    receipt_state=snapshot(workspace,receipt)
+    receipt_document=json.loads(receipt.read_text()) if receipt.is_file() else {'files':{}}
+    if not isinstance(receipt_document,dict) or not isinstance(receipt_document.get('files'),dict):raise ValueError('Invalid installation ownership receipt.')
+    previous=receipt_document['files']
+    conflicts=[];expected={}
     for dest,src in mapping.items():
-        if not dest.resolve().is_relative_to(workspace):raise ValueError(f'Symlink/path escapes workspace: {dest}')
-        if dest.exists():
-            if not dest.is_file():conflicts.append(str(dest));continue
-            existing=sha(dest)
+        state=snapshot(workspace,dest)
+        expected[dest]=state
+        if state['kind']=='file':
+            existing=state['sha256']
             if existing!=sha(src) and not (update_managed and previous.get(str(dest.relative_to(workspace)))==existing):conflicts.append(str(dest))
+    mapping.expected=expected
+    mapping.sources={src:sha(src) for src in set(mapping.values())}
+    mapping.receipt=receipt
+    mapping.receipt_state=receipt_state
+    mapping.previous=dict(previous)
+    mapping.conflicts=list(conflicts)
     return mapping,conflicts
 
 def apply(mapping,workspace):
-    workspace=Path(workspace).resolve();files={}
+    workspace=Path(workspace).resolve()
+    if not isinstance(mapping,InstallPlan):raise ValueError('Apply requires the original inspected install plan.')
+    if mapping.conflicts:raise ValueError('Install conflicts require review before apply.')
+    writes={};files=dict(mapping.previous)
     for dest,src in mapping.items():
-        if not dest.resolve().is_relative_to(workspace):raise ValueError('Destination changed during installation.')
-        dest.parent.mkdir(parents=True,exist_ok=True)
-        if src.resolve()!=dest.resolve():shutil.copy2(src,dest)
-        files[str(dest.relative_to(workspace))]=sha(dest)
-    receipt=workspace/'.qa-agent/.install-state.json'
-    previous=json.loads(receipt.read_text()).get('files',{}) if receipt.exists() else {}
-    previous.update(files);receipt.write_text(json.dumps({'schema_version':'1.0','files':previous},indent=2)+'\n')
-    # Deliberately no stale-file deletion, global installation or active settings edits.
+        data=src.read_bytes()
+        checksum=hashlib.sha256(data).hexdigest()
+        if checksum!=mapping.sources.get(src):raise ValueError(f'Install source changed after preflight: {src}')
+        writes[dest]=data
+        files[str(dest.relative_to(workspace))]=checksum
+    writes[mapping.receipt]=(json.dumps({'schema_version':'1.0','files':files},indent=2)+'\n').encode()
+    expected={**mapping.expected,mapping.receipt:mapping.receipt_state}
+    apply_checked(workspace,writes,expected)
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--workspace',required=True);p.add_argument('--platforms',default='all');p.add_argument('--apply',action='store_true');p.add_argument('--update-managed',action='store_true');p.add_argument('--playwright-loop',choices=['vscode','claude','codex']);p.add_argument('--playwright-cli');p.add_argument('--playwright-reference-only',action='store_true');a=p.parse_args()
     platforms=list(PLATFORMS) if a.platforms=='all' else [s.strip() for s in a.platforms.split(',')]
@@ -67,9 +84,14 @@ def main():
     print(json.dumps({'workspace':str(workspace),'platforms':platforms,'files':len(mapping),'conflicts':conflicts,'apply_requested':a.apply,'managed_update':a.update_managed,'dependency_installation':False,'active_mcp_settings_planned':bool(prepared and not a.playwright_reference_only),'official_playwright_agents':official,'destinations':[str(x.relative_to(workspace)) for x in mapping]},indent=2))
     if conflicts:return 2
     if a.apply:
-        apply(mapping,workspace)
-        if prepared:
-            from setup_playwright_agents import apply_prepared
-            apply_prepared(prepared)
+        try:
+            if prepared:
+                from safe_install import verify_expected
+                verify_expected(workspace,prepared['expected'])
+            apply(mapping,workspace)
+            if prepared:
+                from setup_playwright_agents import apply_prepared
+                apply_prepared(prepared)
+        except (OSError,ValueError,TypeError,KeyError) as e:p.error(str(e))
     return 0
 if __name__=='__main__':raise SystemExit(main())

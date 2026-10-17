@@ -12,3 +12,5 @@ Separate facts from hypotheses; unknown results stay unknown. Do not assert a re
 Engineering/RCA reports carry suspected/probable/confirmed labels and the four-source evidence matrix. Jira/Confluence publication routes to their individual MCP specialists and requires explicit write approval.
 
 For full-stack architecture reports read `references/ARCHITECTURE.md`. Combine only evidenced selected-domain findings, traceability, reproduced bugs versus causal hypotheses, proposed/accepted/implemented/validated solutions, tradeoffs and open risks. Separate readiness recommendations from tested outcomes or formal compliance. Link canonical architecture and engineering artifacts; do not manufacture coverage or enterprise certification.
+
+Read `references/ARCHITECTURE-RECORDS.md` when writing or normalizing the structured quality plan and solution validation links.

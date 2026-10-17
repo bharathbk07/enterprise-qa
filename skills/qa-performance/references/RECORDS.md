@@ -31,3 +31,5 @@ python3 scripts/evidence_checks.py --record evidence.json
 ```
 
 For fallback/query packets and evidence-envelope fields read contracts/EVIDENCE.md from the installed package, or the selected skill's references/EVIDENCE.md. No raw credentials in provenance. Failed/partial/pasted output retains its actual source channel and limitations.
+
+Closed-model load.value is a positive JSON integer concurrent-user count. Fractional concurrent users are rejected by both profile and readiness preflight; positive fractional open-model arrival rates remain allowed in the matching rate units.

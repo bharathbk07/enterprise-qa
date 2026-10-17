@@ -300,3 +300,14 @@ Package 0.3.0 adds eight focused roles for a total of 37: qa-architect, qa-stack
 Implemented guidance now covers stack/trust-boundary discovery, quality-domain scoping, requirement-to-test traceability, evidence-backed defect reporting, domain-specific verification and enterprise solution tradeoffs/validation. Existing QA/performance/RCA and product roles remain operational entry paths. Added local plan consistency checks with nine synthetic scenarios; these check records, not a real application.
 
 Remaining limitations stay open: native client acceptance, actual scanner/assistive-technology/runner capabilities, authorized target evidence, runtime permission/gate enforcement, screenshot redaction/capture and crash/budget issues documented above. Standards links and generated roles do not establish compliance or enterprise readiness. No real application's architecture, bugs, root causes or solution performance were assessed by installing these definitions.
+
+
+## Reviewer fixes — 17 October 2026, v0.3.1
+
+- **RV-031-01 (P1) — Validated solution could omit its source requirements. Fixed with regression tests.** architecture_checks.py binds every source finding requirement to passed solution validation, keeping unrelated regression checks additional.
+- **RV-031-02 (P1) — Apply could overwrite post-preflight user edits. Guarded writes added and tested.** Original destination/receipt snapshots are rechecked across planning, staging and publication; exclusive new files and cooperating-installer lock. Uncooperative-editor race window and multi-file transactions remain documented limits.
+- **RV-031-03 (P2) — Planned native test layers lacked execution handoff. Native execution procedure and result checks added.** Existing runner selection, command execution and source result handling now use native-runner mode without a flow index; all automated kinds remain excluded from the manual gate.
+- **RV-031-04 (P2) — Fractional concurrent users passed readiness. Fixed with regression tests.** Closed-model users require positive integers for k6, JMeter and NeoLoad; open fractional arrival rates remain allowed.
+- **RV-031-05 (P2) — Every role loaded irrelevant shared workflow rules. References split and synchronized.** Common contract and architecture policy are compact; selected workflow rules and structured architecture schemas are loaded on demand.
+
+These corrections do not close the existing host-enforcement, crash recovery, process quotas, redaction or live-client/tenant acceptance findings.

@@ -12,3 +12,5 @@ For each failure score each cause independently 0–100: test-data, application-
 For formal root cause confirmation hand off to qa-rca. Do not average percentiles; do not use independent 0–100 estimates as causal proof. Missing data/thresholds or incomparable baselines remain unknown/inconclusive.
 
 When analyzing pasted/exported monitoring or load results read `references/EVIDENCE.md`. Preserve the user-supplied channel, query/window, counts, omissions and units; missing telemetry is not a pass. JMeter-specific JTL interpretation belongs to qa-jmeter.
+
+For native framework results read `references/NATIVE-EXECUTION.md`: analyze native-runs/ separately from manual runs/, retain actual CLI/report provenance and first attempts, and link requirements/components without inventing flow IDs or manual eligibility.

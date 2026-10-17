@@ -1,0 +1,5 @@
+# Recording privacy, profiles and resource retention
+
+Before recording ask once per session: mask sensitive values or retain plain text in evidence? Do not start without an answer. Persist the choice. Mask before saving when selected; never claim universal screenshot redaction. Raw browser profiles retain authentication state even in masked mode: explain and obtain session-storage consent separately. Do not store profiles without consent. Show plaintext consequences as part of the choice, not as repeated warnings. Keep profiles/evidence out of Git unless the user expressly requests otherwise.
+
+Resources (uploads, downloads and API request/response payloads) share a 25,000,000-byte session budget, measured as stored decoded bytes. Screenshots and metadata are separate. Skipped captures keep size/type/reason/hash when available; never label omitted bodies as captured. Keep evidence until explicit deletion; cleanup previews exact paths and deletes only confirmed recording IDs. Preserve knowledge and test history.

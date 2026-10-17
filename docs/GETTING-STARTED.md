@@ -67,3 +67,8 @@ npm --prefix recorder test
 ```
 
 A browser test needs local socket and process-launch permissions. Missing executable: run npm run doctor inside recorder and prepare the approved Chromium dependency. Changed source checksum: review intentional edits, run scripts/sync_package.py from the repository root, inspect its diff and validate again. Do not regenerate checksums to conceal unknown changes. For discovery/authentication problems, follow INSTALLATION.md or ../integrations/SETUP.md and report your client/version without secrets. Check SUPPORT.md and SECURITY.md at the repository root before opening a report.
+
+
+## Full-stack architect entry
+
+After installing definitions, use qa-architect for a full-stack functional/nonfunctional assessment. It first assesses the current system, proposes compatible improvements and asks only consequential missing project strategy/requirements. For a narrow request use the selected specialist directly. qa-orchestrate still records and tests named flows; recording is not required for an architecture-only review. See [FULLSTACK-ARCHITECT.md](FULLSTACK-ARCHITECT.md) for examples, scope and limitations.

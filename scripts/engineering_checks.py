@@ -61,6 +61,35 @@ def check(kind,record,proposal=None):
             if record.get('proposal_digest')!=digest(proposal):errors.append('Proposal changed or digest mismatch.')
             for key in ('action','target','environment'):
                 if record.get(key)!=proposal.get(key):errors.append(f'Approval scope mismatch: {key}.')
+    elif kind=='readiness':
+        if not isinstance(proposal,dict):return ['Original profile required for readiness.']
+        errors.extend(check('profile',proposal))
+        if record.get('profile_digest')!=digest(proposal):errors.append('Readiness profile changed or digest mismatch.')
+        required=set()
+        for group in ('thresholds','abort_conditions'):
+            values=proposal.get(group)
+            if not isinstance(values,list) or not values:
+                errors.append(f'{group} must be a nonempty array for readiness.')
+                continue
+            required.update(f'{group}:{i}' for i in range(len(values)))
+        controls=record.get('controls')
+        if not isinstance(controls,list):return errors+['Readiness controls must be an array.']
+        seen=set()
+        for control in controls:
+            if not isinstance(control,dict):errors.append('Invalid control mapping.');continue
+            criterion=control.get('criterion')
+            if not isinstance(criterion,str) or criterion not in required:errors.append('Unknown control criterion.');continue
+            if criterion in seen:errors.append('Duplicate control mapping.')
+            seen.add(criterion)
+            if control.get('mechanism') not in ('native','external','manual'):errors.append('Invalid control mechanism.')
+            for field in ('implementation_reference','verification_reference'):
+                if not isinstance(control.get(field),str) or not control[field].strip():errors.append(f'Missing control {field}.')
+            if not instant(control.get('verified_at')):errors.append('Timezone-aware control verified_at required.')
+            if control.get('mechanism')=='manual':
+                for field in ('owner','explicit_manual_approval_reference'):
+                    if not isinstance(control.get(field),str) or not control[field].strip():errors.append(f'Missing manual {field}.')
+                if not positive(control.get('observation_interval_seconds')):errors.append('Positive manual observation interval required.')
+        if required-seen:errors.append('Unmapped thresholds/abort conditions.')
     elif kind not in ('context','profile'):errors.append('Unknown check kind.')
     return errors
 
@@ -81,7 +110,7 @@ def verify_artifacts(proposal,artifact_root):
     return errors
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--kind',choices=['context','profile','rca','approval'],required=True);p.add_argument('--record',required=True);p.add_argument('--proposal');p.add_argument('--artifact-root');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--kind',choices=['context','profile','rca','approval','readiness'],required=True);p.add_argument('--record',required=True);p.add_argument('--proposal');p.add_argument('--artifact-root');a=p.parse_args()
     try:
         from pathlib import Path
         record=json.loads(Path(a.record).read_text());proposal=json.loads(Path(a.proposal).read_text()) if a.proposal else None

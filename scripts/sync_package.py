@@ -13,13 +13,29 @@ def sync():
         (base/'references/CONTRACT.md').write_text(contract)
         (base/'LICENSE').write_text(license_text)
         if (base/'references/ENGINEERING.md').exists():(base/'references/ENGINEERING.md').write_text(engineering)
-    for name in ('qa-rca','qa-fix-proposal','qa-fix-implementation'):
+    for name in ('qa-rca','qa-fix-proposal','qa-fix-implementation','qa-jmeter','qa-performance','qa-performance-engineering'):
         (ROOT/f'skills/{name}/references/RECORDS.md').write_text((ROOT/'contracts/ENGINEERING-RECORDS.md').read_text())
+    architecture=(ROOT/'contracts/ARCHITECTURE.md').read_text()
+    for name in ('qa-architect','qa-stack-discovery','qa-functional-architecture','qa-security','qa-accessibility','qa-resilience','qa-data-quality','qa-solution-architecture','qa-reporting'):
+        (ROOT/f'skills/{name}/references/ARCHITECTURE.md').write_text(architecture)
+    for name,doc in [('qa-security','SECURITY-QUALITY.md'),('qa-accessibility','ACCESSIBILITY-QUALITY.md'),('qa-resilience','RESILIENCE-QUALITY.md'),('qa-data-quality','DATA-QUALITY.md')]:
+        target={'qa-security':'SECURITY.md','qa-accessibility':'ACCESSIBILITY.md','qa-resilience':'RESILIENCE.md','qa-data-quality':'DATA.md'}[name]
+        (ROOT/f'skills/{name}/references/{target}').write_text((ROOT/'docs'/doc).read_text())
+    evidence=(ROOT/'contracts/EVIDENCE.md').read_text()
+    for name in ('qa-mcp-splunk','qa-mcp-dynatrace','qa-mcp-appdynamics','qa-mcp-datadog','qa-mcp-neoload','qa-jmeter','qa-setup','qa-engineering','qa-performance','qa-performance-engineering','qa-telemetry-correlation','qa-analysis'):
+        (ROOT/f'skills/{name}/references/EVIDENCE.md').write_text(evidence)
+    for product in ('splunk','dynatrace','appdynamics','datadog','neoload'):
+        (ROOT/f'skills/qa-mcp-{product}/references/CONNECTOR.md').write_text((ROOT/f'integrations/{product.upper()}.md').read_text())
+    (ROOT/'skills/qa-jmeter/references/JMETER.md').write_text((ROOT/'docs/JMETER.md').read_text())
     (ROOT/'skills/qa-recording/references/RECORDER.md').write_text((ROOT/'docs/RECORDER.md').read_text())
     (ROOT/'skills/qa-knowledge/references/FLOW-DOCUMENT.md').write_text((ROOT/'docs/FLOW-DOCUMENT.md').read_text())
     for name in ('qa-knowledge','qa-orchestrate'):
         (ROOT/f'skills/{name}/references/INTERACTION.md').write_text((ROOT/'docs/INTERACTION.md').read_text())
-    (ROOT/'skills/qa-setup/references/INTEGRATIONS.md').write_text((ROOT/'integrations/SETUP.md').read_text())
+    setup=(ROOT/'integrations/SETUP.md').read_text().replace('../docs/JMETER.md','JMETER.md').replace('../contracts/EVIDENCE.md','EVIDENCE.md')
+    (ROOT/'skills/qa-setup/references/INTEGRATIONS.md').write_text(setup)
+    for product in ('SPLUNK','DYNATRACE','APPDYNAMICS','DATADOG','NEOLOAD'):
+        (ROOT/f'skills/qa-setup/references/{product}.md').write_text((ROOT/f'integrations/{product}.md').read_text())
+    (ROOT/'skills/qa-setup/references/JMETER.md').write_text((ROOT/'docs/JMETER.md').read_text())
     for name in ('qa-setup','qa-playwright','qa-automation'):
         (ROOT/f'skills/{name}/references/PLAYWRIGHT-AGENTS.md').write_text((ROOT/'docs/PLAYWRIGHT-AGENTS.md').read_text())
     for platform,skillroot in [('cursor','.cursor/skills'),('claude-code','.claude/skills'),('vscode-copilot','.agents/skills')]:
@@ -37,7 +53,7 @@ def sync():
     files.update((ROOT/'.github').glob('*.md'));files.update((ROOT/'.github/ISSUE_TEMPLATE').glob('*.yml'))
     for directory,patterns in [('contracts',['*.md','*.json']),('docs',['*.md','*.json','*.html','*.canvas.tsx']),('integrations',['*.md','*.json']),('integrations/templates',['*.json','*.toml'])]:
         for pattern in patterns:files.update((ROOT/directory).glob(pattern))
-    for p in ['check_gate.py','engineering_checks.py','install.py','sync_package.py','validate.py','test_contracts.py','test_engineering.py','setup_playwright_agents.py','test_playwright_agents.py']:
+    for p in ['check_gate.py','engineering_checks.py','install.py','sync_package.py','validate.py','test_contracts.py','test_engineering.py','setup_playwright_agents.py','test_playwright_agents.py','evidence_checks.py','test_evidence.py','architecture_checks.py','test_architecture.py']:
         path=ROOT/'scripts'/p
         if path.exists():files.add(path)
     for platform in ('codex','antigravity','chatgpt-portable'):files.add(ROOT/'adapters'/platform/'instructions.md')

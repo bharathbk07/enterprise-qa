@@ -24,6 +24,17 @@
     "atlassian": {
       "url": "https://mcp.atlassian.com/v2/mcp",
       "type": "http"
+    },
+    "appdynamics": {
+      "url": "https://replace-appdynamics-mcp-endpoint.invalid/mcp",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${input:appd_api_token}"
+      }
+    },
+    "datadog": {
+      "url": "https://replace-datadog-site-mcp-endpoint.invalid",
+      "type": "http"
     }
   },
   "inputs": [
@@ -43,6 +54,12 @@
       "id": "neoload_auth_header",
       "type": "promptString",
       "description": "neoload: secret header/token value, from your approved secret source",
+      "password": true
+    },
+    {
+      "id": "appd_api_token",
+      "type": "promptString",
+      "description": "AppDynamics Controller bearer token from your approved secret source; not an Analytics Events key",
       "password": true
     }
   ]

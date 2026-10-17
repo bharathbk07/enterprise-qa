@@ -10,3 +10,5 @@ Read `references/CONTRACT.md`. Read the selected analysis JSON and only its refe
 Separate facts from hypotheses; unknown results stay unknown. Do not assert a release is ready unless criteria and sufficient evidence establish it. Include traceability to knowledge rules/flows/cases/runs. Report proposed fixes; apply them only on request. Default output is Markdown/JSON with CSV execution/case records; other formats need a request.
 
 Engineering/RCA reports carry suspected/probable/confirmed labels and the four-source evidence matrix. Jira/Confluence publication routes to their individual MCP specialists and requires explicit write approval.
+
+For full-stack architecture reports read `references/ARCHITECTURE.md`. Combine only evidenced selected-domain findings, traceability, reproduced bugs versus causal hypotheses, proposed/accepted/implemented/validated solutions, tradeoffs and open risks. Separate readiness recommendations from tested outcomes or formal compliance. Link canonical architecture and engineering artifacts; do not manufacture coverage or enterprise certification.

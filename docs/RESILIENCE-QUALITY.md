@@ -1,0 +1,9 @@
+# Reliability, infrastructure and recovery
+
+Reference checked 17 October 2026: [Google SRE Workbook: implementing SLOs](https://sre.google/workbook/implementing-slos/). Use user-outcome-oriented SLIs and the project's agreed objectives; no universal availability percentage, RTO/RPO or error budget is imposed by this toolkit.
+
+Trace critical dependencies and bounded failures across client/API/service/data/queue/external provider layers. Inspect timeout propagation, retry amplification/backoff/jitter, idempotency, concurrency limits, backpressure, cache behavior, partial success and failure isolation where relevant. Evaluate deployment readiness/health checks, resource limits, scaling, configuration/secrets, observability and rollback against actual manifests and runtime evidence. A health endpoint or multiple replicas alone does not demonstrate availability or correct failover.
+
+Prefer code/config review and existing recovery/run evidence first. For proposed failure experiments identify fault hypothesis, smallest controlled target/environment, duration and blast radius, workload/data, measurable steady state, alerts, owner, exact stop/rollback/recovery and approval. Use synthetic fixtures where meaningful; they do not prove production recovery. No automatic chaos/failover/restore/profiling or infrastructure mutation from an architecture request.
+
+Backup configuration, backup job success and tested restoration are distinct evidence. Verify data age, consistency, isolation, actual recovery duration and data-loss boundaries only within approved scope. Report untested restore/DR and unknown objectives as gaps. After an approved remediation compare under equivalent configuration/workload and preserve partial failures. Capacity/cost recommendations must state their measurements/assumptions and operating constraints; avoid speculative multi-region or Kubernetes migrations.

@@ -1,6 +1,6 @@
 # Official Playwright Test Agents during setup
 
-Source: [Playwright Test Agents](https://playwright.dev/docs/test-agents). The upstream roles are **planner**, **generator** and **healer**. Generate them with the installed Playwright CLI and regenerate after a Playwright upgrade. They complement the toolkit's 26 roles; qa-playwright/qa-browser alone are not the official agent installation.
+Source: [Playwright Test Agents](https://playwright.dev/docs/test-agents). The upstream roles are **planner**, **generator** and **healer**. Generate them with the installed Playwright CLI and regenerate after a Playwright upgrade. They complement the toolkit's 37 roles; qa-playwright/qa-browser alone are not the official agent installation.
 
 ## Required setup step
 

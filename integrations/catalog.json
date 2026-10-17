@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "verified_documentation_date": "2026-10-15",
+  "verified_documentation_date": "2026-10-17",
   "live_connections_tested": false,
   "providers": [
     {
@@ -8,8 +8,8 @@
       "url": "https://replace-splunk-mcp-endpoint.invalid",
       "secret": "SPLUNK_MCP_ENCRYPTED_TOKEN",
       "prefix": "Bearer ",
-      "source": "https://help.splunk.com/en/splunk-enterprise/mcp-server-for-splunk-platform/1.0/connecting-to-the-mcp-server-and-settings",
-      "note": "Copy the endpoint from the Splunk MCP Server app. The cited 1.0 guidance requires an encrypted MCP token, not a generic REST token; verify the deployed version. Tool availability is administrator-controlled. Do not disable TLS verification.",
+      "source": "https://help.splunk.com/en/splunk-cloud-platform/mcp-server-for-splunk-platform/2.0/connecting-to-the-mcp-server-and-settings",
+      "note": "Version-specific 2.0 connection guidance checked; inspect the actual deployed version and obtain its endpoint/encrypted MCP token from the app. Do not substitute a generic REST token or disable TLS verification.",
       "status": "documented-template-not-connected",
       "required_setup": [
         "edition/version",
@@ -22,6 +22,13 @@
       ],
       "product_roles": [
         "qa-mcp-splunk"
+      ],
+      "verified_documentation_date": "2026-10-17",
+      "operational_reference": "integrations/SPLUNK.md",
+      "fallback_order": [
+        "mcp",
+        "permitted-official-api-or-export",
+        "user-query-and-pasted-results"
       ]
     },
     {
@@ -43,6 +50,13 @@
       ],
       "product_roles": [
         "qa-mcp-dynatrace"
+      ],
+      "verified_documentation_date": "2026-10-17",
+      "operational_reference": "integrations/DYNATRACE.md",
+      "fallback_order": [
+        "mcp",
+        "permitted-official-api-or-export",
+        "user-query-and-pasted-results"
       ]
     },
     {
@@ -64,6 +78,13 @@
       ],
       "product_roles": [
         "qa-mcp-neoload"
+      ],
+      "verified_documentation_date": "2026-10-17",
+      "operational_reference": "integrations/NEOLOAD.md",
+      "fallback_order": [
+        "mcp",
+        "permitted-official-api-or-export",
+        "user-query-and-pasted-results"
       ]
     },
     {
@@ -84,7 +105,73 @@
       "product_roles": [
         "qa-mcp-jira",
         "qa-mcp-confluence"
+      ],
+      "verified_documentation_date": "2026-10-15"
+    },
+    {
+      "id": "appdynamics",
+      "url": "https://replace-appdynamics-mcp-endpoint.invalid/mcp",
+      "source": "https://help.splunk.com/en/appdynamics-saas/mcp-server-integration/26.7.0/configure-an-mcp-client",
+      "note": "Controller monitoring MCP; Analytics Events auth is separate and optional per selected capability. Confirm server release and deployment support.",
+      "verified_documentation_date": "2026-10-17",
+      "operational_reference": "integrations/APPDYNAMICS.md",
+      "status": "documented-template-not-connected",
+      "required_setup": [
+        "edition/version",
+        "deployment/region/site",
+        "verified endpoint",
+        "organization/account/application",
+        "auth method and secret reference",
+        "available tool/action schemas",
+        "allowed scope and query budgets"
+      ],
+      "product_roles": [
+        "qa-mcp-appdynamics"
+      ],
+      "fallback_order": [
+        "mcp",
+        "permitted-official-api-or-export",
+        "user-query-and-pasted-results"
+      ],
+      "secret": "APPD_API_TOKEN",
+      "prefix": "Bearer "
+    },
+    {
+      "id": "datadog",
+      "url": "https://replace-datadog-site-mcp-endpoint.invalid",
+      "source": "https://docs.datadoghq.com/mcp_server/",
+      "note": "Observability MCP, not Code Security MCP. Choose supported tenant site/endpoint and auth flow; discover restricted toolsets and permissions.",
+      "verified_documentation_date": "2026-10-17",
+      "operational_reference": "integrations/DATADOG.md",
+      "status": "documented-template-not-connected",
+      "required_setup": [
+        "edition/version",
+        "deployment/region/site",
+        "verified endpoint",
+        "organization/account/application",
+        "auth method and secret reference",
+        "available tool/action schemas",
+        "allowed scope and query budgets"
+      ],
+      "product_roles": [
+        "qa-mcp-datadog"
+      ],
+      "fallback_order": [
+        "mcp",
+        "permitted-official-api-or-export",
+        "user-query-and-pasted-results"
       ]
+    }
+  ],
+  "local_runners": [
+    {
+      "id": "jmeter",
+      "role": "qa-jmeter",
+      "reference": "docs/JMETER.md",
+      "source": "https://jmeter.apache.org/usermanual/get-started.html",
+      "verified_documentation_date": "2026-10-17",
+      "mcp_server_assumed": false,
+      "live_execution_tested": false
     }
   ]
 }

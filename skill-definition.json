@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "kind": "portable-qa-skill-catalog",
-  "entrypoint": "qa-orchestrate",
+  "entrypoint": "qa-architect",
   "skills": [
     {
       "id": "qa-orchestrate",
@@ -132,12 +132,67 @@
       "id": "qa-mcp-confluence",
       "path": "skills/qa-mcp-confluence/SKILL.md",
       "description": "Prepare application knowledge, performance/RCA documents and runbooks, then publish version-aware Confluence changes after explicit approval."
+    },
+    {
+      "id": "qa-mcp-appdynamics",
+      "description": "Investigate AppDynamics application, transaction, snapshot and metric evidence through discovered MCP tools or scoped official API/export fallbacks.",
+      "path": "skills/qa-mcp-appdynamics/SKILL.md"
+    },
+    {
+      "id": "qa-mcp-datadog",
+      "description": "Investigate Datadog APM, logs and metrics through the observability MCP server or scoped official API/export fallbacks.",
+      "path": "skills/qa-mcp-datadog/SKILL.md"
+    },
+    {
+      "id": "qa-jmeter",
+      "description": "Inspect, create or update JMeter JMX plans, prepare approved CLI load runs and assess JTL/dashboard evidence without migrating existing tools.",
+      "path": "skills/qa-jmeter/SKILL.md"
+    },
+    {
+      "id": "qa-architect",
+      "description": "Coordinate full-stack functional and nonfunctional quality architecture, testing, defect investigation, RCA and evidence-backed enterprise solutions.",
+      "path": "skills/qa-architect/SKILL.md"
+    },
+    {
+      "id": "qa-stack-discovery",
+      "description": "Map an existing frontend, API/service, data, integration and infrastructure stack with implementation evidence and deployment uncertainty.",
+      "path": "skills/qa-stack-discovery/SKILL.md"
+    },
+    {
+      "id": "qa-functional-architecture",
+      "description": "Design full-stack functional quality strategy and trace business rules, state transitions, API contracts and data invariants to tests and reproducible defects.",
+      "path": "skills/qa-functional-architecture/SKILL.md"
+    },
+    {
+      "id": "qa-security",
+      "description": "Review full-stack threat boundaries and security controls, plan scoped verification and report reproducible vulnerabilities with remediation evidence.",
+      "path": "skills/qa-security/SKILL.md"
+    },
+    {
+      "id": "qa-accessibility",
+      "description": "Assess web accessibility through scoped automated and manual checks, evidence-linked criteria and practical frontend remediation plans.",
+      "path": "skills/qa-accessibility/SKILL.md"
+    },
+    {
+      "id": "qa-resilience",
+      "description": "Assess service and infrastructure resilience, failure handling and recoverability using measurable reliability objectives and scoped test plans.",
+      "path": "skills/qa-resilience/SKILL.md"
+    },
+    {
+      "id": "qa-data-quality",
+      "description": "Assess database, cache, queue and event correctness, consistency, isolation and migration risks with evidence-backed tests and remediation plans.",
+      "path": "skills/qa-data-quality/SKILL.md"
+    },
+    {
+      "id": "qa-solution-architecture",
+      "description": "Propose compatible enterprise solutions and justified redesign options with measurable quality goals, tradeoffs, delivery stages and rollback plans.",
+      "path": "skills/qa-solution-architecture/SKILL.md"
     }
   ],
   "contract": "contracts/CONTRACT.md",
   "recorder": "recorder/",
   "not_a_native_platform_manifest": true,
-  "package_version": "0.2.5",
+  "package_version": "0.3.0",
   "browser_policy": {
     "mode": "dedicated-spawned-only",
     "integrated_browser_allowed": false,
@@ -189,5 +244,40 @@
     "unsupported_native_hosts": "reference-only; native acceptance must be verified",
     "regenerate_after_playwright_upgrade": true,
     "preserve_framework_mcp_and_ci": true
+  },
+  "evidence_fallback": {
+    "order": [
+      "mcp",
+      "approved-official-api-or-local-export",
+      "user-run-query-or-command-and-pasted-results"
+    ],
+    "denial_bypass_allowed": false,
+    "pasted_results_are_live_tool_receipts": false,
+    "local_checks": "scripts/evidence_checks.py",
+    "live_acceptance_required": true
+  },
+  "architecture_scope": {
+    "functional_and_nonfunctional": true,
+    "layers": [
+      "frontend",
+      "apis-services",
+      "databases",
+      "caches-queues-events",
+      "integrations",
+      "infrastructure-delivery",
+      "observability"
+    ],
+    "quality_domains": [
+      "functional-correctness",
+      "performance",
+      "security",
+      "accessibility",
+      "data-integrity",
+      "resilience-recoverability",
+      "maintainability-operability"
+    ],
+    "strategy": "assess-first-compatible-improvements; ask project strategy when consequential; redesign only with evidence-backed cost/risk justification",
+    "legacy_qa_entrypoint": "qa-orchestrate",
+    "runtime_enforcement": false
   }
 }

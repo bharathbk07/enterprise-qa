@@ -55,3 +55,26 @@ Package v0.2.5 makes the upstream planner, generator and healer a required QA se
 - Generated upstream CI workflows, application seed tests and specs are excluded from installation. No application framework or CI pipeline was changed. No dependency download, browser session, live application test, MCP server connection or native-client discovery was exercised for this update. Existing recorder browser-test results above remain historical.
 
 Official native output is verified at generation time for the three named loops. Cursor/Antigravity use explicitly inactive reference output until their native support is verified; ChatGPT without local access receives local setup instructions. Client acceptance, dedicated-browser ownership and application fixtures/configuration must be checked before first test-agent execution. Regenerate managed upstream definitions after Playwright upgrades, preserving local edits and the QA execution boundaries.
+
+
+# Reliability and product specialists — 17 October 2026
+
+Package v0.2.6 adds AppDynamics, Datadog and JMeter specialists for a total of 29 skills/roles. Official sources for those products and Splunk, Dynatrace and NeoLoad were reviewed; product source/version dates and live acceptance limits are recorded in integrations/catalog.json and the product references. The historical 15 October gap review is retained with a dated eight-finding follow-up and implementation statuses.
+
+- Forty-five Python tests passed: 33 existing checks plus 12 new synthetic normalized-response/readiness tests. Cases include all six selected products, missing/denied/expired access, throttling within remaining budgets, partial/empty/pasted results, malformed metadata, uncertain launch/write reconciliation, profile changes and missing/duplicate/manual control mappings. These tests exercise the local helpers, not vendor transports, login, query syntax or real stop enforcement.
+- Package integrity validation passed for 29 skills/roles, generated native adapter exports, provider/runner routing, JSON/TOML templates, reference links and owned source checksums. A temporary three-platform installation verified new skill/agent propagation without active product MCP configuration. Git whitespace checks passed.
+- skill-creator quick_validate.py was attempted for qa-jmeter but could not run because PyYAML is absent. The dependency-free repository validator passed; the bundled validator is not reported as passed.
+
+No dependencies were installed, live product connections made, JMX executed, load generated or application/CI code changed for this update. Recorder runtime is unchanged and its historical browser tests were not rerun. Production/third-party data was not supplied. Native client discovery, Windows/Linux execution, tenant authentication, schema/query compatibility, runtime approvals and actual threshold/abort wiring remain live acceptance work. Declared mappings/local records cannot attest truth or enforce a client's external mutation tools. No GitHub write is part of this local update.
+
+
+# Full-stack architect expansion — 17 October 2026
+
+Package v0.3.0 adds eight focused architecture roles, bringing the catalog to 37 skills/roles, and selects qa-architect as the main entry point. qa-orchestrate and qa-engineering remain compatible focused workflow entries. The user chose full-stack functional/nonfunctional scope and assess-first, compatible improvements with consequential project-strategy clarification and justified redesign only.
+
+- Fifty-four Python tests passed: 45 existing checks plus nine synthetic quality-plan consistency tests covering domain selection, evidence/acceptance, failed or unexecuted checks, duplicate IDs, findings/solution linkage, rollback, validation and malformed records. No app tests or security/resilience experiments were run.
+- Package integrity validation passed for 37 skills/roles, generated adapters, shared references, provider/runner templates and owned checksums. Temporary three-platform installation verified all eight new skills/agents and the new catalog entry point, with no active product MCP settings. Whitespace checks passed.
+- Official ASVS, WCAG 2.2/W3C evaluation and SRE SLO references were checked for scoped guidance. Their inclusion does not certify compliance or define a project's mandatory targets.
+- skill-creator quick_validate.py was attempted for qa-architect but PyYAML remains absent. The dependency-free repository validator passed instead; bundled validation is not claimed.
+
+No dependencies, active client settings, scanners or cloud infrastructure were installed, no live target tested and no application/framework/CI code changed for this expansion. Recorder runtime and browser integration test results remain as previously reported. Native discovery and any real application's functional/security/accessibility/data/resilience/performance acceptance require selected authorized resources and evidence. Architecture helpers check local record consistency, not evidence truth, approvals or runtime enforcement. Updates remain local in this phase.

@@ -1,12 +1,15 @@
-# Enterprise QA Agent Kit
+# Enterprise Full-Stack Quality Architect Kit
 
 [MIT license](LICENSE) · [Getting started](docs/GETTING-STARTED.md) · [Contributing](CONTRIBUTING.md) · [Support](SUPPORT.md)
 
-A modular, open-source QA toolkit for web applications and APIs. It connects recorded human flows to application knowledge, illustrated flow documents, manual test cases, automation, performance engineering, root cause analysis and engineering reports.
+A modular, open-source full-stack functional and nonfunctional quality architect for web applications and APIs. It assesses frontend, services, data, integrations and infrastructure; helps test behavior, find bugs, investigate root causes and propose enterprise solutions with measurable acceptance. Existing recording, application knowledge, manual cases, automation, performance and engineering reports remain integrated.
 
-The kit contains **26 focused skills and 26 agent roles**, platform adapters and a TypeScript Playwright recorder. The skills describe agent workflows; the recorder is executable capture software. It is not an unattended runtime for every QA stage. See [verification](verification.md) for what has actually been tested.
+The kit contains **37 focused skills and 37 agent roles**, platform adapters and a TypeScript Playwright recorder. The skills describe agent workflows; the recorder is executable capture software. It is not an unattended runtime for every QA stage. See [verification](verification.md) for what has actually been tested.
 
 ## What it does
+
+- Uses qa-architect as the full-stack entry point, with focused stack discovery, functional architecture, security, accessibility, resilience, data quality and solution design specialists. Existing qa-orchestrate remains available for QA stages.
+- Assesses the existing architecture first, prioritizes compatible improvements and asks for project strategy only when it affects the decision. Redesign needs an evidence-backed cost/risk justification and a smaller alternative.
 
 - Records human demonstrations in dedicated spawned Chromium browsers, including step screenshots, console errors and bounded API/file evidence.
 - Reviews a suggested flow name, inferred steps, completion status and minor uncertainties in one question. Further questions are reserved for essential gaps or required approvals; confirmed application/workspace preferences are reused.
@@ -14,7 +17,7 @@ The kit contains **26 focused skills and 26 agent roles**, platform adapters and
 - Designs at least 20 meaningful manual cases per flow where business rules support them, executes selected cases and preserves evidence. Missing rules remain unresolved rather than invented.
 - Inspects an existing automation framework, including feature files, data wiring and pipelines. Automation updates require two distinct current-version manual executions per flow or an explicit scoped override.
 - Supports performance engineering, workload modeling, telemetry correlation, bottleneck analysis, evidence-based RCA, reviewable fix proposals and approved implementation/retesting.
-- Provides separate Splunk, Dynatrace, NeoLoad, Jira and Confluence skills and documented MCP setup templates. Templates do not establish live connections.
+- Provides separate Splunk, Dynatrace, AppDynamics, Datadog, NeoLoad, Jira and Confluence specialists plus a dedicated JMeter skill/agent and documented MCP setup templates. Templates do not establish live connections.
 
 ## Platform support
 
@@ -47,6 +50,11 @@ Ask the user before missing-component installation/configuration when an agent e
 
 ## Typical agent requests
 
+- Use qa-architect to assess this application and produce a scoped functional/nonfunctional quality plan.
+- Use qa-stack-discovery to trace a critical request through frontend, API, data and infrastructure.
+- Use qa-security, qa-accessibility or qa-resilience for a selected domain assessment.
+- Use qa-solution-architecture to propose compatible remedies for these findings, with tradeoffs and validation.
+
 - Use qa-orchestrate to record and document the checkout flow.
 - Use qa-knowledge to summarize recording REC-ID for one combined review and create the illustrated flow document.
 - Use qa-test-design to create cases for Checkout, FLOW-003.
@@ -54,6 +62,9 @@ Ask the user before missing-component installation/configuration when an agent e
 - Use qa-framework to inspect the entire framework and test-data wiring.
 - Use qa-performance-engineering to plan a workload, correlate telemetry and investigate bottlenecks.
 - Use qa-rca to investigate RUN-ID and prepare a fix proposal for approval.
+- Use qa-mcp-appdynamics or qa-mcp-datadog for scoped monitoring evidence.
+- Use qa-jmeter to inspect an existing JMX plan or analyze a selected JTL report.
+- If tool/API access is unavailable, ask for a scoped query/command to run and paste the redacted results.
 
 ## Project structure
 
@@ -67,6 +78,7 @@ After preparing recorder dependencies, run from the repository root:
 
 ```sh
 python3 scripts/validate.py
+# For a real assessment artifact: python3 scripts/architecture_checks.py --record quality-plan.json
 npm --prefix recorder run build
 python3 -m unittest discover -s scripts -p 'test_*.py'
 npm --prefix recorder test
@@ -78,7 +90,7 @@ The browser tests launch Chromium against a loopback-only fixture. Environments 
 
 - [Getting started](docs/GETTING-STARTED.md), [installation and updates](docs/INSTALLATION.md), [official Playwright agents](docs/PLAYWRIGHT-AGENTS.md), [recorder](docs/RECORDER.md)
 - [Flow documents](docs/FLOW-DOCUMENT.md), [fewer-question interaction](docs/INTERACTION.md), [data model](contracts/DATA-MODEL.md)
-- [Architecture](docs/ARCHITECTURE.md), [engineering rules](contracts/ENGINEERING.md), [MCP setup](integrations/SETUP.md)
+- [Full-stack architect](docs/FULLSTACK-ARCHITECT.md), [architecture](docs/ARCHITECTURE.md), [engineering rules](contracts/ENGINEERING.md), [MCP setup](integrations/SETUP.md), [evidence fallback](contracts/EVIDENCE.md), [JMeter](docs/JMETER.md)
 - [Gap review](docs/GAP-REVIEW.md), [verification](verification.md), [changelog](CHANGELOG.md)
 - [Contributing](CONTRIBUTING.md), [security reporting](SECURITY.md), [support](SUPPORT.md), [community conduct](CODE_OF_CONDUCT.md)
 

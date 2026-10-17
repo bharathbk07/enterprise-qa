@@ -61,3 +61,8 @@ Clone https://github.com/bharathbk07/enterprise-qa.git and run these commands fr
 # Official Playwright Test Agents
 
 Full setup includes the upstream planner/generator/healer, not only qa-playwright/qa-browser. After preparing compatible local Playwright dependencies, use setup_playwright_agents.py or install.py --playwright-loop with the selected documented loop. See [PLAYWRIGHT-AGENTS.md](PLAYWRIGHT-AGENTS.md) for preview/apply commands, reference-only handling for other hosts, conflict protection, preserved seed/CI files, license notices and refresh after upgrades. Include this phase in the existing concrete setup approval instead of asking redundant questions.
+
+
+# Full-stack architect discovery
+
+qa-architect is the full-stack entry point; qa-orchestrate remains the QA workflow entry. The kit now has 37 focused skills/roles, including stack, functional, security, accessibility, resilience, data and solution architecture. Use the same dry-run/managed-update installer; no framework, infrastructure or scanner migration is performed by installing definitions. Verify the selected client's discovery and run a bounded source-only assessment before claiming live execution capabilities. See FULLSTACK-ARCHITECT.md.

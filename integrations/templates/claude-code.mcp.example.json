@@ -24,6 +24,17 @@
     "atlassian": {
       "url": "https://mcp.atlassian.com/v2/mcp",
       "type": "http"
+    },
+    "appdynamics": {
+      "url": "https://replace-appdynamics-mcp-endpoint.invalid/mcp",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${APPD_API_TOKEN}"
+      }
+    },
+    "datadog": {
+      "url": "https://replace-datadog-site-mcp-endpoint.invalid",
+      "type": "http"
     }
   }
 }

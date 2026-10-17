@@ -22,3 +22,12 @@ python scripts/engineering_checks.py --kind approval --record approval.json --pr
 `--artifact-root` is required by approval preflight when patch files are referenced; each relative path must stay within that root and match its hash. Exit 2 means missing/mismatched structure or content. This does not provide signed approvals, revocation enforcement or interception of every client's mutation tools.
 
 Jira/Confluence drafts retain content digest, destination IDs, expected version, evidence links, redaction review and requested action. After a write, retain returned ID/URL/version and verified outcome. Unknown outcomes remain unknown until reconciliation.
+
+Readiness record: profile_digest (same canonical digest as the unchanged profile), controls (array). Every profile thresholds[i] and abort_conditions[i] must have exactly one mapping with criterion `thresholds:i` / `abort_conditions:i`, mechanism `native` / `external` / `manual`, implementation_reference, verification_reference, verified_at (timezone-aware). A manual mapping also requires owner, observation_interval_seconds (positive), and explicit_manual_approval_reference. References point to actual runner configuration/validation evidence or a concrete approved human procedure, not self-certified truth. The helper validates mappings and the profile first; it cannot inspect external configurations or enforce runtime behavior.
+
+```sh
+python3 scripts/engineering_checks.py --kind readiness --record readiness.json --proposal profile.json
+python3 scripts/evidence_checks.py --record evidence.json
+```
+
+For fallback/query packets and evidence-envelope fields read contracts/EVIDENCE.md from the installed package, or the selected skill's references/EVIDENCE.md. No raw credentials in provenance. Failed/partial/pasted output retains its actual source channel and limitations.

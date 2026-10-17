@@ -229,3 +229,74 @@ Next action: Run a cross-platform/client acceptance matrix; verify duplicate-ski
 Prioritize EN-01 (enforce permissions/gates at the host), PR-01 (application-specific redaction acceptance), and LV-01 (bounded live connector acceptance). These need a chosen host/application/environment and approval scope; they are not silently enabled by this package.
 
 Provider source links and deployment caveats are in integrations/SETUP.md. The initial package archive is the v1 source snapshot for the findings marked v1.
+
+
+## Reliability follow-up — 17 October 2026
+
+Scope: proactive setup-to-execution review of the current package and official documentation for Dynatrace, Splunk, AppDynamics, Datadog, NeoLoad and JMeter. No user-reported incident, live tenant access or live load run was supplied. The findings below preserve the original review; the implementation status section records the resulting local changes and remaining limits. Preserve the original confirmed-cause standard, dedicated spawned-browser policy and existing approval boundaries.
+
+Confirmed direction: prioritize practical reliability; use MCP first, then an approved official API or local export, then give the user a scoped query/command and request pasted results. Validate fixes with local tests and simulated connector responses; report live checks separately. The user subsequently selected dedicated AppDynamics, Datadog and JMeter skills/agents with shared fallback/evidence guidance.
+
+### RF-01 — No consistent capability fallback or query handoff
+
+Priority P1. Evidence: integrations/SETUP.md steps 4–5 and the three existing product SKILL.md files require discovery but do not define the agreed fallback sequence or a user-run query packet. Suggestion: introduce a shared fallback procedure with product-specific query references. Record the failed/missing capability and selected path. Provide explicit environment, identifiers, UTC window, bounded limits, query dialect/version, expected fields/units, redaction instructions and a paste template. Never ask for tokens or silently switch tenants. A pasted response is user-supplied evidence, not proof of a live tool call. Missing output stays missing; user-run mutations/load still require approval.
+
+### RF-02 — AppDynamics and Datadog are absent from discovery and routing
+
+Priority P1. Evidence: integrations/catalog.json, skill-definition.json, agent-manifest.json and qa-telemetry-correlation name only the existing providers. Suggestion: add scoped product guidance and explicit routing without loading every provider. AppDynamics requires its own Controller/Analytics authentication distinction; Datadog requires site-specific setup and restricted toolsets. Choose focused specialists or references after reviewing these findings. Do not claim either product is connected.
+
+### RF-03 — Documentation freshness lacks an operational refresh decision
+
+Priority P2. Evidence: integrations/catalog.json records 15 October sources; Splunk guidance is explicitly pinned to 1.0 while official 1.3 guidance is available. This alone does not make the deployed 1.0 instructions invalid. Suggestion: retain verified source/version/date per product, compare against the actual deployment during setup, and rediscover on permission/server changes. Keep supported deployment boundaries and unresolved differences explicit rather than replacing all configurations with the newest endpoint.
+
+### RF-04 — Generic discovery guidance has no simulated failure acceptance suite
+
+Priority P1. Evidence: scripts/test_engineering.py exercises records, gates, approvals and installation, but does not test normalized connector outcomes for denied access, expired authentication, throttling, empty/partial results, pagination or uncertain launch outcomes. Suggestion: add deterministic fixture-driven checks for evidence/fallback decisions; preserve reason, completeness and retry budget. Simulations must be labelled synthetic. They cannot certify authentication, vendor schemas or host policy enforcement.
+
+### RF-05 — JMeter is named but its execution contract lacks tool-specific detail
+
+Priority P1. Evidence: skills/qa-performance/SKILL.md and contracts/ENGINEERING.md provide general load guidance, without a JMeter reference or specialist. Suggestion: document existing JMX/plugin/Java dependencies, dynamic correlation, CSV sharing/recycling, assertions, non-GUI execution, injector limits, JTL fields/units, unique result paths, dashboard output requirements and aggregate-sample pitfalls. Use CLI load execution and disable expensive debug listeners, following Apache documentation. Do not assume that JMeter executes browser JavaScript or that a process exit proves SLO compliance. Preserve the existing tool rather than migrate the application.
+
+### RF-06 — Structural profile checks do not establish executable stop criteria
+
+Priority P1. Evidence: scripts/engineering_checks.py requires nonempty thresholds, abort_conditions and generator_limits; it does not validate tool-specific executable mappings or prove an abort mechanism is wired. This is consistent with its structural-only disclaimer. Suggestion: add a pre-execution mapping from each approved threshold/abort condition to a supported runner check, owner or manual stop procedure, and report unmapped conditions before launching. Do not report an abort as enforced merely because it appears in JSON.
+
+### RF-07 — User-pasted evidence needs provenance and completeness handling
+
+Priority P1. Evidence: contracts/ENGINEERING.md covers tool/query provenance but has no explicit handoff for the newly chosen paste fallback. Suggestion: retain user-provided source, time window, collection time, query and filters, omitted fields, counts/continuation markers, units and redaction status. Identify unknown fields without guessing, retain conflicting results separately and request only the missing critical slice. No synthetic trace IDs, invented totals or confirmed RCA from a truncated excerpt.
+
+### RF-08 — Runtime enforcement and client/live acceptance remain unresolved
+
+Priority P1. Evidence: existing EN-01/LV-01/PL-01 and verification.md. Suggestion: keep these findings open. Validate local simulated decisions now; provide a per-product bounded read and denial test checklist for later approved tenant validation. Host hooks or policy gateways require a chosen host and explicit implementation scope; documentation-only changes cannot close enforcement gaps.
+
+### Official sources checked for this follow-up
+
+- Dynatrace: [remote MCP capabilities and permissions](https://docs.dynatrace.com/docs/dynatrace-intelligence/dynatrace-mcp).
+- Splunk: [MCP Server for Splunk platform 1.3](https://help.splunk.com/en/splunk-cloud-platform/mcp-server-for-splunk-platform/1.3/about-mcp-server-for-splunk-platform).
+- AppDynamics: [26.7.0 MCP client and authentication](https://help.splunk.com/en/appdynamics-saas/mcp-server-integration/26.7.0/configure-an-mcp-client), [deployment](https://help.splunk.com/en/appdynamics-saas/mcp-server-integration/26.7.0/deploy-the-mcp-server).
+- Datadog: [observability MCP server](https://docs.datadoghq.com/mcp_server/), [toolsets and permissions](https://docs.datadoghq.com/mcp_server/tools/). Site-specific setup must be verified for the selected tenant; do not infer a universal URL.
+- NeoLoad: [Web meta-tool discovery](https://docs.tricentis.com/neoload-web-v2/en-us/content/ai_integration/mcp_meta_tool.htm), [User Path MCP client actions](https://docs.tricentis.com/neoload-latest/en-us/content/reference_guide/mcp_actions.htm). These are different capabilities.
+- JMeter: [CLI execution](https://jmeter.apache.org/usermanual/get-started.html), [best practices](https://jmeter.apache.org/usermanual/best-practices.html), [dashboard generation](https://jmeter.apache.org/usermanual/generating-dashboard).
+
+
+### Follow-up implementation status — 17 October 2026
+
+- **RF-01 — Procedure and checker added.** Shared fallback/query packet in contracts/EVIDENCE.md; explicit denial and uncertain-write handling. Next: Validate a bounded permitted read and query handoff for the chosen tenant.
+- **RF-02 — Skills and routing added.** Three focused skills/agents and generated client exports; provider registry/templates updated. Next: Verify actual client discovery and selected product capabilities.
+- **RF-03 — Sources refreshed.** Six product references dated 17 October; Splunk version boundaries and per-provider source dates retained. Next: Compare actual deployed release and refresh after tool/permission changes.
+- **RF-04 — Local synthetic tests added.** Twelve new tests cover normalized evidence outcomes and readiness mappings. Next: Live product/auth/protocol acceptance remains separate.
+- **RF-05 — JMeter procedure added.** Dedicated qa-jmeter with JMX/CLI/JTL/dashboard and data/runner guidance. Next: Validate selected JMX/plugins and stop behavior against an approved fixture/profile.
+- **RF-06 — Structural mapping check added.** Profile-bound readiness requires every threshold/abort mapping and verification reference; manual controls need owner/cadence/approval reference. Next: Actual runner control wiring/enforcement remains unverified and must be checked before launch.
+- **RF-07 — Evidence procedure and checker added.** Pasted results retain user-supplied provenance; failed, empty, partial and conflicting records remain limited. Next: Review real pasted/exported evidence semantics and redaction.
+- **RF-08 — Open — host/live validation.** No policy gateway, host hook or live connection was introduced. Next: Select approved host/tenant and complete the bounded acceptance checklist.
+
+These statuses distinguish added guidance, local structural checks and synthetic tests from runtime enforcement and live acceptance. No load run or vendor connection is claimed.
+
+
+## Full-stack architecture expansion — 17 October 2026
+
+Package 0.3.0 adds eight focused roles for a total of 37: qa-architect, qa-stack-discovery, qa-functional-architecture, qa-security, qa-accessibility, qa-resilience, qa-data-quality and qa-solution-architecture. The user selected end-to-end functional/nonfunctional scope and an assess-first strategy favoring compatible changes, with project strategy clarification when consequential and redesign justified by cost/risk evidence.
+
+Implemented guidance now covers stack/trust-boundary discovery, quality-domain scoping, requirement-to-test traceability, evidence-backed defect reporting, domain-specific verification and enterprise solution tradeoffs/validation. Existing QA/performance/RCA and product roles remain operational entry paths. Added local plan consistency checks with nine synthetic scenarios; these check records, not a real application.
+
+Remaining limitations stay open: native client acceptance, actual scanner/assistive-technology/runner capabilities, authorized target evidence, runtime permission/gate enforcement, screenshot redaction/capture and crash/budget issues documented above. Standards links and generated roles do not establish compliance or enterprise readiness. No real application's architecture, bugs, root causes or solution performance were assessed by installing these definitions.

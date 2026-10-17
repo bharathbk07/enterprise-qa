@@ -1,0 +1,11 @@
+# AppDynamics monitoring
+
+Sources checked 17 October 2026: [26.7.0 client/authentication](https://help.splunk.com/en/appdynamics-saas/mcp-server-integration/26.7.0/configure-an-mcp-client), [deployment](https://help.splunk.com/en/appdynamics-saas/mcp-server-integration/26.7.0/deploy-the-mcp-server). Documentation verification is not live connection acceptance. Check the actual Controller/server release and supported SaaS/on-prem combination; do not infer Virtual Appliance admin capabilities from APM monitoring.
+
+The documented server supports streamable HTTP and stdio. HTTP uses a Controller bearer token; live Analytics Events additionally needs its separate Events key. Stdio supports environment-bearer or documented OAuth credentials. Do not add Analytics credentials unless the selected operation needs them. The HTTP endpoint belongs to a deployed server, not an invented public vendor SaaS URL. Inspect the selected image/version and deployment requirements rather than installing a floating latest image.
+
+Discover actual tools. The guide uses list_apm_applications as a connection check; restrict acceptance to the approved account and retain only the selected application mapping. Follow with a permitted application/time-scoped metric or snapshot read if available. Never invoke administrative operations to prove connection.
+
+For API/export fallback select the Controller's official application/metric/snapshot API documented for that release. Resolve application, tier/node, transaction and metric paths before constructing a request. Use absolute event windows, chosen rollup/resolution, row/response limits and secret references outside command text. If API access is missing, give the user a Controller Metric Browser or transaction snapshot selection for the selected application/window and request aggregate rows with metric path, timestamp, unit, resolution and snapshot IDs. Analytics queries require their own permissions and schema; APM access does not imply them.
+
+Preserve metric rollups, partial snapshot capture, transaction/backend timing boundaries and timezone. A slow sampled snapshot supports a candidate mechanism, not population frequency or confirmed root cause. Apply references/EVIDENCE.md in the installed matching skill for fallback and pasted data. No live AppDynamics deployment was exercised by this package.

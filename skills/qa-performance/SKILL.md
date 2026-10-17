@@ -10,3 +10,7 @@ Read `references/CONTRACT.md`. Preserve existing k6/JMeter/NeoLoad conventions; 
 For script creation ask only necessary missing design inputs. Before any execution ask missing target/environment, VUs or arrival/request rate, stages/duration, request mix, warmup, thresholds (latency percentiles, error rate, throughput), resource limits, abort criteria and permitted side effects. Present and confirm complete run profile, storing approval timestamp/profile hash. Script generation is not run approval. Run only within approved limits, stop on configured abort conditions. Write scripts plus run instructions and preserve raw results; hand to qa-analysis.
 
 Full engineering work routes to qa-performance-engineering; NeoLoad tool operations route to qa-mcp-neoload. When applying engineering run profiles also read `references/ENGINEERING.md`.
+
+Delegate selected JMeter plan/CLI/JTL work to qa-jmeter; keep tool selection and complete run-profile approval here. For missing execution access or user-pasted results read `references/EVIDENCE.md`. Map approved thresholds/abort conditions to verified mechanisms with readiness preflight before execution; a JSON condition is not an enforced stop.
+
+For profile-bound readiness record fields read `references/RECORDS.md`.

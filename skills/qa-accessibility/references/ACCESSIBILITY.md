@@ -1,0 +1,9 @@
+# Accessibility verification
+
+References checked 17 October 2026: [WCAG 2.2 Recommendation](https://www.w3.org/TR/WCAG22/), [W3C evaluation overview](https://www.w3.org/WAI/test-evaluate/). Use the project's specified version/level and exact verified criterion IDs. WCAG 2.2 is a reference, not an automatically adopted legal target. Do not copy the full standard into reports or claim conformance from a subset of checks.
+
+Select representative complete user processes and relevant page states, including validation/errors, dialogs, loading, dynamic updates and recovery. Inspect semantic structure, names/roles/values, label/instruction relationships, keyboard operability, focus order/visibility/restoration, alternatives, contrast, zoom/reflow and user preferences as applicable. Confirm actual assistive technology/browser/version support; headless DOM checks cannot substitute for every manual interaction or screen-reader behavior.
+
+For each result capture criterion/version, tested page/component/state, method/technology, expected versus actual, safe reproduction and evidence. Separate automated rule matches, manually checked criteria and untested/blocked criteria. Tool rule IDs are not automatically WCAG criterion IDs. A screenshot may show appearance but does not prove programmatic semantics or announcements. Use dedicated spawned browsers for UI work and human checks where the available tool cannot observe the behavior.
+
+Recommend semantic and interaction fixes consistent with existing component conventions. Include regression tests for keyboard/assistive flows and ordinary pointer flows without hiding focus or removing necessary functionality. Record screen-reader/locale/device gaps explicitly. Application edits require the concrete fix approval workflow; publication follows the existing visibility/redaction rules.

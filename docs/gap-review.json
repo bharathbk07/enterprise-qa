@@ -225,5 +225,80 @@
       "resolution": "Generated native role adapters and portable fallbacks; validated source/metadata locally.",
       "next_action": "Run a cross-platform/client acceptance matrix; verify duplicate-skill discovery and supported secret/auth behavior."
     }
-  ]
+  ],
+  "follow_up": {
+    "review_date": "2026-10-17",
+    "package_version": "0.2.6",
+    "skills": 29,
+    "agents": 29,
+    "basis": "Source review and official documentation; local normalized-evidence tests; no live product acceptance",
+    "findings": [
+      {
+        "id": "RF-01",
+        "status": "Procedure and checker added",
+        "resolution": "Shared fallback/query packet in contracts/EVIDENCE.md; explicit denial and uncertain-write handling.",
+        "next_action": "Validate a bounded permitted read and query handoff for the chosen tenant."
+      },
+      {
+        "id": "RF-02",
+        "status": "Skills and routing added",
+        "resolution": "Three focused skills/agents and generated client exports; provider registry/templates updated.",
+        "next_action": "Verify actual client discovery and selected product capabilities."
+      },
+      {
+        "id": "RF-03",
+        "status": "Sources refreshed",
+        "resolution": "Six product references dated 17 October; Splunk version boundaries and per-provider source dates retained.",
+        "next_action": "Compare actual deployed release and refresh after tool/permission changes."
+      },
+      {
+        "id": "RF-04",
+        "status": "Local synthetic tests added",
+        "resolution": "Twelve new tests cover normalized evidence outcomes and readiness mappings.",
+        "next_action": "Live product/auth/protocol acceptance remains separate."
+      },
+      {
+        "id": "RF-05",
+        "status": "JMeter procedure added",
+        "resolution": "Dedicated qa-jmeter with JMX/CLI/JTL/dashboard and data/runner guidance.",
+        "next_action": "Validate selected JMX/plugins and stop behavior against an approved fixture/profile."
+      },
+      {
+        "id": "RF-06",
+        "status": "Structural mapping check added",
+        "resolution": "Profile-bound readiness requires every threshold/abort mapping and verification reference; manual controls need owner/cadence/approval reference.",
+        "next_action": "Actual runner control wiring/enforcement remains unverified and must be checked before launch."
+      },
+      {
+        "id": "RF-07",
+        "status": "Evidence procedure and checker added",
+        "resolution": "Pasted results retain user-supplied provenance; failed, empty, partial and conflicting records remain limited.",
+        "next_action": "Review real pasted/exported evidence semantics and redaction."
+      },
+      {
+        "id": "RF-08",
+        "status": "Open \u2014 host/live validation",
+        "resolution": "No policy gateway, host hook or live connection was introduced.",
+        "next_action": "Select approved host/tenant and complete the bounded acceptance checklist."
+      }
+    ]
+  },
+  "architecture_extension": {
+    "date": "2026-10-17",
+    "package_version": "0.3.0",
+    "skills": 37,
+    "agents": 37,
+    "new_roles": [
+      "qa-architect",
+      "qa-stack-discovery",
+      "qa-functional-architecture",
+      "qa-security",
+      "qa-accessibility",
+      "qa-resilience",
+      "qa-data-quality",
+      "qa-solution-architecture"
+    ],
+    "validation": "Nine synthetic quality-plan consistency tests; not a live application assessment",
+    "residual_gaps": "Existing enforcement, data handling, crash/capture and client/live acceptance findings remain open."
+  }
 }

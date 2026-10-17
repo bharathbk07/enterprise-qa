@@ -17,3 +17,14 @@ env_http_headers = { "Authorization" = "NEOLOAD_AUTH_HEADER" }
 [mcp_servers.atlassian]
 url = "https://mcp.atlassian.com/v2/mcp"
 enabled = false
+
+# Deployed AppDynamics HTTP server; optional Analytics key is configured only when needed.
+[mcp_servers.appdynamics]
+url = "https://replace-appdynamics-mcp-endpoint.invalid/mcp"
+enabled = false
+bearer_token_env_var = "APPD_API_TOKEN"
+
+# Confirm actual Datadog site endpoint and supported client OAuth flow before activation.
+[mcp_servers.datadog]
+url = "https://replace-datadog-site-mcp-endpoint.invalid"
+enabled = false

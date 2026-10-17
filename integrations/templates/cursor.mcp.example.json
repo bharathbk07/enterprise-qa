@@ -11,6 +11,12 @@
     },
     "atlassian": {
       "url": "https://mcp.atlassian.com/v2/mcp"
+    },
+    "appdynamics": {
+      "url": "https://replace-appdynamics-mcp-endpoint.invalid/mcp"
+    },
+    "datadog": {
+      "url": "https://replace-datadog-site-mcp-endpoint.invalid"
     }
   }
 }

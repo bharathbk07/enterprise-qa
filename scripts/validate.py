@@ -30,10 +30,21 @@ for path in ROOT.rglob('*.json'):
     if any(x in path.parts for x in ('node_modules','.npm-cache','dist','__pycache__')):continue
     json.loads(path.read_text())
 for platform,key in [('cursor','mcpServers'),('claude-code','mcpServers'),('vscode-copilot','servers')]:
-    document=json.loads((ROOT/f'integrations/templates/{platform}.mcp.example.json').read_text());assert set(document[key])=={'splunk','dynatrace','neoload','atlassian'}
+    document=json.loads((ROOT/f'integrations/templates/{platform}.mcp.example.json').read_text());assert set(document[key])=={p['id'] for p in json.loads((ROOT/'integrations/catalog.json').read_text())['providers']}
     assert all(v['url'].startswith('https://') for v in document[key].values())
     assert 'NODE_TLS_REJECT_UNAUTHORIZED' not in json.dumps(document)
-tomllib.loads((ROOT/'integrations/templates/codex.config.example.toml').read_text())
+registry=json.loads((ROOT/'integrations/catalog.json').read_text())
+for provider in registry['providers']:
+    assert all(role in agents for role in provider['product_roles'])
+    if 'operational_reference' in provider:assert (ROOT/provider['operational_reference']).is_file()
+for runner in registry.get('local_runners',[]):assert runner['role'] in agents and (ROOT/runner['reference']).is_file()
+assert set(tomllib.loads((ROOT/'integrations/templates/codex.config.example.toml').read_text())['mcp_servers'])=={p['id'] for p in registry['providers']}
+for base in (ROOT/'integrations',ROOT/'skills/qa-setup/references'):
+    files=base.glob('*.md')
+    for path in files:
+        for target in re.findall(r'\]\(([^)]+)\)',path.read_text()):
+            if '://' not in target and not target.startswith('#'):assert (path.parent/target.split('#')[0]).is_file(),(path,target)
+
 owned=json.loads((ROOT/'distribution.json').read_text())['files'];assert len({x['path'] for x in owned})==len(owned)
 for entry in owned:
     path=ROOT/entry['path'];assert path.resolve().is_relative_to(ROOT) and path.is_file();assert hashlib.sha256(path.read_bytes()).hexdigest()==entry['sha256'],entry['path']

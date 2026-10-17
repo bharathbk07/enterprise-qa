@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "kind": "portable-qa-agent-manifest",
   "native_runtime_config": false,
-  "entrypoint": "qa-orchestrate",
+  "entrypoint": "qa-architect",
   "execution": "sequential-by-default",
   "agents": [
     {
@@ -160,6 +160,72 @@
       "skill": "qa-mcp-confluence",
       "prompt": "agents/qa-mcp-confluence.md",
       "description": "Prepare application knowledge, performance/RCA documents and runbooks, then publish version-aware Confluence changes after explicit approval."
+    },
+    {
+      "id": "qa-mcp-appdynamics",
+      "description": "Investigate AppDynamics application, transaction, snapshot and metric evidence through discovered MCP tools or scoped official API/export fallbacks.",
+      "skill": "qa-mcp-appdynamics",
+      "prompt": "agents/qa-mcp-appdynamics.md"
+    },
+    {
+      "id": "qa-mcp-datadog",
+      "description": "Investigate Datadog APM, logs and metrics through the observability MCP server or scoped official API/export fallbacks.",
+      "skill": "qa-mcp-datadog",
+      "prompt": "agents/qa-mcp-datadog.md"
+    },
+    {
+      "id": "qa-jmeter",
+      "description": "Inspect, create or update JMeter JMX plans, prepare approved CLI load runs and assess JTL/dashboard evidence without migrating existing tools.",
+      "skill": "qa-jmeter",
+      "prompt": "agents/qa-jmeter.md"
+    },
+    {
+      "id": "qa-architect",
+      "description": "Coordinate full-stack functional and nonfunctional quality architecture, testing, defect investigation, RCA and evidence-backed enterprise solutions.",
+      "skill": "qa-architect",
+      "prompt": "agents/qa-architect.md"
+    },
+    {
+      "id": "qa-stack-discovery",
+      "description": "Map an existing frontend, API/service, data, integration and infrastructure stack with implementation evidence and deployment uncertainty.",
+      "skill": "qa-stack-discovery",
+      "prompt": "agents/qa-stack-discovery.md"
+    },
+    {
+      "id": "qa-functional-architecture",
+      "description": "Design full-stack functional quality strategy and trace business rules, state transitions, API contracts and data invariants to tests and reproducible defects.",
+      "skill": "qa-functional-architecture",
+      "prompt": "agents/qa-functional-architecture.md"
+    },
+    {
+      "id": "qa-security",
+      "description": "Review full-stack threat boundaries and security controls, plan scoped verification and report reproducible vulnerabilities with remediation evidence.",
+      "skill": "qa-security",
+      "prompt": "agents/qa-security.md"
+    },
+    {
+      "id": "qa-accessibility",
+      "description": "Assess web accessibility through scoped automated and manual checks, evidence-linked criteria and practical frontend remediation plans.",
+      "skill": "qa-accessibility",
+      "prompt": "agents/qa-accessibility.md"
+    },
+    {
+      "id": "qa-resilience",
+      "description": "Assess service and infrastructure resilience, failure handling and recoverability using measurable reliability objectives and scoped test plans.",
+      "skill": "qa-resilience",
+      "prompt": "agents/qa-resilience.md"
+    },
+    {
+      "id": "qa-data-quality",
+      "description": "Assess database, cache, queue and event correctness, consistency, isolation and migration risks with evidence-backed tests and remediation plans.",
+      "skill": "qa-data-quality",
+      "prompt": "agents/qa-data-quality.md"
+    },
+    {
+      "id": "qa-solution-architecture",
+      "description": "Propose compatible enterprise solutions and justified redesign options with measurable quality goals, tradeoffs, delivery stages and rollback plans.",
+      "skill": "qa-solution-architecture",
+      "prompt": "agents/qa-solution-architecture.md"
     }
   ],
   "handoff_contract": {
@@ -190,7 +256,7 @@
     "antigravity",
     "chatgpt-portable"
   ],
-  "package_version": "0.2.5",
+  "package_version": "0.3.0",
   "browser_policy": {
     "mode": "dedicated-spawned-only",
     "integrated_browser_allowed": false,
@@ -242,5 +308,40 @@
     "unsupported_native_hosts": "reference-only; native acceptance must be verified",
     "regenerate_after_playwright_upgrade": true,
     "preserve_framework_mcp_and_ci": true
+  },
+  "evidence_fallback": {
+    "order": [
+      "mcp",
+      "approved-official-api-or-local-export",
+      "user-run-query-or-command-and-pasted-results"
+    ],
+    "denial_bypass_allowed": false,
+    "pasted_results_are_live_tool_receipts": false,
+    "local_checks": "scripts/evidence_checks.py",
+    "live_acceptance_required": true
+  },
+  "architecture_scope": {
+    "functional_and_nonfunctional": true,
+    "layers": [
+      "frontend",
+      "apis-services",
+      "databases",
+      "caches-queues-events",
+      "integrations",
+      "infrastructure-delivery",
+      "observability"
+    ],
+    "quality_domains": [
+      "functional-correctness",
+      "performance",
+      "security",
+      "accessibility",
+      "data-integrity",
+      "resilience-recoverability",
+      "maintainability-operability"
+    ],
+    "strategy": "assess-first-compatible-improvements; ask project strategy when consequential; redesign only with evidence-backed cost/risk justification",
+    "legacy_qa_entrypoint": "qa-orchestrate",
+    "runtime_enforcement": false
   }
 }

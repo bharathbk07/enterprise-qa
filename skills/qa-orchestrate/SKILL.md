@@ -15,3 +15,5 @@ Performance-engineering or incident/RCA requests route to qa-engineering. Tool-l
 Recording-to-knowledge handoff must resolve a user-supplied or user-confirmed flow name and produce an illustrated manual flow document. Route naming and screenshot-to-step mapping to qa-knowledge; retain gaps/readiness in workflow.json. Do not mark documentation complete when only recording metadata or screenshot links without the required inline images exist.
 
 Use summary-first clarification from `references/INTERACTION.md`: one combined review resolves flow name, steps, completion and minor uncertainties. Reuse confirmed preferences; ask additional questions only for essential gaps or required approval. Do not run a fixed discovery questionnaire or ask specialists to repeat answered questions.
+
+Broader full-stack quality/solution architecture requests go to qa-architect with the existing application context and a concrete scope. Do not forward a delegated recording/testing task back to the architect; complete it and return its artifacts. Existing QA-only entry usage remains supported.

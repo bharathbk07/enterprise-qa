@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.3.0 — 2026-10-17
+
+- Evolved the toolkit into a full-stack functional/nonfunctional quality architect with eight focused roles, bringing the total to 37.
+- Added assess-first project strategy, compatible-improvement defaults, quality traceability and measurable enterprise solution guidance.
+- Preserved existing QA/performance/RCA/product integrations, dedicated-browser policy, execution gates and explicit fix/deployment boundaries.
+- Added local quality-plan consistency checks and synthetic tests; plans do not claim test execution, certification or runtime enforcement.
+
+## 0.2.6 — 2026-10-17
+
+- Added dedicated AppDynamics, Datadog and JMeter skills/agents, scoped routing, official product references and manual-merge templates.
+- Added shared MCP/API/export/user-query fallback with pasted-result provenance and explicit incomplete/failed evidence.
+- Added local synthetic evidence/failure checks and profile-bound threshold/abort readiness mapping; these do not claim live acceptance or runtime enforcement.
+- Reviewed eight reliability gaps; retained larger enforcement and live-client validation work as open.
+
 ## 0.2.5 — 2026-10-15
 
 - Required official Playwright planner/generator/healer initialization during setup, alongside toolkit QA agents.

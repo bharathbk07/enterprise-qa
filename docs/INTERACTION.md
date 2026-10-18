@@ -36,3 +36,8 @@ Combining flow review does not authorize a new recording privacy choice, retaine
 ## Persisted review state
 
 `workflow.json`/`clarification.json` track summary review status, proposed and confirmed name/completion, inferred step/evidence mapping, minor uncertainties, essential blockers, answers and confirmation references. Keep the existing step cursor for compatibility, but it no longer means every recorded step must trigger a question. Drafts remain draft when name/completion or essential rules are unconfirmed. Dedicated spawned-browser and inline screenshot requirements remain unchanged.
+
+
+## Work continuity without another questionnaire
+
+For the same ongoing work, use its matched work ID and mutable note; do not ask the user to repeat context or choose a new filename. Create a separate note only for distinct work whose context will be reused, and skip one-off answers. Check existing application knowledge, work/issue IDs, scoped preferences and source freshness before questioning. If identity/scope is genuinely ambiguous, ask one guided question with the proposed existing work and meaningful alternatives/free text, then continue with the answer. Do not turn note maintenance into a mandatory flow review or new approval step. See the installed knowledge role's KNOWLEDGE.md reference for full continuity rules.

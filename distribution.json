@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "package_version": "0.3.1",
+  "package_version": "0.3.2",
   "files": [
     {
       "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
@@ -20,7 +20,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "4016847b862a0570df58928d2821baae0470a89dee2283b06a25481b306ddfe1"
+      "sha256": "01e20b0c14931496b6db78b4431e8f50900dccc5f346c9fbbadc49336c5a1fab"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -36,7 +36,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "808c78fb9c4b6394a964bc744bf7ce8cd6bdb072090984f3208d316d6566712c"
+      "sha256": "d3c4083827129d80370eeaecd53cac9bbd771b4328180702bec8f3aeaaf94d99"
     },
     {
       "path": "SECURITY.md",
@@ -116,7 +116,7 @@
     },
     {
       "path": "adapters/claude-code/agents/qa-knowledge.md",
-      "sha256": "9557c5630593af3bb526050b5267b8e66a57958872918908bd8d2177149eaf53"
+      "sha256": "885a88521c4d03f1761925423ff749efe6b2d89f0d4828cabe3b586bcfe20b7d"
     },
     {
       "path": "adapters/claude-code/agents/qa-mcp-appdynamics.md",
@@ -272,7 +272,7 @@
     },
     {
       "path": "adapters/cursor/agents/qa-knowledge.md",
-      "sha256": "968fcefea2e0a1a9f774967f949542fbbdc9c9db5c73786fae672d65ba9f8f19"
+      "sha256": "e64a771e9ca56ba6008237bbbf2a97c427d94069a4ff14e32b3117f703ab6385"
     },
     {
       "path": "adapters/cursor/agents/qa-mcp-appdynamics.md",
@@ -424,7 +424,7 @@
     },
     {
       "path": "adapters/vscode-copilot/agents/qa-knowledge.agent.md",
-      "sha256": "ae245709fea0078edc3399ecd0fbc42c426908070f772c03c598864f649b30c8"
+      "sha256": "6ad48e35fb92a5941f5387efae75820b905994403b18ee6b410159acbe7a7b52"
     },
     {
       "path": "adapters/vscode-copilot/agents/qa-mcp-appdynamics.agent.md",
@@ -520,7 +520,7 @@
     },
     {
       "path": "agent-manifest.json",
-      "sha256": "8dae142274cd61f18ca6b7f229a2f4021d519df884dfe3530e2939ea21c5a9dc"
+      "sha256": "c5e020de8eca023c9476d6fd55360a5c9a0fac94b6807a1cee5d14608a15478e"
     },
     {
       "path": "agents/LICENSE",
@@ -580,7 +580,7 @@
     },
     {
       "path": "agents/qa-knowledge.md",
-      "sha256": "33ac8d12af0b93e07b4304d33bca01c274cdfb122b9e5209db195e0e8ae0bea3"
+      "sha256": "ded83b41a2f6b48738d4776cdebd42ef7af1309e8d27dff3ac1ae978e133fce7"
     },
     {
       "path": "agents/qa-mcp-appdynamics.md",
@@ -692,11 +692,11 @@
     },
     {
       "path": "contracts/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "contracts/DATA-MODEL.md",
-      "sha256": "31e9dfbb266622f6eeebcc8651b8989a2532617dafcb5da97ea6fc3801aa18ab"
+      "sha256": "973108fda867c57a159b662c1cd3a9d6fd3675801fead9e38cbaad07ba43b134"
     },
     {
       "path": "contracts/ENGINEERING-RECORDS.md",
@@ -713,6 +713,10 @@
     {
       "path": "contracts/FLOWS.md",
       "sha256": "cc97f6f03aa6fb08979ba7aafcf36932cc14e84e5326fa3c249c9c868b7441d5"
+    },
+    {
+      "path": "contracts/KNOWLEDGE.md",
+      "sha256": "5aee1e7c42a4a4824610fd528e7459f620b37546e20763770123219211f43da7"
     },
     {
       "path": "contracts/NATIVE-EXECUTION.md",
@@ -748,7 +752,7 @@
     },
     {
       "path": "docs/EXAMPLE-WALKTHROUGH.md",
-      "sha256": "9b4bd9f7a50b4deb870a9242d7649eab4a7933d562b749f09eca50388bf02af0"
+      "sha256": "d9386178d0d310831c732e44ec7b053c2ace9c35f2ea1a881f76fa36e49329ad"
     },
     {
       "path": "docs/FLOW-DOCUMENT.md",
@@ -756,7 +760,7 @@
     },
     {
       "path": "docs/FULLSTACK-ARCHITECT.md",
-      "sha256": "75c38d283e4d9e20370e885dcf9abf794b9cd02e8503f66322592e9555c12063"
+      "sha256": "ce4a08955ab25753a017612f9951d53fe55da477b80611b4946df214336d93ef"
     },
     {
       "path": "docs/GAP-REVIEW.md",
@@ -772,7 +776,7 @@
     },
     {
       "path": "docs/INTERACTION.md",
-      "sha256": "65397b7490c47f495df29a00221eb97c6701317d23639b60f70ae03c7766d6e4"
+      "sha256": "773bc7a55a765c2ef8ebf8199ba75565e8162320b50293e0e3ae8985da20d3f4"
     },
     {
       "path": "docs/JMETER.md",
@@ -928,7 +932,7 @@
     },
     {
       "path": "scripts/sync_package.py",
-      "sha256": "bcfa6ea1ee07b8bcad1cc32be26a6e939e80eecb9736d5411de2ebe958cab83c"
+      "sha256": "0b888dc9375f8d5f1d5a6dbe5baadf0718328c38e2e62652aafd08e5f2b16ef2"
     },
     {
       "path": "scripts/test_architecture.py",
@@ -964,7 +968,7 @@
     },
     {
       "path": "skill-definition.json",
-      "sha256": "7e2be11a4efef04958f66b4afff6fe2e120d31ec363120e2963ec91ec9129e9e"
+      "sha256": "654b15f7ad859d663db8e30f32ffa2801f3a0f7e69c4a7f793682c90d79f4e1a"
     },
     {
       "path": "skills/qa-accessibility/LICENSE",
@@ -984,7 +988,7 @@
     },
     {
       "path": "skills/qa-accessibility/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-analysis/LICENSE",
@@ -996,7 +1000,7 @@
     },
     {
       "path": "skills/qa-analysis/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-analysis/references/EVIDENCE.md",
@@ -1012,7 +1016,7 @@
     },
     {
       "path": "skills/qa-architect/SKILL.md",
-      "sha256": "ee6ce7f0e043079a74e8d42ceb46112f53754990bc8ff085574cee4a24eb5087"
+      "sha256": "2c963c347c4875f7d7a8269028aedabdd34a4f8058640e5108754203f170d410"
     },
     {
       "path": "skills/qa-architect/references/ARCHITECTURE-RECORDS.md",
@@ -1024,7 +1028,11 @@
     },
     {
       "path": "skills/qa-architect/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
+    },
+    {
+      "path": "skills/qa-architect/references/KNOWLEDGE.md",
+      "sha256": "5aee1e7c42a4a4824610fd528e7459f620b37546e20763770123219211f43da7"
     },
     {
       "path": "skills/qa-automation/LICENSE",
@@ -1040,7 +1048,7 @@
     },
     {
       "path": "skills/qa-automation/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-automation/references/PLAYWRIGHT-AGENTS.md",
@@ -1056,7 +1064,7 @@
     },
     {
       "path": "skills/qa-bottleneck-analysis/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-bottleneck-analysis/references/ENGINEERING.md",
@@ -1076,7 +1084,7 @@
     },
     {
       "path": "skills/qa-data-quality/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-data-quality/references/DATA.md",
@@ -1088,11 +1096,11 @@
     },
     {
       "path": "skills/qa-engineering/SKILL.md",
-      "sha256": "263132e8e2ca4c3e760b4e5bdc0d953e4ea693671c4eb90d3740ce53f9ec79dd"
+      "sha256": "f066eef02ad4e0a10cf5fb24591106135c808eb064a97a1a4b2e00268e744b1f"
     },
     {
       "path": "skills/qa-engineering/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-engineering/references/ENGINEERING.md",
@@ -1101,6 +1109,10 @@
     {
       "path": "skills/qa-engineering/references/EVIDENCE.md",
       "sha256": "dda55281df9491c0b15fcc3f1826d8692192d68a4f491589a1b83dcb5377c44f"
+    },
+    {
+      "path": "skills/qa-engineering/references/KNOWLEDGE.md",
+      "sha256": "5aee1e7c42a4a4824610fd528e7459f620b37546e20763770123219211f43da7"
     },
     {
       "path": "skills/qa-fix-implementation/LICENSE",
@@ -1116,7 +1128,7 @@
     },
     {
       "path": "skills/qa-fix-implementation/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-fix-implementation/references/ENGINEERING.md",
@@ -1136,7 +1148,7 @@
     },
     {
       "path": "skills/qa-fix-proposal/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-fix-proposal/references/ENGINEERING.md",
@@ -1156,7 +1168,7 @@
     },
     {
       "path": "skills/qa-framework/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-functional-architecture/LICENSE",
@@ -1172,7 +1184,7 @@
     },
     {
       "path": "skills/qa-functional-architecture/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-jmeter/LICENSE",
@@ -1184,7 +1196,7 @@
     },
     {
       "path": "skills/qa-jmeter/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-jmeter/references/ENGINEERING.md",
@@ -1208,11 +1220,11 @@
     },
     {
       "path": "skills/qa-knowledge/SKILL.md",
-      "sha256": "7d10a9f357e998d099ccecad0494f7c17009f1c71a33d5ceffa2d8bdfc695718"
+      "sha256": "b2ba91eb55522167e46d142472e7414b7f8a903d58144d473a046bb5d2568aa9"
     },
     {
       "path": "skills/qa-knowledge/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-knowledge/references/FLOW-DOCUMENT.md",
@@ -1224,7 +1236,11 @@
     },
     {
       "path": "skills/qa-knowledge/references/INTERACTION.md",
-      "sha256": "65397b7490c47f495df29a00221eb97c6701317d23639b60f70ae03c7766d6e4"
+      "sha256": "773bc7a55a765c2ef8ebf8199ba75565e8162320b50293e0e3ae8985da20d3f4"
+    },
+    {
+      "path": "skills/qa-knowledge/references/KNOWLEDGE.md",
+      "sha256": "5aee1e7c42a4a4824610fd528e7459f620b37546e20763770123219211f43da7"
     },
     {
       "path": "skills/qa-mcp-appdynamics/LICENSE",
@@ -1240,7 +1256,7 @@
     },
     {
       "path": "skills/qa-mcp-appdynamics/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-mcp-appdynamics/references/ENGINEERING.md",
@@ -1264,7 +1280,7 @@
     },
     {
       "path": "skills/qa-mcp-confluence/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-mcp-confluence/references/ENGINEERING.md",
@@ -1284,7 +1300,7 @@
     },
     {
       "path": "skills/qa-mcp-datadog/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-mcp-datadog/references/ENGINEERING.md",
@@ -1308,7 +1324,7 @@
     },
     {
       "path": "skills/qa-mcp-dynatrace/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-mcp-dynatrace/references/ENGINEERING.md",
@@ -1332,7 +1348,7 @@
     },
     {
       "path": "skills/qa-mcp-jira/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-mcp-jira/references/ENGINEERING.md",
@@ -1352,7 +1368,7 @@
     },
     {
       "path": "skills/qa-mcp-neoload/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-mcp-neoload/references/ENGINEERING.md",
@@ -1376,7 +1392,7 @@
     },
     {
       "path": "skills/qa-mcp-splunk/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-mcp-splunk/references/ENGINEERING.md",
@@ -1392,15 +1408,19 @@
     },
     {
       "path": "skills/qa-orchestrate/SKILL.md",
-      "sha256": "ad210cd34463cf621890b8ca2c4b6058bdc82a0f805496fe95ac17c4783c933d"
+      "sha256": "ea73444f4aff5cac57d528b6a6b03f8ca8792b9af586ce2fc80d5f8d7dfe0cdb"
     },
     {
       "path": "skills/qa-orchestrate/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-orchestrate/references/INTERACTION.md",
-      "sha256": "65397b7490c47f495df29a00221eb97c6701317d23639b60f70ae03c7766d6e4"
+      "sha256": "773bc7a55a765c2ef8ebf8199ba75565e8162320b50293e0e3ae8985da20d3f4"
+    },
+    {
+      "path": "skills/qa-orchestrate/references/KNOWLEDGE.md",
+      "sha256": "5aee1e7c42a4a4824610fd528e7459f620b37546e20763770123219211f43da7"
     },
     {
       "path": "skills/qa-performance/LICENSE",
@@ -1412,7 +1432,7 @@
     },
     {
       "path": "skills/qa-performance/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-performance/references/ENGINEERING.md",
@@ -1436,7 +1456,7 @@
     },
     {
       "path": "skills/qa-performance-engineering/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-performance-engineering/references/ENGINEERING.md",
@@ -1460,7 +1480,7 @@
     },
     {
       "path": "skills/qa-performance-retest/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-performance-retest/references/ENGINEERING.md",
@@ -1480,7 +1500,7 @@
     },
     {
       "path": "skills/qa-playwright/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-playwright/references/PLAYWRIGHT-AGENTS.md",
@@ -1496,7 +1516,7 @@
     },
     {
       "path": "skills/qa-rca/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-rca/references/ENGINEERING.md",
@@ -1520,7 +1540,7 @@
     },
     {
       "path": "skills/qa-recording/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-recording/references/RECORDER.md",
@@ -1548,7 +1568,7 @@
     },
     {
       "path": "skills/qa-reporting/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-resilience/LICENSE",
@@ -1564,7 +1584,7 @@
     },
     {
       "path": "skills/qa-resilience/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-resilience/references/RESILIENCE.md",
@@ -1584,7 +1604,7 @@
     },
     {
       "path": "skills/qa-security/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-security/references/SECURITY.md",
@@ -1604,7 +1624,7 @@
     },
     {
       "path": "skills/qa-setup/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-setup/references/DATADOG.md",
@@ -1660,7 +1680,7 @@
     },
     {
       "path": "skills/qa-solution-architecture/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-stack-discovery/LICENSE",
@@ -1676,7 +1696,7 @@
     },
     {
       "path": "skills/qa-stack-discovery/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-telemetry-correlation/LICENSE",
@@ -1688,7 +1708,7 @@
     },
     {
       "path": "skills/qa-telemetry-correlation/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-telemetry-correlation/references/ENGINEERING.md",
@@ -1708,7 +1728,7 @@
     },
     {
       "path": "skills/qa-test-design/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-test-design/references/FLOWS.md",
@@ -1732,7 +1752,7 @@
     },
     {
       "path": "skills/qa-test-execution/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-test-execution/references/FLOWS.md",
@@ -1752,7 +1772,7 @@
     },
     {
       "path": "skills/qa-workload-model/references/CONTRACT.md",
-      "sha256": "fe6f44f57f3c222f0d9f7111a834176889ebffcad020697714d6945d33ebd3da"
+      "sha256": "df8564dcacb433285445813ca5d7e8c0e94a83d94fa459d852801b99bc0be94d"
     },
     {
       "path": "skills/qa-workload-model/references/ENGINEERING.md",
@@ -1760,7 +1780,7 @@
     },
     {
       "path": "verification.md",
-      "sha256": "1094105ab396b0cba83d903b901e805a13a89fbdffae3a1ed9ea06255606c882"
+      "sha256": "3bd716e598a0fe56682b3f5aaf44fb8d422014958a5f97c72589d03104c78988"
     }
   ]
 }

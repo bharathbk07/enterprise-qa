@@ -58,3 +58,8 @@ qa-test-execution now has native-runner mode for selected existing unit/componen
 Common instructions now retain identity, evidence, permissions and essential browser boundaries. Recording, detailed browser ownership, manual flows, automation and setup rules are loaded from the selected mode reference. Structured plan fields are in [ARCHITECTURE-RECORDS.md](../contracts/ARCHITECTURE-RECORDS.md); security/accessibility/domain reviews need not load the full schema. A validated solution must verify every requirement attached to its source findings, alongside any additional regression checks.
 
 See the [illustrative checkout walkthrough](EXAMPLE-WALKTHROUGH.md) for a complete usage example covering cases, execution, RCA, solution design and honest report states.
+
+
+## Remembering useful work
+
+The architect can reuse [application/work knowledge](../contracts/KNOWLEDGE.md) through qa-knowledge without recording a browser flow. Continue the same work in its existing note; create a separate note for a distinct investigation only if it will help later sessions. Canonical application knowledge stays one file per application, with references to relevant work. Saved notes retain sourced facts, decisions, attempts and next actions, not credentials or permission grants. Routine lookups do not create a note. Ask one short guided question only when identity or an essential fact is genuinely unclear.

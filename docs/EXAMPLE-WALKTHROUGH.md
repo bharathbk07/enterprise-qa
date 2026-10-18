@@ -225,3 +225,8 @@ If you copy this record to a separate local file, `scripts/architecture_checks.p
 - [Manual flow/screenshot guidance](FLOW-DOCUMENT.md)
 - [Installation and managed updates](INSTALLATION.md)
 - [Verification and remaining limitations](../verification.md)
+
+
+## Continuing this kind of work later
+
+For a real ongoing checkout investigation, qa-knowledge can update its existing work note with sourced findings, decisions, evidence links and the next action. A second session or a different monitoring tool does not start a duplicate note. A separate accessibility investigation may have its own note if ongoing context will be useful, linked to the same application's canonical knowledge. An isolated query need not create any file. No real Harbor Orders work note is created by this illustrative guide. See [knowledge continuity](../contracts/KNOWLEDGE.md).

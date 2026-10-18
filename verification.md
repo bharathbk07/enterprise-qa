@@ -96,3 +96,15 @@ Guarded installation rechecks destination content/path/mode and ownership receip
 # Example document — 17 October 2026
 
 Added docs/EXAMPLE-WALKTHROUGH.md: a fictional checkout use case spanning architecture, 20 planned manual cases, native execution, automation prerequisites, performance, monitoring fallback, RCA, solution review and honest report states. No application was tested for the example; there are no fabricated execution results, screenshots, measurements or approvals. Its embedded JSON passed architecture consistency checks with recorded_summary incomplete, all local Markdown links resolved and the table contains 20 planned cases. The document is linked from the README and architect guide and included in the reviewed distribution. The 72-test results above apply to the included v0.3.1 implementation; adding this example changes documentation only.
+
+
+# Useful knowledge continuity — 18 October 2026
+
+Package v0.3.2 extends the existing qa-knowledge role rather than introducing another knowledge agent or runtime database. Recorded-flow documentation remains a separate mode. Knowledge is saved only when durable facts or ongoing work justify it: same application uses its canonical knowledge file; same work updates its matched note; distinct ongoing work can have a separate note; one-off answers create none. Essential identity ambiguities receive one guided question with choices/free text; unchanged context and minor details do not trigger an intake questionnaire.
+
+- Dependency-free package validation passed for 37 skills/roles, reference links, generated adapters and 445 owned source checksums. Git whitespace checks passed.
+- An isolated three-platform installation propagated the knowledge reference to the four relevant roles for Cursor, Claude Code and VS Code Copilot without creating application/work notes or active MCP configuration.
+- An independent skill-creator behavioral evaluation used synthetic local artifacts: continuing QA-123 updated its existing WORK-007 note, a separate ongoing accessibility review created WORK-008, and a generic idempotency explanation created no file. The evaluator preserved uncertainty, linked sources, asked no unnecessary questions and performed no browser activity, tests or code changes. Its temporary fixture is not distributed as real application knowledge.
+- skill-creator quick_validate.py was attempted for qa-knowledge but could not run because PyYAML is absent. Bundled validation is not claimed; the dependency-free repository validator passed.
+
+This update changes guidance, catalogs and package synchronization only. No live target, connector, browser or application code was exercised. The 72 Python tests reported for v0.3.1 remain historical and were not rerun for this update. These changes are local; no GitHub publication was performed in this phase.

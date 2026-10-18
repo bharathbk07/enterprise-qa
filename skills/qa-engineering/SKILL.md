@@ -12,3 +12,5 @@ Use selected evidence paths and IDs instead of loading all product outputs. For 
 Use qa-jmeter for selected JMeter execution details. For failed/unavailable access or user-pasted evidence read `references/EVIDENCE.md`; keep source/channel, window and completeness through the handoff.
 
 For full-stack assessment or solution-design scope beyond this engineering investigation, use qa-architect or qa-solution-architecture once with concrete findings/context. Do not bounce delegated RCA/performance tasks between coordinators. Existing confirmation and fix approvals remain unchanged.
+
+When repeated or ongoing work would benefit from durable context, read `references/KNOWLEDGE.md` and route the scoped update/resume to qa-knowledge knowledge mode. Reuse the same application/work note; separate genuinely distinct work only when useful. Pass the matched work ID/path and source deltas in handoffs. Do not create notes for every request, force recording, or repeat known questions.

@@ -37,3 +37,8 @@ Confirmed nonsecret defaults live in `qa/preferences.json` (workspace) and `qa/<
 # Native framework execution
 
 qa-test-execution selects manual-flow or native-runner mode before resolving flow records. Selected existing unit/component/contract/integration/end-to-end suites do not require manual flow identity. See NATIVE-EXECUTION.md for handoff and result fields. Native results use native-runs/, automated-* execution kinds, actual runner/report provenance and original attempt outcomes; qa-analysis normalizes them without granting manual gate eligibility. Flow/version references are optional traceability, not invented prerequisites.
+
+
+# Conditional work continuity
+
+knowledge.md remains the single canonical application knowledge document. Ongoing work may reuse an existing mutable summary or, when useful, work-knowledge/WORK-ID.md and work-knowledge/index.json. Match stable work/incident/assessment IDs and objectives before writing; update the same note on resume, create a separate note for distinct work only when continuity adds value, and skip one-off/redundant notes. See KNOWLEDGE.md for identity, freshness, minimal fields and few-question policy. These notes link versioned flow/test/RCA/architecture evidence; they neither replace immutable history nor carry reusable approvals. No application notes/index are created during toolkit setup.

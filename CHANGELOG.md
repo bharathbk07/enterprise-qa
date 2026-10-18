@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.2 — 2026-10-18
+
+- Added conditional application/work continuity through the existing knowledge role: resume the same note, separate distinct useful work, and skip redundant one-off notes.
+- Separated non-recording knowledge updates from illustrated-flow documentation; reuse confirmed context and ask only essential guided questions one at a time.
+- Preserved canonical application knowledge, evidence/version history, privacy and action-specific approvals; no automatic knowledge files are created at setup.
+
 ## 0.3.1 — 2026-10-17
 
 - Added an illustrative checkout walkthrough with 20 planned cases, staged prompts, RCA/solution examples and a structurally valid incomplete planning record.

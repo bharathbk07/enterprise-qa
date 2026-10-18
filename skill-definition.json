@@ -26,7 +26,7 @@
     {
       "id": "qa-knowledge",
       "path": "skills/qa-knowledge/SKILL.md",
-      "description": "Summarize and name recorded flows with minimal clarification, maintain business knowledge, and create illustrated manual flow documents."
+      "description": "Maintain reusable application/work knowledge with few questions, resume the same work in place, and document recorded flows with confirmed names and screenshots."
     },
     {
       "id": "qa-framework",
@@ -192,7 +192,7 @@
   "contract": "contracts/CONTRACT.md",
   "recorder": "recorder/",
   "not_a_native_platform_manifest": true,
-  "package_version": "0.3.1",
+  "package_version": "0.3.2",
   "browser_policy": {
     "mode": "dedicated-spawned-only",
     "integrated_browser_allowed": false,
@@ -292,5 +292,13 @@
     ],
     "architecture_records": "ARCHITECTURE-RECORDS.md",
     "policy": "load-selected-mode-only"
+  },
+  "knowledge_continuity": {
+    "application": "one-canonical-knowledge.md-per-stable-application",
+    "same_work": "update-matched-note-in-place",
+    "different_work": "separate-note-only-if-reusable-continuity-adds-value",
+    "one_off": "no-new-note",
+    "clarification": "essential-ambiguity-only-one-guided-question-at-a-time",
+    "saved_knowledge_grants_approval": false
   }
 }

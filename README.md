@@ -13,7 +13,7 @@ The kit contains **37 focused skills and 37 agent roles**, platform adapters and
 
 - Records human demonstrations in dedicated spawned Chromium browsers, including step screenshots, console errors and bounded API/file evidence.
 - Reviews a suggested flow name, inferred steps, completion status and minor uncertainties in one question. Further questions are reserved for essential gaps or required approvals; confirmed application/workspace preferences are reused.
-- Maintains one application knowledge document and versioned manual flow documents with actual screenshots embedded per step.
+- Maintains one application knowledge document and versioned manual flow documents with actual screenshots embedded per step. Ongoing work can reuse a compact note across sessions; distinct work gets a separate note only when useful, with no compulsory per-request diary.
 - Designs at least 20 meaningful manual cases per flow where business rules support them, executes selected cases and preserves evidence. Missing rules remain unresolved rather than invented.
 - Inspects an existing automation framework, including feature files, data wiring and pipelines. Automation updates require two distinct current-version manual executions per flow or an explicit scoped override.
 - Supports performance engineering, workload modeling, telemetry correlation, bottleneck analysis, evidence-based RCA, reviewable fix proposals and approved implementation/retesting.

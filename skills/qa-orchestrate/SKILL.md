@@ -17,3 +17,5 @@ Recording-to-knowledge handoff must resolve a user-supplied or user-confirmed fl
 Use summary-first clarification from `references/INTERACTION.md`: one combined review resolves flow name, steps, completion and minor uncertainties. Reuse confirmed preferences; ask additional questions only for essential gaps or required approval. Do not run a fixed discovery questionnaire or ask specialists to repeat answered questions.
 
 Broader full-stack quality/solution architecture requests go to qa-architect with the existing application context and a concrete scope. Do not forward a delegated recording/testing task back to the architect; complete it and return its artifacts. Existing QA-only entry usage remains supported.
+
+When repeated or ongoing work would benefit from durable context, read `references/KNOWLEDGE.md` and route the scoped update/resume to qa-knowledge knowledge mode. Reuse the same application/work note; separate genuinely distinct work only when useful. Pass the matched work ID/path and source deltas in handoffs. Do not create notes for every request, force recording, or repeat known questions.
